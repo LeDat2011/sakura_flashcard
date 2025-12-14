@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Sakura Flashcard</string>
+    
+    <!-- Error Messages -->
+    <string name="error_bad_request">Yêu cầu không hợp lệ. Vui lòng kiểm tra lại thông tin.</string>
+    <string name="error_unauthorized">Yêu cầu xác thực. Vui lòng đăng nhập.</string>
+    <string name="error_forbidden">Truy cập bị từ chối. Bạn không có quyền.</string>
+    <string name="error_not_found">Không tìm thấy nội dung yêu cầu.</string>
+    <string name="error_timeout">Hết thời gian chờ. Vui lòng thử lại.</string>
+    <string name="error_rate_limit">Quá nhiều yêu cầu. Vui lòng đợi và thử lại.</string>
+    <string name="error_server_error">Lỗi máy chủ. Vui lòng thử lại sau.</string>
+    <string name="error_server_unavailable">Dịch vụ tạm thời không khả dụng.</string>
+    <string name="error_network_generic">Lỗi mạng. Vui lòng kiểm tra kết nối.</string>
+    <string name="error_no_internet">Không có kết nối Internet. Vui lòng kiểm tra mạng.</string>
+    <string name="error_generic">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+    
+    <!-- Error Context Messages -->
+    <string name="error_context_flashcards">khi tải thẻ học</string>
+    <string name="error_context_auth">trong quá trình xác thực</string>
+    <string name="error_context_quiz">khi nộp bài kiểm tra</string>
+    <string name="error_context_game">khi nộp kết quả trò chơi</string>
+    <string name="error_context_profile">khi cập nhật hồ sơ</string>
+    <string name="error_context_sync">trong quá trình đồng bộ</string>
+    <string name="error_context_characters">khi tải chữ cái</string>
+    <string name="error_context_images">khi tải hình ảnh</string>
+    
+    <!-- Performance Messages -->
+    <string name="performance_low_memory">Phát hiện bộ nhớ thấp. Một số tính năng có thể bị hạn chế.</string>
+    <string name="performance_slow_network">Phát hiện mạng chậm. Việc tải có thể mất nhiều thời gian hơn.</string>
+    <string name="performance_cache_cleared">Đã xóa bộ nhớ đệm thành công.</string>
+    
+    <!-- Retry Messages -->
+    <string name="retry_button">Thử lại</string>
+    <string name="retry_in_progress">Đang thử lại…</string>
+    <string name="retry_failed">Thử lại thất bại. Vui lòng thử lại sau.</string>
+</resources>

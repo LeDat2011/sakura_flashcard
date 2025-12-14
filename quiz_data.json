@@ -1,0 +1,2470 @@
+[
+  {
+    "_id": { "$oid": "693e36d08bebd27195919d01" },
+    "topic": "ANIMALS",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Động vật - Cơ bản",
+    "description": "Bộ câu hỏi ANIMALS cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d02" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「犬」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "いぬ", "isCorrect": true },
+          { "optionId": "B", "text": "ねこ", "isCorrect": false },
+          { "optionId": "C", "text": "とり", "isCorrect": false },
+          { "optionId": "D", "text": "さかな", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "犬 (いぬ) có nghĩa là con chó",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d03" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「猫」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Con chó", "isCorrect": false },
+          { "optionId": "B", "text": "Con mèo", "isCorrect": true },
+          { "optionId": "C", "text": "Con chim", "isCorrect": false },
+          { "optionId": "D", "text": "Con cá", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "猫 (ねこ) có nghĩa là con mèo",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d04" },
+        "questionNumber": 3,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「鳥」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "うま", "isCorrect": false },
+          { "optionId": "B", "text": "うし", "isCorrect": false },
+          { "optionId": "C", "text": "とり", "isCorrect": true },
+          { "optionId": "D", "text": "ぶた", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "鳥 (とり) có nghĩa là con chim",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d05" },
+        "questionNumber": 4,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「魚」(さかな) có nghĩa là con cá",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "魚 (さかな) đúng là có nghĩa là con cá",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d06" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'con ngựa'?",
+        "options": [
+          { "optionId": "A", "text": "牛", "isCorrect": false },
+          { "optionId": "B", "text": "馬", "isCorrect": true },
+          { "optionId": "C", "text": "豚", "isCorrect": false },
+          { "optionId": "D", "text": "羊", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "馬 (うま) có nghĩa là con ngựa",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d07" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「牛」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Con lợn", "isCorrect": false },
+          { "optionId": "B", "text": "Con cừu", "isCorrect": false },
+          { "optionId": "C", "text": "Con bò", "isCorrect": true },
+          { "optionId": "D", "text": "Con dê", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "牛 (うし) có nghĩa là con bò",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d08" },
+        "questionNumber": 7,
+        "questionType": "FILL_BLANK",
+        "questionText": "Con mèo trong tiếng Nhật là「___」(ねこ)",
+        "options": [
+          { "optionId": "A", "text": "猫", "isCorrect": true },
+          { "optionId": "B", "text": "犬", "isCorrect": false },
+          { "optionId": "C", "text": "鳥", "isCorrect": false },
+          { "optionId": "D", "text": "魚", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "猫 là chữ Kanji của ねこ (con mèo)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d09" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「豚」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ひつじ", "isCorrect": false },
+          { "optionId": "B", "text": "ぶた", "isCorrect": true },
+          { "optionId": "C", "text": "うさぎ", "isCorrect": false },
+          { "optionId": "D", "text": "かめ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "豚 (ぶた) có nghĩa là con lợn",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d0a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「虫」(むし) có nghĩa là con côn trùng",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "虫 (むし) đúng là có nghĩa là côn trùng/sâu bọ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d0b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'con thỏ'?",
+        "options": [
+          { "optionId": "A", "text": "亀", "isCorrect": false },
+          { "optionId": "B", "text": "蛇", "isCorrect": false },
+          { "optionId": "C", "text": "兎", "isCorrect": true },
+          { "optionId": "D", "text": "熊", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "兎 (うさぎ) có nghĩa là con thỏ",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919d10" },
+    "topic": "ANIMALS",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Động vật - Sơ cấp",
+    "description": "Bộ câu hỏi ANIMALS cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d11" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「象」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ぞう", "isCorrect": true },
+          { "optionId": "B", "text": "きりん", "isCorrect": false },
+          { "optionId": "C", "text": "らいおん", "isCorrect": false },
+          { "optionId": "D", "text": "とら", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "象 (ぞう) có nghĩa là con voi",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d12" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「猿」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Con hổ", "isCorrect": false },
+          { "optionId": "B", "text": "Con khỉ", "isCorrect": true },
+          { "optionId": "C", "text": "Con gấu", "isCorrect": false },
+          { "optionId": "D", "text": "Con sói", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "猿 (さる) có nghĩa là con khỉ",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d13" },
+        "questionNumber": 3,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「鯨」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "いるか", "isCorrect": false },
+          { "optionId": "B", "text": "くじら", "isCorrect": true },
+          { "optionId": "C", "text": "さめ", "isCorrect": false },
+          { "optionId": "D", "text": "たこ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "鯨 (くじら) có nghĩa là cá voi",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d14" },
+        "questionNumber": 4,
+        "questionType": "FILL_BLANK",
+        "questionText": "犬が___います。(đang có)",
+        "options": [
+          { "optionId": "A", "text": "一匹", "isCorrect": true },
+          { "optionId": "B", "text": "一本", "isCorrect": false },
+          { "optionId": "C", "text": "一個", "isCorrect": false },
+          { "optionId": "D", "text": "一台", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "匹 (ひき) là đơn vị đếm dùng cho động vật nhỏ/vừa",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d15" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「蛇」(へび) có nghĩa là con rắn",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "蛇 (へび) đúng là có nghĩa là con rắn",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d16" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'con hươu cao cổ'?",
+        "options": [
+          { "optionId": "A", "text": "ライオン", "isCorrect": false },
+          { "optionId": "B", "text": "キリン", "isCorrect": true },
+          { "optionId": "C", "text": "トラ", "isCorrect": false },
+          { "optionId": "D", "text": "ゴリラ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "キリン có nghĩa là con hươu cao cổ",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d17" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「熊」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Con sư tử", "isCorrect": false },
+          { "optionId": "B", "text": "Con báo", "isCorrect": false },
+          { "optionId": "C", "text": "Con gấu", "isCorrect": true },
+          { "optionId": "D", "text": "Con chồn", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "熊 (くま) có nghĩa là con gấu",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d18" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「鶏」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "にわとり", "isCorrect": true },
+          { "optionId": "B", "text": "あひる", "isCorrect": false },
+          { "optionId": "C", "text": "すずめ", "isCorrect": false },
+          { "optionId": "D", "text": "からす", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "鶏 (にわとり) có nghĩa là con gà",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d19" },
+        "questionNumber": 9,
+        "questionType": "FILL_BLANK",
+        "questionText": "動物園で___を見ました。(nhìn thấy con voi)",
+        "options": [
+          { "optionId": "A", "text": "象", "isCorrect": true },
+          { "optionId": "B", "text": "犬", "isCorrect": false },
+          { "optionId": "C", "text": "猫", "isCorrect": false },
+          { "optionId": "D", "text": "鳥", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "象 (ぞう) là con voi, phù hợp với ngữ cảnh sở thú",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d1a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「狼」(おおかみ) có nghĩa là con sói",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "狼 (おおかみ) đúng là có nghĩa là con sói",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919d20" },
+    "topic": "ANIMALS",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Động vật - Trung cấp",
+    "description": "Bộ câu hỏi ANIMALS cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d21" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「野生動物」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Động vật nuôi", "isCorrect": false },
+          { "optionId": "B", "text": "Động vật hoang dã", "isCorrect": true },
+          { "optionId": "C", "text": "Động vật biển", "isCorrect": false },
+          { "optionId": "D", "text": "Động vật quý hiếm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "野生動物 (やせいどうぶつ) có nghĩa là động vật hoang dã",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d22" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「絶滅危惧種」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ぜつめつきぐしゅ", "isCorrect": true },
+          { "optionId": "B", "text": "ぜつめつきけんしゅ", "isCorrect": false },
+          { "optionId": "C", "text": "ぜつめつあぶなしゅ", "isCorrect": false },
+          { "optionId": "D", "text": "ぜつめつきがいしゅ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "絶滅危惧種 (ぜつめつきぐしゅ) có nghĩa là loài có nguy cơ tuyệt chủng",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d23" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この動物は___が長いです。(cổ)",
+        "options": [
+          { "optionId": "A", "text": "首", "isCorrect": true },
+          { "optionId": "B", "text": "足", "isCorrect": false },
+          { "optionId": "C", "text": "尾", "isCorrect": false },
+          { "optionId": "D", "text": "耳", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "首 (くび) có nghĩa là cổ",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d24" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「哺乳類」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Loài bò sát", "isCorrect": false },
+          { "optionId": "B", "text": "Loài có vú", "isCorrect": true },
+          { "optionId": "C", "text": "Loài lưỡng cư", "isCorrect": false },
+          { "optionId": "D", "text": "Loài chim", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "哺乳類 (ほにゅうるい) có nghĩa là động vật có vú",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d25" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「爬虫類」(はちゅうるい) có nghĩa là loài bò sát",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "爬虫類 (はちゅうるい) đúng là có nghĩa là loài bò sát",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919d30" },
+    "topic": "ANIMALS",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Động vật - Trung cao cấp",
+    "description": "Bộ câu hỏi ANIMALS cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d31" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「生態系」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Hệ thống sinh học", "isCorrect": false },
+          { "optionId": "B", "text": "Hệ sinh thái", "isCorrect": true },
+          { "optionId": "C", "text": "Môi trường sống", "isCorrect": false },
+          { "optionId": "D", "text": "Chuỗi thức ăn", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "生態系 (せいたいけい) có nghĩa là hệ sinh thái",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d32" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「肉食動物」と「草食動物」の違いは何ですか？",
+        "options": [
+          { "optionId": "A", "text": "Kích thước cơ thể", "isCorrect": false },
+          { "optionId": "B", "text": "Loại thức ăn", "isCorrect": true },
+          { "optionId": "C", "text": "Nơi sinh sống", "isCorrect": false },
+          { "optionId": "D", "text": "Cách di chuyển", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "肉食動物 (にくしょくどうぶつ) là động vật ăn thịt, 草食動物 (そうしょくどうぶつ) là động vật ăn cỏ",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d33" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "動物の___を守ることが大切です。(môi trường sống)",
+        "options": [
+          { "optionId": "A", "text": "生息地", "isCorrect": true },
+          { "optionId": "B", "text": "生活", "isCorrect": false },
+          { "optionId": "C", "text": "食事", "isCorrect": false },
+          { "optionId": "D", "text": "習性", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "生息地 (せいそくち) có nghĩa là môi trường sống/nơi cư trú",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d34" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「冬眠」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ふゆみん", "isCorrect": false },
+          { "optionId": "B", "text": "とうみん", "isCorrect": true },
+          { "optionId": "C", "text": "ふゆねむり", "isCorrect": false },
+          { "optionId": "D", "text": "どうみん", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "冬眠 (とうみん) có nghĩa là ngủ đông",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919d40" },
+    "topic": "ANIMALS",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Động vật - Cao cấp",
+    "description": "Bộ câu hỏi ANIMALS cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d41" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「生物多様性」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Sự phong phú sinh học", "isCorrect": false },
+          { "optionId": "B", "text": "Đa dạng sinh học", "isCorrect": true },
+          { "optionId": "C", "text": "Tiến hóa sinh học", "isCorrect": false },
+          { "optionId": "D", "text": "Cân bằng sinh thái", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "生物多様性 (せいぶつたようせい) có nghĩa là đa dạng sinh học",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d42" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「外来種」と「在来種」の違いは何ですか？",
+        "options": [
+          { "optionId": "A", "text": "Loài ngoại lai và loài bản địa", "isCorrect": true },
+          { "optionId": "B", "text": "Loài lớn và loài nhỏ", "isCorrect": false },
+          { "optionId": "C", "text": "Loài biển và loài cạn", "isCorrect": false },
+          { "optionId": "D", "text": "Loài ăn thịt và ăn cỏ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "外来種 (がいらいしゅ) là loài ngoại lai, 在来種 (ざいらいしゅ) là loài bản địa",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919d43" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "動物の___行動を研究する学問を動物行動学という。(bản năng)",
+        "options": [
+          { "optionId": "A", "text": "本能的", "isCorrect": true },
+          { "optionId": "B", "text": "自然的", "isCorrect": false },
+          { "optionId": "C", "text": "野生的", "isCorrect": false },
+          { "optionId": "D", "text": "原始的", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "本能的 (ほんのうてき) có nghĩa là mang tính bản năng",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919e01" },
+    "topic": "ANIME",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Anime - Cơ bản",
+    "description": "Bộ câu hỏi ANIME cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e02" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「漫画」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "まんが", "isCorrect": true },
+          { "optionId": "B", "text": "えいが", "isCorrect": false },
+          { "optionId": "C", "text": "おんがく", "isCorrect": false },
+          { "optionId": "D", "text": "しゃしん", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "漫画 (まんが) có nghĩa là truyện tranh",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e03" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「主人公」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Phản diện", "isCorrect": false },
+          { "optionId": "B", "text": "Nhân vật phụ", "isCorrect": false },
+          { "optionId": "C", "text": "Nhân vật chính", "isCorrect": true },
+          { "optionId": "D", "text": "Tác giả", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "主人公 (しゅじんこう) có nghĩa là nhân vật chính",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e04" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「アニメ」là từ viết tắt của animation",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "アニメ là từ viết tắt của アニメーション (animation)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e05" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「見る」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Nghe", "isCorrect": false },
+          { "optionId": "B", "text": "Xem", "isCorrect": true },
+          { "optionId": "C", "text": "Đọc", "isCorrect": false },
+          { "optionId": "D", "text": "Viết", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "見る (みる) có nghĩa là xem/nhìn",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e06" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「好き」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "きらい", "isCorrect": false },
+          { "optionId": "B", "text": "すき", "isCorrect": true },
+          { "optionId": "C", "text": "たのしい", "isCorrect": false },
+          { "optionId": "D", "text": "かなしい", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "好き (すき) có nghĩa là thích",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e07" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "このアニメは___です。(thú vị)",
+        "options": [
+          { "optionId": "A", "text": "面白い", "isCorrect": true },
+          { "optionId": "B", "text": "難しい", "isCorrect": false },
+          { "optionId": "C", "text": "悲しい", "isCorrect": false },
+          { "optionId": "D", "text": "怖い", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "面白い (おもしろい) có nghĩa là thú vị/hay",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e08" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「声」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Hình ảnh", "isCorrect": false },
+          { "optionId": "B", "text": "Âm thanh", "isCorrect": false },
+          { "optionId": "C", "text": "Giọng nói", "isCorrect": true },
+          { "optionId": "D", "text": "Bài hát", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "声 (こえ) có nghĩa là giọng nói/tiếng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e09" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「絵」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "え", "isCorrect": true },
+          { "optionId": "B", "text": "かい", "isCorrect": false },
+          { "optionId": "C", "text": "が", "isCorrect": false },
+          { "optionId": "D", "text": "ず", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "絵 (え) có nghĩa là tranh/hình vẽ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e0a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「話」(はなし) có nghĩa là câu chuyện",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "話 (はなし) đúng là có nghĩa là câu chuyện/chuyện kể",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e0b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'tập phim'?",
+        "options": [
+          { "optionId": "A", "text": "本", "isCorrect": false },
+          { "optionId": "B", "text": "話", "isCorrect": true },
+          { "optionId": "C", "text": "巻", "isCorrect": false },
+          { "optionId": "D", "text": "章", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "話 (わ) khi dùng làm đơn vị đếm có nghĩa là tập (phim)",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919e10" },
+    "topic": "ANIME",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Anime - Sơ cấp",
+    "description": "Bộ câu hỏi ANIME cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e11" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「声優」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "せいゆう", "isCorrect": true },
+          { "optionId": "B", "text": "こえゆう", "isCorrect": false },
+          { "optionId": "C", "text": "せいゆ", "isCorrect": false },
+          { "optionId": "D", "text": "こえすぐ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "声優 (せいゆう) có nghĩa là diễn viên lồng tiếng",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e12" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「作品」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Tác giả", "isCorrect": false },
+          { "optionId": "B", "text": "Tác phẩm", "isCorrect": true },
+          { "optionId": "C", "text": "Nhà xuất bản", "isCorrect": false },
+          { "optionId": "D", "text": "Độc giả", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "作品 (さくひん) có nghĩa là tác phẩm",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e13" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この漫画の___はとても有名です。(tác giả)",
+        "options": [
+          { "optionId": "A", "text": "作者", "isCorrect": true },
+          { "optionId": "B", "text": "読者", "isCorrect": false },
+          { "optionId": "C", "text": "歌手", "isCorrect": false },
+          { "optionId": "D", "text": "画家", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "作者 (さくしゃ) có nghĩa là tác giả",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e14" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「連載」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Xuất bản một lần", "isCorrect": false },
+          { "optionId": "B", "text": "Đăng nhiều kỳ", "isCorrect": true },
+          { "optionId": "C", "text": "Hoàn thành", "isCorrect": false },
+          { "optionId": "D", "text": "Tái bản", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "連載 (れんさい) có nghĩa là đăng nhiều kỳ/liên tục",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e15" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「少年漫画」(しょうねんまんが) là manga dành cho con trai",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "少年漫画 là thể loại manga hướng đến đối tượng nam thanh thiếu niên",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e16" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「放送」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ほうそう", "isCorrect": true },
+          { "optionId": "B", "text": "はなそう", "isCorrect": false },
+          { "optionId": "C", "text": "ほそう", "isCorrect": false },
+          { "optionId": "D", "text": "はっそう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "放送 (ほうそう) có nghĩa là phát sóng",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e17" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「敵」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bạn bè", "isCorrect": false },
+          { "optionId": "B", "text": "Kẻ thù", "isCorrect": true },
+          { "optionId": "C", "text": "Đồng đội", "isCorrect": false },
+          { "optionId": "D", "text": "Người lạ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "敵 (てき) có nghĩa là kẻ thù/đối thủ",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e18" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "アニメの___がとても綺麗です。(hình ảnh)",
+        "options": [
+          { "optionId": "A", "text": "映像", "isCorrect": true },
+          { "optionId": "B", "text": "音声", "isCorrect": false },
+          { "optionId": "C", "text": "歌詞", "isCorrect": false },
+          { "optionId": "D", "text": "台詞", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "映像 (えいぞう) có nghĩa là hình ảnh/video",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e19" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「完結」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "かんけつ", "isCorrect": true },
+          { "optionId": "B", "text": "かんけち", "isCorrect": false },
+          { "optionId": "C", "text": "わんけつ", "isCorrect": false },
+          { "optionId": "D", "text": "かんげつ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "完結 (かんけつ) có nghĩa là kết thúc/hoàn thành",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e1a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「少女漫画」(しょうじょまんが) là manga dành cho con gái",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "少女漫画 là thể loại manga hướng đến đối tượng nữ thanh thiếu niên",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919e20" },
+    "topic": "ANIME",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Anime - Trung cấp",
+    "description": "Bộ câu hỏi ANIME cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e21" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「原作」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bản chuyển thể", "isCorrect": false },
+          { "optionId": "B", "text": "Tác phẩm gốc", "isCorrect": true },
+          { "optionId": "C", "text": "Bản dịch", "isCorrect": false },
+          { "optionId": "D", "text": "Phần tiếp theo", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "原作 (げんさく) có nghĩa là tác phẩm gốc/nguyên tác",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e22" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「脚本家」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "きゃくほんか", "isCorrect": true },
+          { "optionId": "B", "text": "あしもとか", "isCorrect": false },
+          { "optionId": "C", "text": "きゃくほんや", "isCorrect": false },
+          { "optionId": "D", "text": "かくほんか", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "脚本家 (きゃくほんか) có nghĩa là biên kịch",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e23" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "このアニメは___が高い。(tỷ lệ khán giả)",
+        "options": [
+          { "optionId": "A", "text": "視聴率", "isCorrect": true },
+          { "optionId": "B", "text": "人気度", "isCorrect": false },
+          { "optionId": "C", "text": "売上", "isCorrect": false },
+          { "optionId": "D", "text": "評価", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "視聴率 (しちょうりつ) có nghĩa là tỷ lệ người xem/rating",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e24" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「伏線」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Kết thúc bất ngờ", "isCorrect": false },
+          { "optionId": "B", "text": "Manh mối/dấu hiệu báo trước", "isCorrect": true },
+          { "optionId": "C", "text": "Nhân vật ẩn", "isCorrect": false },
+          { "optionId": "D", "text": "Cảnh hồi tưởng", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "伏線 (ふくせん) có nghĩa là manh mối/dấu hiệu báo trước trong cốt truyện",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e25" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「制作委員会」(せいさくいいんかい) là ủy ban sản xuất anime",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "制作委員会 là hệ thống tài trợ và sản xuất anime tại Nhật Bản",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919e30" },
+    "topic": "ANIME",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Anime - Trung cao cấp",
+    "description": "Bộ câu hỏi ANIME cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e31" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「作画監督」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Đạo diễn âm thanh", "isCorrect": false },
+          { "optionId": "B", "text": "Giám đốc hình ảnh", "isCorrect": true },
+          { "optionId": "C", "text": "Biên kịch", "isCorrect": false },
+          { "optionId": "D", "text": "Nhà sản xuất", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "作画監督 (さくがかんとく) là người giám sát chất lượng hình ảnh trong anime",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e32" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「興行収入」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "こうぎょうしゅうにゅう", "isCorrect": true },
+          { "optionId": "B", "text": "きょうぎょうしゅうにゅう", "isCorrect": false },
+          { "optionId": "C", "text": "こうぎょうしゅにゅう", "isCorrect": false },
+          { "optionId": "D", "text": "きょうぎょうしゅにゅう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "興行収入 (こうぎょうしゅうにゅう) có nghĩa là doanh thu phòng vé",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e33" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "このアニメは社会___を反映している。(hiện tượng)",
+        "options": [
+          { "optionId": "A", "text": "現象", "isCorrect": true },
+          { "optionId": "B", "text": "問題", "isCorrect": false },
+          { "optionId": "C", "text": "事件", "isCorrect": false },
+          { "optionId": "D", "text": "状況", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "社会現象 (しゃかいげんしょう) có nghĩa là hiện tượng xã hội",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e34" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「世界観」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Quan điểm cá nhân", "isCorrect": false },
+          { "optionId": "B", "text": "Thế giới quan/bối cảnh", "isCorrect": true },
+          { "optionId": "C", "text": "Văn hóa thế giới", "isCorrect": false },
+          { "optionId": "D", "text": "Tầm nhìn toàn cầu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "世界観 (せかいかん) trong anime chỉ bối cảnh/thiết lập thế giới của tác phẩm",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919e40" },
+    "topic": "ANIME",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Anime - Cao cấp",
+    "description": "Bộ câu hỏi ANIME cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e41" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「叙情的」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Mang tính hành động", "isCorrect": false },
+          { "optionId": "B", "text": "Mang tính trữ tình", "isCorrect": true },
+          { "optionId": "C", "text": "Mang tính hài hước", "isCorrect": false },
+          { "optionId": "D", "text": "Mang tính kinh dị", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "叙情的 (じょじょうてき) có nghĩa là mang tính trữ tình/cảm xúc",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e42" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「風刺」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ふうし", "isCorrect": true },
+          { "optionId": "B", "text": "かぜさし", "isCorrect": false },
+          { "optionId": "C", "text": "ふうさ", "isCorrect": false },
+          { "optionId": "D", "text": "かぜし", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "風刺 (ふうし) có nghĩa là châm biếm/trào phúng",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919e43" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この作品は___な表現が特徴的だ。(ẩn dụ)",
+        "options": [
+          { "optionId": "A", "text": "比喩的", "isCorrect": true },
+          { "optionId": "B", "text": "直接的", "isCorrect": false },
+          { "optionId": "C", "text": "具体的", "isCorrect": false },
+          { "optionId": "D", "text": "客観的", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "比喩的 (ひゆてき) có nghĩa là mang tính ẩn dụ",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919f01" },
+    "topic": "FOOD",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Đồ ăn - Cơ bản",
+    "description": "Bộ câu hỏi FOOD cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f02" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「ご飯」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ごはん", "isCorrect": true },
+          { "optionId": "B", "text": "ごめし", "isCorrect": false },
+          { "optionId": "C", "text": "ごぱん", "isCorrect": false },
+          { "optionId": "D", "text": "こはん", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "ご飯 (ごはん) có nghĩa là cơm/bữa ăn",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f03" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「水」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Trà", "isCorrect": false },
+          { "optionId": "B", "text": "Nước", "isCorrect": true },
+          { "optionId": "C", "text": "Sữa", "isCorrect": false },
+          { "optionId": "D", "text": "Rượu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "水 (みず) có nghĩa là nước",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f04" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「肉」(にく) có nghĩa là thịt",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "肉 (にく) đúng là có nghĩa là thịt",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f05" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「野菜」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "やさい", "isCorrect": true },
+          { "optionId": "B", "text": "のさい", "isCorrect": false },
+          { "optionId": "C", "text": "やな", "isCorrect": false },
+          { "optionId": "D", "text": "のな", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "野菜 (やさい) có nghĩa là rau củ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f06" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'trứng'?",
+        "options": [
+          { "optionId": "A", "text": "肉", "isCorrect": false },
+          { "optionId": "B", "text": "魚", "isCorrect": false },
+          { "optionId": "C", "text": "卵", "isCorrect": true },
+          { "optionId": "D", "text": "豆", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "卵 (たまご) có nghĩa là trứng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f07" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "朝___を食べます。(bữa sáng)",
+        "options": [
+          { "optionId": "A", "text": "ご飯", "isCorrect": true },
+          { "optionId": "B", "text": "お茶", "isCorrect": false },
+          { "optionId": "C", "text": "お酒", "isCorrect": false },
+          { "optionId": "D", "text": "お水", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "朝ご飯 (あさごはん) có nghĩa là bữa sáng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f08" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「お茶」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Cà phê", "isCorrect": false },
+          { "optionId": "B", "text": "Trà", "isCorrect": true },
+          { "optionId": "C", "text": "Nước ép", "isCorrect": false },
+          { "optionId": "D", "text": "Sữa", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "お茶 (おちゃ) có nghĩa là trà",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f09" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「パン」là gì?",
+        "options": [
+          { "optionId": "A", "text": "Cơm", "isCorrect": false },
+          { "optionId": "B", "text": "Mì", "isCorrect": false },
+          { "optionId": "C", "text": "Bánh mì", "isCorrect": true },
+          { "optionId": "D", "text": "Bánh ngọt", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "パン có nghĩa là bánh mì (từ tiếng Bồ Đào Nha 'pão')",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f0a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「果物」(くだもの) có nghĩa là trái cây",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "果物 (くだもの) đúng là có nghĩa là trái cây",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f0b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「飲む」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "たべる", "isCorrect": false },
+          { "optionId": "B", "text": "のむ", "isCorrect": true },
+          { "optionId": "C", "text": "つくる", "isCorrect": false },
+          { "optionId": "D", "text": "かう", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "飲む (のむ) có nghĩa là uống",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919f10" },
+    "topic": "FOOD",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Đồ ăn - Sơ cấp",
+    "description": "Bộ câu hỏi FOOD cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f11" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「料理」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "りょうり", "isCorrect": true },
+          { "optionId": "B", "text": "りょり", "isCorrect": false },
+          { "optionId": "C", "text": "りゅうり", "isCorrect": false },
+          { "optionId": "D", "text": "りょおり", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "料理 (りょうり) có nghĩa là món ăn/nấu ăn",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f12" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「甘い」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Mặn", "isCorrect": false },
+          { "optionId": "B", "text": "Chua", "isCorrect": false },
+          { "optionId": "C", "text": "Ngọt", "isCorrect": true },
+          { "optionId": "D", "text": "Cay", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "甘い (あまい) có nghĩa là ngọt",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f13" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この料理は___がいい。(hương vị)",
+        "options": [
+          { "optionId": "A", "text": "味", "isCorrect": true },
+          { "optionId": "B", "text": "色", "isCorrect": false },
+          { "optionId": "C", "text": "形", "isCorrect": false },
+          { "optionId": "D", "text": "量", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "味 (あじ) có nghĩa là vị/hương vị",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f14" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「辛い」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "からい", "isCorrect": true },
+          { "optionId": "B", "text": "つらい", "isCorrect": false },
+          { "optionId": "C", "text": "にがい", "isCorrect": false },
+          { "optionId": "D", "text": "すっぱい", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "辛い (からい) có nghĩa là cay (cũng có thể đọc là つらい với nghĩa khó khăn)",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f15" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「酸っぱい」(すっぱい) có nghĩa là chua",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "酸っぱい (すっぱい) đúng là có nghĩa là chua",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f16" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'đắng'?",
+        "options": [
+          { "optionId": "A", "text": "甘い", "isCorrect": false },
+          { "optionId": "B", "text": "辛い", "isCorrect": false },
+          { "optionId": "C", "text": "苦い", "isCorrect": true },
+          { "optionId": "D", "text": "塩辛い", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "苦い (にがい) có nghĩa là đắng",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f17" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「焼く」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Luộc", "isCorrect": false },
+          { "optionId": "B", "text": "Nướng/Chiên", "isCorrect": true },
+          { "optionId": "C", "text": "Hấp", "isCorrect": false },
+          { "optionId": "D", "text": "Kho", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "焼く (やく) có nghĩa là nướng/chiên/rán",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f18" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「冷たい」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "つめたい", "isCorrect": true },
+          { "optionId": "B", "text": "あたたかい", "isCorrect": false },
+          { "optionId": "C", "text": "あつい", "isCorrect": false },
+          { "optionId": "D", "text": "さむい", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "冷たい (つめたい) có nghĩa là lạnh (đồ vật)",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f19" },
+        "questionNumber": 9,
+        "questionType": "FILL_BLANK",
+        "questionText": "___を入れてください。(muối)",
+        "options": [
+          { "optionId": "A", "text": "塩", "isCorrect": true },
+          { "optionId": "B", "text": "砂糖", "isCorrect": false },
+          { "optionId": "C", "text": "醤油", "isCorrect": false },
+          { "optionId": "D", "text": "酢", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "塩 (しお) có nghĩa là muối",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f1a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「砂糖」(さとう) có nghĩa là đường",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "砂糖 (さとう) đúng là có nghĩa là đường",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919f20" },
+    "topic": "FOOD",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Đồ ăn - Trung cấp",
+    "description": "Bộ câu hỏi FOOD cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f21" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「食材」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Dụng cụ nấu ăn", "isCorrect": false },
+          { "optionId": "B", "text": "Nguyên liệu thực phẩm", "isCorrect": true },
+          { "optionId": "C", "text": "Món ăn hoàn chỉnh", "isCorrect": false },
+          { "optionId": "D", "text": "Công thức nấu ăn", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "食材 (しょくざい) có nghĩa là nguyên liệu thực phẩm",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f22" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「栄養」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "えいよう", "isCorrect": true },
+          { "optionId": "B", "text": "さかえよう", "isCorrect": false },
+          { "optionId": "C", "text": "えいやく", "isCorrect": false },
+          { "optionId": "D", "text": "さかえやく", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "栄養 (えいよう) có nghĩa là dinh dưỡng",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f23" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この料理は___が豊富です。(vitamin)",
+        "options": [
+          { "optionId": "A", "text": "ビタミン", "isCorrect": true },
+          { "optionId": "B", "text": "カロリー", "isCorrect": false },
+          { "optionId": "C", "text": "タンパク質", "isCorrect": false },
+          { "optionId": "D", "text": "炭水化物", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "ビタミン là vitamin trong tiếng Nhật",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f24" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「調理法」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Nguyên liệu", "isCorrect": false },
+          { "optionId": "B", "text": "Phương pháp chế biến", "isCorrect": true },
+          { "optionId": "C", "text": "Công cụ nấu ăn", "isCorrect": false },
+          { "optionId": "D", "text": "Thời gian nấu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "調理法 (ちょうりほう) có nghĩa là phương pháp chế biến/nấu nướng",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f25" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「発酵食品」(はっこうしょくひん) có nghĩa là thực phẩm lên men",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "発酵食品 là thực phẩm lên men như miso, natto, kimchi",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919f30" },
+    "topic": "FOOD",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Đồ ăn - Trung cao cấp",
+    "description": "Bộ câu hỏi FOOD cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f31" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「食品添加物」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Thực phẩm tươi sống", "isCorrect": false },
+          { "optionId": "B", "text": "Chất phụ gia thực phẩm", "isCorrect": true },
+          { "optionId": "C", "text": "Thực phẩm hữu cơ", "isCorrect": false },
+          { "optionId": "D", "text": "Thực phẩm chức năng", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "食品添加物 (しょくひんてんかぶつ) có nghĩa là chất phụ gia thực phẩm",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f32" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「食中毒」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しょくちゅうどく", "isCorrect": true },
+          { "optionId": "B", "text": "しょくなかどく", "isCorrect": false },
+          { "optionId": "C", "text": "たべちゅうどく", "isCorrect": false },
+          { "optionId": "D", "text": "くいちゅうどく", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "食中毒 (しょくちゅうどく) có nghĩa là ngộ độc thực phẩm",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f33" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "日本の___文化は世界遺産に登録されている。(ẩm thực)",
+        "options": [
+          { "optionId": "A", "text": "食", "isCorrect": true },
+          { "optionId": "B", "text": "料理", "isCorrect": false },
+          { "optionId": "C", "text": "味", "isCorrect": false },
+          { "optionId": "D", "text": "食事", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "食文化 (しょくぶんか) có nghĩa là văn hóa ẩm thực",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f34" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「旬」có nghĩa là gì trong ngữ cảnh thực phẩm?",
+        "options": [
+          { "optionId": "A", "text": "Hạn sử dụng", "isCorrect": false },
+          { "optionId": "B", "text": "Mùa/thời điểm ngon nhất", "isCorrect": true },
+          { "optionId": "C", "text": "Giá cả", "isCorrect": false },
+          { "optionId": "D", "text": "Xuất xứ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "旬 (しゅん) có nghĩa là mùa của thực phẩm, thời điểm thực phẩm ngon nhất",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195919f40" },
+    "topic": "FOOD",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Đồ ăn - Cao cấp",
+    "description": "Bộ câu hỏi FOOD cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f41" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「食の安全性」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Giá trị dinh dưỡng", "isCorrect": false },
+          { "optionId": "B", "text": "An toàn thực phẩm", "isCorrect": true },
+          { "optionId": "C", "text": "Chất lượng thực phẩm", "isCorrect": false },
+          { "optionId": "D", "text": "Nguồn gốc thực phẩm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "食の安全性 (しょくのあんぜんせい) có nghĩa là an toàn thực phẩm",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f42" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「持続可能な食料生産」đề cập đến điều gì?",
+        "options": [
+          { "optionId": "A", "text": "Sản xuất thực phẩm nhanh", "isCorrect": false },
+          { "optionId": "B", "text": "Sản xuất thực phẩm bền vững", "isCorrect": true },
+          { "optionId": "C", "text": "Sản xuất thực phẩm giá rẻ", "isCorrect": false },
+          { "optionId": "D", "text": "Sản xuất thực phẩm nhập khẩu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "持続可能な食料生産 (じぞくかのうなしょくりょうせいさん) là sản xuất thực phẩm bền vững",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195919f43" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "食品___の問題は世界的に深刻である。(lãng phí)",
+        "options": [
+          { "optionId": "A", "text": "ロス", "isCorrect": true },
+          { "optionId": "B", "text": "不足", "isCorrect": false },
+          { "optionId": "C", "text": "過剰", "isCorrect": false },
+          { "optionId": "D", "text": "汚染", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "食品ロス (しょくひんロス) có nghĩa là lãng phí thực phẩm",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd2719591a001" },
+    "topic": "COLORS",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Màu sắc - Cơ bản",
+    "description": "Bộ câu hỏi COLORS cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a002" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「赤」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "あか", "isCorrect": true },
+          { "optionId": "B", "text": "あお", "isCorrect": false },
+          { "optionId": "C", "text": "しろ", "isCorrect": false },
+          { "optionId": "D", "text": "くろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "赤 (あか) có nghĩa là màu đỏ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a003" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「青」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu đỏ", "isCorrect": false },
+          { "optionId": "B", "text": "Màu xanh dương", "isCorrect": true },
+          { "optionId": "C", "text": "Màu vàng", "isCorrect": false },
+          { "optionId": "D", "text": "Màu xanh lá", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "青 (あお) có nghĩa là màu xanh dương/xanh da trời",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a004" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「白」(しろ) có nghĩa là màu trắng",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "白 (しろ) đúng là có nghĩa là màu trắng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a005" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「黒」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しろ", "isCorrect": false },
+          { "optionId": "B", "text": "くろ", "isCorrect": true },
+          { "optionId": "C", "text": "きいろ", "isCorrect": false },
+          { "optionId": "D", "text": "ちゃいろ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "黒 (くろ) có nghĩa là màu đen",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a006" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'màu vàng'?",
+        "options": [
+          { "optionId": "A", "text": "緑", "isCorrect": false },
+          { "optionId": "B", "text": "黄色", "isCorrect": true },
+          { "optionId": "C", "text": "茶色", "isCorrect": false },
+          { "optionId": "D", "text": "灰色", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "黄色 (きいろ) có nghĩa là màu vàng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a007" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "空の色は___です。(màu xanh)",
+        "options": [
+          { "optionId": "A", "text": "青", "isCorrect": true },
+          { "optionId": "B", "text": "赤", "isCorrect": false },
+          { "optionId": "C", "text": "白", "isCorrect": false },
+          { "optionId": "D", "text": "黒", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "Bầu trời có màu xanh - 青 (あお)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a008" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「緑」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu xanh dương", "isCorrect": false },
+          { "optionId": "B", "text": "Màu xanh lá", "isCorrect": true },
+          { "optionId": "C", "text": "Màu tím", "isCorrect": false },
+          { "optionId": "D", "text": "Màu cam", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "緑 (みどり) có nghĩa là màu xanh lá cây",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a009" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「ピンク」là màu gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu tím", "isCorrect": false },
+          { "optionId": "B", "text": "Màu cam", "isCorrect": false },
+          { "optionId": "C", "text": "Màu hồng", "isCorrect": true },
+          { "optionId": "D", "text": "Màu nâu", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "ピンク có nghĩa là màu hồng (từ tiếng Anh 'pink')",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a00a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「オレンジ」là màu cam",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "オレンジ đúng là màu cam (từ tiếng Anh 'orange')",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a00b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「茶色」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ちゃいろ", "isCorrect": true },
+          { "optionId": "B", "text": "はいいろ", "isCorrect": false },
+          { "optionId": "C", "text": "むらさき", "isCorrect": false },
+          { "optionId": "D", "text": "ねずみいろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "茶色 (ちゃいろ) có nghĩa là màu nâu",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd2719591a010" },
+    "topic": "COLORS",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Màu sắc - Sơ cấp",
+    "description": "Bộ câu hỏi COLORS cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a011" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「紫」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "むらさき", "isCorrect": true },
+          { "optionId": "B", "text": "あおむらさき", "isCorrect": false },
+          { "optionId": "C", "text": "ふじいろ", "isCorrect": false },
+          { "optionId": "D", "text": "すみれ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "紫 (むらさき) có nghĩa là màu tím",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a012" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「灰色」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu bạc", "isCorrect": false },
+          { "optionId": "B", "text": "Màu xám", "isCorrect": true },
+          { "optionId": "C", "text": "Màu trắng ngà", "isCorrect": false },
+          { "optionId": "D", "text": "Màu đen nhạt", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "灰色 (はいいろ) có nghĩa là màu xám",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a013" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この花は___色です。(màu tím)",
+        "options": [
+          { "optionId": "A", "text": "紫", "isCorrect": true },
+          { "optionId": "B", "text": "青", "isCorrect": false },
+          { "optionId": "C", "text": "赤", "isCorrect": false },
+          { "optionId": "D", "text": "桃", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "紫色 (むらさきいろ) có nghĩa là màu tím",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a014" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「金色」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "きんいろ", "isCorrect": true },
+          { "optionId": "B", "text": "かねいろ", "isCorrect": false },
+          { "optionId": "C", "text": "こがねいろ", "isCorrect": false },
+          { "optionId": "D", "text": "きいろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "金色 (きんいろ) có nghĩa là màu vàng kim",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a015" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「銀色」(ぎんいろ) có nghĩa là màu bạc",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "銀色 (ぎんいろ) đúng là có nghĩa là màu bạc",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a016" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「水色」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu xanh đậm", "isCorrect": false },
+          { "optionId": "B", "text": "Màu xanh nhạt/xanh nước biển", "isCorrect": true },
+          { "optionId": "C", "text": "Màu xanh lá", "isCorrect": false },
+          { "optionId": "D", "text": "Màu trong suốt", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "水色 (みずいろ) có nghĩa là màu xanh nhạt/xanh nước biển",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a017" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「薄い」trong ngữ cảnh màu sắc có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Đậm", "isCorrect": false },
+          { "optionId": "B", "text": "Nhạt", "isCorrect": true },
+          { "optionId": "C", "text": "Sáng", "isCorrect": false },
+          { "optionId": "D", "text": "Tối", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "薄い (うすい) khi nói về màu sắc có nghĩa là nhạt",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a018" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "この色は___すぎます。(đậm)",
+        "options": [
+          { "optionId": "A", "text": "濃", "isCorrect": true },
+          { "optionId": "B", "text": "薄", "isCorrect": false },
+          { "optionId": "C", "text": "明る", "isCorrect": false },
+          { "optionId": "D", "text": "暗", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "濃い (こい) có nghĩa là đậm (màu)",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a019" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「肌色」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "はだいろ", "isCorrect": true },
+          { "optionId": "B", "text": "ひふいろ", "isCorrect": false },
+          { "optionId": "C", "text": "きいろ", "isCorrect": false },
+          { "optionId": "D", "text": "にくいろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "肌色 (はだいろ) có nghĩa là màu da",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a01a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「桃色」(ももいろ) có nghĩa là màu hồng đào",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "桃色 (ももいろ) đúng là màu hồng đào/hồng nhạt",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd2719591a020" },
+    "topic": "COLORS",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Màu sắc - Trung cấp",
+    "description": "Bộ câu hỏi COLORS cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a021" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「色彩」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu sắc đơn", "isCorrect": false },
+          { "optionId": "B", "text": "Sắc thái màu sắc", "isCorrect": true },
+          { "optionId": "C", "text": "Màu tự nhiên", "isCorrect": false },
+          { "optionId": "D", "text": "Màu nhân tạo", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "色彩 (しきさい) có nghĩa là sắc thái màu sắc/màu sắc nói chung",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a022" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「原色」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "げんしょく", "isCorrect": true },
+          { "optionId": "B", "text": "はらいろ", "isCorrect": false },
+          { "optionId": "C", "text": "もといろ", "isCorrect": false },
+          { "optionId": "D", "text": "げんいろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "原色 (げんしょく) có nghĩa là màu nguyên (đỏ, xanh, vàng)",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a023" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この絵は___が豊かです。(màu sắc)",
+        "options": [
+          { "optionId": "A", "text": "色彩", "isCorrect": true },
+          { "optionId": "B", "text": "色調", "isCorrect": false },
+          { "optionId": "C", "text": "配色", "isCorrect": false },
+          { "optionId": "D", "text": "彩度", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "色彩が豊か có nghĩa là màu sắc phong phú",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a024" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「暖色」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu lạnh", "isCorrect": false },
+          { "optionId": "B", "text": "Màu ấm", "isCorrect": true },
+          { "optionId": "C", "text": "Màu trung tính", "isCorrect": false },
+          { "optionId": "D", "text": "Màu tự nhiên", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "暖色 (だんしょく) có nghĩa là màu ấm (đỏ, cam, vàng)",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a025" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「寒色」(かんしょく) có nghĩa là màu lạnh",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "寒色 (かんしょく) đúng là màu lạnh (xanh dương, xanh lá, tím)",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd2719591a030" },
+    "topic": "COLORS",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Màu sắc - Trung cao cấp",
+    "description": "Bộ câu hỏi COLORS cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a031" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「色調」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Độ sáng màu", "isCorrect": false },
+          { "optionId": "B", "text": "Tông màu/gam màu", "isCorrect": true },
+          { "optionId": "C", "text": "Độ bão hòa màu", "isCorrect": false },
+          { "optionId": "D", "text": "Sự pha trộn màu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "色調 (しきちょう) có nghĩa là tông màu/gam màu",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a032" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「彩度」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "さいど", "isCorrect": true },
+          { "optionId": "B", "text": "いろど", "isCorrect": false },
+          { "optionId": "C", "text": "あやど", "isCorrect": false },
+          { "optionId": "D", "text": "さど", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "彩度 (さいど) có nghĩa là độ bão hòa màu (saturation)",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a033" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この写真は___を上げると鮮やかになる。(độ bão hòa)",
+        "options": [
+          { "optionId": "A", "text": "彩度", "isCorrect": true },
+          { "optionId": "B", "text": "明度", "isCorrect": false },
+          { "optionId": "C", "text": "色相", "isCorrect": false },
+          { "optionId": "D", "text": "濃度", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "彩度 (さいど) là độ bão hòa màu",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a034" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「補色」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Màu tương tự", "isCorrect": false },
+          { "optionId": "B", "text": "Màu bổ sung/đối lập", "isCorrect": true },
+          { "optionId": "C", "text": "Màu nguyên", "isCorrect": false },
+          { "optionId": "D", "text": "Màu trung gian", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "補色 (ほしょく) có nghĩa là màu bổ sung/màu đối lập trên bánh xe màu",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd2719591a040" },
+    "topic": "COLORS",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Màu sắc - Cao cấp",
+    "description": "Bộ câu hỏi COLORS cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a041" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「色相環」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bảng màu", "isCorrect": false },
+          { "optionId": "B", "text": "Bánh xe màu", "isCorrect": true },
+          { "optionId": "C", "text": "Phổ màu", "isCorrect": false },
+          { "optionId": "D", "text": "Dải màu", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "色相環 (しきそうかん) có nghĩa là bánh xe màu (color wheel)",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a042" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「色覚異常」đề cập đến tình trạng gì?",
+        "options": [
+          { "optionId": "A", "text": "Nhạy cảm với màu sắc", "isCorrect": false },
+          { "optionId": "B", "text": "Mù màu/rối loạn thị giác màu", "isCorrect": true },
+          { "optionId": "C", "text": "Khả năng phân biệt màu tốt", "isCorrect": false },
+          { "optionId": "D", "text": "Yêu thích màu sắc đặc biệt", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "色覚異常 (しきかくいじょう) có nghĩa là rối loạn nhận thức màu sắc/mù màu",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719591a043" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "日本の伝統色には___な名前がついている。(phong nhã)",
+        "options": [
+          { "optionId": "A", "text": "風雅", "isCorrect": true },
+          { "optionId": "B", "text": "華麗", "isCorrect": false },
+          { "optionId": "C", "text": "派手", "isCorrect": false },
+          { "optionId": "D", "text": "地味", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "風雅 (ふうが) có nghĩa là phong nhã, thanh lịch - thường dùng để mô tả tên màu truyền thống Nhật Bản",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  }
+]

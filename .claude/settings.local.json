@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c \"powershell.exe -Command \"\"(Get-Content ''D:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\ui\\screens\\HomeScreen.kt'' -Raw) -replace ''import androidx.compose.foundation.background'', ''import androidx.compose.foundation.BorderStroke\\r\\nimport androidx.compose.foundation.background'' | Set-Content ''D:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\ui\\screens\\HomeScreen.kt'' -NoNewline\"\"\")",
+      "Bash(cmd.exe /c \"echo package com.example.sakura_flashcard.data.model > D:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\data\\model\\UserProfile.kt\")",
+      "Bash(cmd.exe /c \"type D:\\sakura_flashcard\\DESIGN_SYSTEM_GUIDE.md\")",
+      "Bash(cmd.exe /c \"type D:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\ui\\screens\\HomeScreen.kt\")",
+      "Bash(dir:*)",
+      "Bash(powershell -Command \"Get-Content 'd:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\ui\\components\\QuizComponents.kt'\":*)",
+      "Bash(cmd /c type \"d:\\sakura_flashcard\\app\\src\\main\\java\\com\\example\\sakura_flashcard\\ui\\components\\QuizComponents.kt\")",
+      "Bash(cmd /c \"if not exist d:\\sakura_flashcard\\docs mkdir d:\\sakura_flashcard\\docs\")"
+    ]
+  }
+}

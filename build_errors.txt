@@ -1,0 +1,223 @@
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugResources
+> Task :app:processDebugResources
+
+> Task :app:kspDebugKotlin FAILED
+./gradlew : e: java.lang.IllegalStateException: Storage for [D
+:\sakura_flashcard\app\build\kspCaches\debug\symbolLookups\id-
+to-file.tab] is already registered
+At line:1 char:1
++ ./gradlew :app:kspDebugKotlin --rerun-tasks 2>&1 | 
+ForEach-Object { $ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (e: java.lang.Il. 
+   ..eady registered:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.re
+gisterPagedFileStorage(FilePageCache.java:410)
+	at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorage
+.<init>(PagedFileStorage.java:72)
+	at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMapped
+File.<init>(ResizeableMappedFile.java:55)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTreeE
+numerator.<init>(PersistentBTreeEnumerator.java:128)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnumer
+ator.createDefaultEnumerator(PersistentEnumerator.java:52)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImp
+l.<init>(PersistentMapImpl.java:165)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImp
+l.<init>(PersistentMapImpl.java:140)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBui
+lder.buildImplementation(PersistentMapBuilder.java:88)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBui
+lder.build(PersistentMapBuilder.java:71)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMa
+p.<init>(PersistentHashMap.java:45)
+	at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMa
+p.<init>(PersistentHashMap.java:71)
+	at org.jetbrains.kotlin.incremental.storage.LazyStorage.creat
+eMap(LazyStorage.kt:62)
+	at org.jetbrains.kotlin.incremental.storage.LazyStorage.getSt
+orageOrCreateNew(LazyStorage.kt:59)
+	at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(L
+azyStorage.kt:80)
+	at org.jetbrains.kotlin.incremental.storage.PersistentStorage
+Wrapper.set(PersistentStorage.kt:96)
+	at org.jetbrains.kotlin.incremental.LookupStorage.addFileIfNe
+eded(LookupStorage.kt:165)
+	at org.jetbrains.kotlin.incremental.LookupStorage.addAll$lamb
+da$4(LookupStorage.kt:117)
+	at org.jetbrains.kotlin.utils.CollectionsKt.keysToMap(collect
+ions.kt:117)
+	at org.jetbrains.kotlin.incremental.LookupStorage.addAll(Look
+upStorage.kt:117)
+	at org.jetbrains.kotlin.incremental.BuildUtilKt.update(buildU
+til.kt:134)
+	at com.google.devtools.ksp.LookupStorageWrapperImpl.update(In
+crementalContext.kt:231)
+	at com.google.devtools.ksp.common.IncrementalContextBase.upda
+teLookupCache(IncrementalContextBase.kt:133)
+	at com.google.devtools.ksp.common.IncrementalContextBase.upda
+teCaches(IncrementalContextBase.kt:365)
+	at com.google.devtools.ksp.common.IncrementalContextBase.upda
+teCachesAndOutputs(IncrementalContextBase.kt:471)
+	at com.google.devtools.ksp.AbstractKotlinSymbolProcessingExte
+nsion.doAnalysis(KotlinSymbolProcessingExtension.kt:362)
+	at org.jetbrains.kotlin.cli.jvm.compiler.TopDownAnalyzerFacad
+eForJVM.analyzeFilesWithJavaIntegration(TopDownAnalyzerFacadeF
+orJVM.kt:112)
+	at org.jetbrains.kotlin.cli.jvm.compiler.TopDownAnalyzerFacad
+eForJVM.analyzeFilesWithJavaIntegration$default(TopDownAnalyze
+rFacadeForJVM.kt:75)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.analyze$lambda$12(KotlinToJVMBytecodeCompiler.kt:373)
+	at org.jetbrains.kotlin.cli.common.messages.AnalyzerWithCompi
+lerReport.analyzeAndReport(AnalyzerWithCompilerReport.kt:112)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.analyze(KotlinToJVMBytecodeCompiler.kt:364)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.repeatAnalysisIfNeeded(KotlinToJVMBytecodeCompiler.kt:
+282)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.repeatAnalysisIfNeeded(KotlinToJVMBytecodeCompiler.kt:
+282)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.runFrontendAndGenerateIrUsingClassicFrontend(KotlinToJ
+VMBytecodeCompiler.kt:195)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeC
+ompiler.compileModules$cli(KotlinToJVMBytecodeCompiler.kt:106)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVM
+Compiler.kt:170)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVM
+Compiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICo
+mpiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICo
+mpiler.kt:49)
+	at 
+org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(Com
+pileServiceImpl.kt:1555)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.
+invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at 
+java.base/java.security.AccessController.doPrivileged(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages
+(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHand
+ler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHand
+ler.lambda$run$0(Unknown Source)
+	at 
+java.base/java.security.AccessController.doPrivileged(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHand
+ler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorke
+r(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.r
+un(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+	Suppressed: java.lang.Exception: Storage[D:\sakura_flashcard\
+app\build\kspCaches\debug\symbolLookups\id-to-file.tab] 
+registration stack trace
+		at org.jetbrains.kotlin.com.intellij.util.io.FilePageCache.r
+egisterPagedFileStorage(FilePageCache.java:437)
+		at org.jetbrains.kotlin.com.intellij.util.io.PagedFileStorag
+e.<init>(PagedFileStorage.java:72)
+		at org.jetbrains.kotlin.com.intellij.util.io.ResizeableMappe
+dFile.<init>(ResizeableMappedFile.java:55)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentBTree
+Enumerator.<init>(PersistentBTreeEnumerator.java:128)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentEnume
+rator.createDefaultEnumerator(PersistentEnumerator.java:52)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapIm
+pl.<init>(PersistentMapImpl.java:165)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapIm
+pl.<init>(PersistentMapImpl.java:140)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBu
+ilder.buildImplementation(PersistentMapBuilder.java:88)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapBu
+ilder.build(PersistentMapBuilder.java:71)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashM
+ap.<init>(PersistentHashMap.java:45)
+		at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashM
+ap.<init>(PersistentHashMap.java:71)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.crea
+teMap(LazyStorage.kt:62)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.getS
+torageIfExists(LazyStorage.kt:53)
+		at org.jetbrains.kotlin.incremental.storage.LazyStorage.get(
+LazyStorage.kt:76)
+		at org.jetbrains.kotlin.incremental.storage.PersistentStorag
+eWrapper.get(PersistentStorage.kt:92)
+		at org.jetbrains.kotlin.incremental.LookupStorage.get(Lookup
+Storage.kt:99)
+		at com.google.devtools.ksp.LookupStorageWrapperImpl.get(Incr
+ementalContext.kt:224)
+		at com.google.devtools.ksp.common.IncrementalContextBase.cal
+cDirtyFiles(IncrementalContextBase.kt:234)
+		at com.google.devtools.ksp.AbstractKotlinSymbolProcessingExt
+ension$doAnalysis$2.invoke(KotlinSymbolProcessingExtension.kt:
+196)
+		at com.google.devtools.ksp.AbstractKotlinSymbolProcessingExt
+ension$doAnalysis$2.invoke(KotlinSymbolProcessingExtension.kt:
+189)
+		at com.google.devtools.ksp.AbstractKotlinSymbolProcessingExt
+ension.handleException(KotlinSymbolProcessingExtension.kt:414)
+		at com.google.devtools.ksp.AbstractKotlinSymbolProcessingExt
+ension.doAnalysis(KotlinSymbolProcessingExtension.kt:189)
+		at org.jetbrains.kotlin.cli.jvm.compiler.TopDownAnalyzerFaca
+deForJVM.analyzeFilesWithJavaIntegration(TopDownAnalyzerFacade
+ForJVM.kt:112)
+		at org.jetbrains.kotlin.cli.jvm.compiler.TopDownAnalyzerFaca
+deForJVM.analyzeFilesWithJavaIntegration$default(TopDownAnalyz
+erFacadeForJVM.kt:75)
+		at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecode
+Compiler.analyze$lambda$12(KotlinToJVMBytecodeCompiler.kt:373)
+		at org.jetbrains.kotlin.cli.common.messages.AnalyzerWithComp
+ilerReport.analyzeAndReport(AnalyzerWithCompilerReport.kt:112)
+		at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecode
+Compiler.analyze(KotlinToJVMBytecodeCompiler.kt:364)
+		... 23 more
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:kspDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.comp
+ilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompile
+rWorkAction
+   > Internal compiler error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 8s
+14 actionable tasks: 14 executed
