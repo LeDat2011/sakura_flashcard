@@ -22,6 +22,11 @@ interface ApiService {
     @GET("auth/profile")
     suspend fun getProfile(): Response<ApiResponse<UserProfile>>
 
+    @PUT("auth/profile")
+    suspend fun updateProfile(
+        @Body request: UpdateProfileRequest
+    ): Response<ApiResponse<UserProfile>>
+
     // ==================== VOCABULARY ====================
     @GET("vocabularies")
     suspend fun getVocabularies(

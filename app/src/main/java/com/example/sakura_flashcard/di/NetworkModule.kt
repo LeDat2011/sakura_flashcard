@@ -36,7 +36,9 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().apply {
+        return HttpLoggingInterceptor { message ->
+            android.util.Log.d("🌸 API", message)
+        }.apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
     }

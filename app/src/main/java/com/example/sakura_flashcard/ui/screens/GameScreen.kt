@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.sakura_flashcard.data.api.LeaderboardEntry
@@ -176,9 +178,21 @@ private fun GameSelectionScreen(
             text = "🎮 Chọn trò chơi",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
-            color = AppColors.TextPrimary,
+            color = Color(0xFF7c3aed),
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier
+                .padding(bottom = 8.dp)
+                .background(
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(
+                            Color(0xFFf5e5ff),
+                            Color(0xFFede9fe),
+                            Color(0xFFfaf5ff)
+                        )
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                )
+                .padding(horizontal = 24.dp, vertical = 8.dp)
         )
         
         Text(
@@ -189,37 +203,7 @@ private fun GameSelectionScreen(
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
-        // Statistics and Leaderboard buttons - more colorful
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 8.dp, vertical = 8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            Button(
-                onClick = { showStatistics = true },
-                modifier = Modifier.weight(1f),
-                enabled = gameStatistics != null,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF9C27B0),
-                    contentColor = Color.White
-                )
-            ) {
-                Text("📊 Thống kê")
-            }
-            
-            Button(
-                onClick = { showLeaderboard = true },
-                modifier = Modifier.weight(1f),
-                enabled = leaderboard.isNotEmpty(),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFFF9800),
-                    contentColor = Color.White
-                )
-            ) {
-                Text("🏆 Xếp hạng")
-            }
-        }
+
 
         // Level selection - colorful chips
         Card(

@@ -1,0 +1,619 @@
+[
+  {
+    "_id": { "$oid": "693e36d08bebd27195922001" },
+    "topic": "SCHOOL",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Trường học - Cơ bản",
+    "description": "Bộ câu hỏi SCHOOL cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195922002" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「学校」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "がっこう", "isCorrect": true },
+          { "optionId": "B", "text": "がくこう", "isCorrect": false },
+          { "optionId": "C", "text": "かっこう", "isCorrect": false },
+          { "optionId": "D", "text": "かくこう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "学校 (がっこう) có nghĩa là trường học",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922003" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「先生」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Học sinh", "isCorrect": false },
+          { "optionId": "B", "text": "Giáo viên", "isCorrect": true },
+          { "optionId": "C", "text": "Bạn học", "isCorrect": false },
+          { "optionId": "D", "text": "Hiệu trưởng", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "先生 (せんせい) có nghĩa là giáo viên/thầy cô",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922004" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「学生」(がくせい) có nghĩa là học sinh/sinh viên",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "学生 (がくせい) đúng là có nghĩa là học sinh/sinh viên",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922005" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「教室」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "きょうしつ", "isCorrect": true },
+          { "optionId": "B", "text": "きょしつ", "isCorrect": false },
+          { "optionId": "C", "text": "おしえしつ", "isCorrect": false },
+          { "optionId": "D", "text": "きょうむろ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "教室 (きょうしつ) có nghĩa là phòng học/lớp học",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922006" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'sách'?",
+        "options": [
+          { "optionId": "A", "text": "鉛筆", "isCorrect": false },
+          { "optionId": "B", "text": "本", "isCorrect": true },
+          { "optionId": "C", "text": "机", "isCorrect": false },
+          { "optionId": "D", "text": "椅子", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "本 (ほん) có nghĩa là sách",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922007" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "___で字を書きます。(bút chì)",
+        "options": [
+          { "optionId": "A", "text": "鉛筆", "isCorrect": true },
+          { "optionId": "B", "text": "消しゴム", "isCorrect": false },
+          { "optionId": "C", "text": "ノート", "isCorrect": false },
+          { "optionId": "D", "text": "定規", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "鉛筆 (えんぴつ) có nghĩa là bút chì",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922008" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「勉強」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Chơi", "isCorrect": false },
+          { "optionId": "B", "text": "Học", "isCorrect": true },
+          { "optionId": "C", "text": "Ăn", "isCorrect": false },
+          { "optionId": "D", "text": "Ngủ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "勉強 (べんきょう) có nghĩa là học tập",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922009" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「宿題」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しゅくだい", "isCorrect": true },
+          { "optionId": "B", "text": "やどだい", "isCorrect": false },
+          { "optionId": "C", "text": "しゅくもん", "isCorrect": false },
+          { "optionId": "D", "text": "しょくだい", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "宿題 (しゅくだい) có nghĩa là bài tập về nhà",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592200a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「試験」(しけん) có nghĩa là kỳ thi",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "試験 (しけん) đúng là có nghĩa là kỳ thi/bài kiểm tra",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592200b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'bàn'?",
+        "options": [
+          { "optionId": "A", "text": "椅子", "isCorrect": false },
+          { "optionId": "B", "text": "机", "isCorrect": true },
+          { "optionId": "C", "text": "窓", "isCorrect": false },
+          { "optionId": "D", "text": "ドア", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "机 (つくえ) có nghĩa là cái bàn",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195922010" },
+    "topic": "SCHOOL",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Trường học - Sơ cấp",
+    "description": "Bộ câu hỏi SCHOOL cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195922011" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「授業」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "じゅぎょう", "isCorrect": true },
+          { "optionId": "B", "text": "じゅうぎょう", "isCorrect": false },
+          { "optionId": "C", "text": "さずぎょう", "isCorrect": false },
+          { "optionId": "D", "text": "じゅうごう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "授業 (じゅぎょう) có nghĩa là tiết học/bài giảng",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922012" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「成績」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bài tập", "isCorrect": false },
+          { "optionId": "B", "text": "Thành tích/Điểm số", "isCorrect": true },
+          { "optionId": "C", "text": "Kỳ nghỉ", "isCorrect": false },
+          { "optionId": "D", "text": "Lớp học", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "成績 (せいせき) có nghĩa là thành tích/điểm số học tập",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922013" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "大学に___したいです。(nhập học)",
+        "options": [
+          { "optionId": "A", "text": "入学", "isCorrect": true },
+          { "optionId": "B", "text": "卒業", "isCorrect": false },
+          { "optionId": "C", "text": "退学", "isCorrect": false },
+          { "optionId": "D", "text": "転校", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "入学 (にゅうがく) có nghĩa là nhập học",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922014" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「卒業」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "そつぎょう", "isCorrect": true },
+          { "optionId": "B", "text": "しゅつぎょう", "isCorrect": false },
+          { "optionId": "C", "text": "そつごう", "isCorrect": false },
+          { "optionId": "D", "text": "しゅつごう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "卒業 (そつぎょう) có nghĩa là tốt nghiệp",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922015" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「復習」(ふくしゅう) có nghĩa là ôn tập",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "復習 (ふくしゅう) đúng là có nghĩa là ôn tập/xem lại",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922016" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「予習」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Ôn tập", "isCorrect": false },
+          { "optionId": "B", "text": "Soạn bài trước", "isCorrect": true },
+          { "optionId": "C", "text": "Thi lại", "isCorrect": false },
+          { "optionId": "D", "text": "Nghỉ học", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "予習 (よしゅう) có nghĩa là chuẩn bị bài/soạn bài trước",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922017" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「図書館」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "としょかん", "isCorrect": true },
+          { "optionId": "B", "text": "ずしょかん", "isCorrect": false },
+          { "optionId": "C", "text": "としょやかた", "isCorrect": false },
+          { "optionId": "D", "text": "としょしつ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "図書館 (としょかん) có nghĩa là thư viện",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922018" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "毎日___に通っています。(trường học)",
+        "options": [
+          { "optionId": "A", "text": "学校", "isCorrect": true },
+          { "optionId": "B", "text": "会社", "isCorrect": false },
+          { "optionId": "C", "text": "病院", "isCorrect": false },
+          { "optionId": "D", "text": "銀行", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "学校に通う (がっこうにかよう) nghĩa là đi học",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922019" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「部活」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Câu lạc bộ/Hoạt động ngoại khóa", "isCorrect": true },
+          { "optionId": "B", "text": "Bài tập nhóm", "isCorrect": false },
+          { "optionId": "C", "text": "Thi đấu", "isCorrect": false },
+          { "optionId": "D", "text": "Dã ngoại", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "部活 (ぶかつ) có nghĩa là hoạt động câu lạc bộ/ngoại khóa",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592201a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「休み時間」(やすみじかん) có nghĩa là giờ nghỉ",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "休み時間 (やすみじかん) đúng là có nghĩa là giờ nghỉ giải lao",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195922020" },
+    "topic": "SCHOOL",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Trường học - Trung cấp",
+    "description": "Bộ câu hỏi SCHOOL cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195922021" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「受験」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Tốt nghiệp", "isCorrect": false },
+          { "optionId": "B", "text": "Dự thi", "isCorrect": true },
+          { "optionId": "C", "text": "Nghỉ học", "isCorrect": false },
+          { "optionId": "D", "text": "Chuyển trường", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "受験 (じゅけん) có nghĩa là dự thi/thi tuyển",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922022" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「奨学金」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しょうがくきん", "isCorrect": true },
+          { "optionId": "B", "text": "しょうがっきん", "isCorrect": false },
+          { "optionId": "C", "text": "はげがくきん", "isCorrect": false },
+          { "optionId": "D", "text": "しょうがくかね", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "奨学金 (しょうがくきん) có nghĩa là học bổng",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922023" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この大学は___が高いです。(tỷ lệ cạnh tranh)",
+        "options": [
+          { "optionId": "A", "text": "倍率", "isCorrect": true },
+          { "optionId": "B", "text": "比率", "isCorrect": false },
+          { "optionId": "C", "text": "割合", "isCorrect": false },
+          { "optionId": "D", "text": "確率", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "倍率 (ばいりつ) trong ngữ cảnh thi cử nghĩa là tỷ lệ chọi",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922024" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「単位」có nghĩa là gì trong ngữ cảnh đại học?",
+        "options": [
+          { "optionId": "A", "text": "Đơn vị đo lường", "isCorrect": false },
+          { "optionId": "B", "text": "Tín chỉ", "isCorrect": true },
+          { "optionId": "C", "text": "Điểm số", "isCorrect": false },
+          { "optionId": "D", "text": "Học kỳ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "単位 (たんい) trong đại học có nghĩa là tín chỉ",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922025" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「履修」(りしゅう) có nghĩa là đăng ký học môn",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "履修 (りしゅう) đúng là có nghĩa là đăng ký học/theo học môn",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195922030" },
+    "topic": "SCHOOL",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Trường học - Trung cao cấp",
+    "description": "Bộ câu hỏi SCHOOL cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195922031" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「論文」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bài kiểm tra", "isCorrect": false },
+          { "optionId": "B", "text": "Luận văn", "isCorrect": true },
+          { "optionId": "C", "text": "Bài tập lớn", "isCorrect": false },
+          { "optionId": "D", "text": "Báo cáo thực tập", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "論文 (ろんぶん) có nghĩa là luận văn/bài nghiên cứu",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922032" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「専攻」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "せんこう", "isCorrect": true },
+          { "optionId": "B", "text": "せんごう", "isCorrect": false },
+          { "optionId": "C", "text": "もっぱらこう", "isCorrect": false },
+          { "optionId": "D", "text": "せんがく", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "専攻 (せんこう) có nghĩa là chuyên ngành",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922033" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "彼は___課程の学生です。(sau đại học)",
+        "options": [
+          { "optionId": "A", "text": "大学院", "isCorrect": true },
+          { "optionId": "B", "text": "大学", "isCorrect": false },
+          { "optionId": "C", "text": "高校", "isCorrect": false },
+          { "optionId": "D", "text": "専門学校", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "大学院 (だいがくいん) có nghĩa là sau đại học (thạc sĩ, tiến sĩ)",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922034" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「ゼミ」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Buổi thuyết trình", "isCorrect": false },
+          { "optionId": "B", "text": "Nhóm nghiên cứu/Seminar", "isCorrect": true },
+          { "optionId": "C", "text": "Câu lạc bộ", "isCorrect": false },
+          { "optionId": "D", "text": "Lớp học thêm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "ゼミ (từ tiếng Đức Seminar) là nhóm nghiên cứu/buổi hội thảo chuyên đề",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195922040" },
+    "topic": "SCHOOL",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Trường học - Cao cấp",
+    "description": "Bộ câu hỏi SCHOOL cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195922041" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「学術論文」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bài luận sinh viên", "isCorrect": false },
+          { "optionId": "B", "text": "Luận văn học thuật", "isCorrect": true },
+          { "optionId": "C", "text": "Báo cáo thực tập", "isCorrect": false },
+          { "optionId": "D", "text": "Bài kiểm tra viết", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "学術論文 (がくじゅつろんぶん) có nghĩa là luận văn/bài báo học thuật",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922042" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「査読」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "さどく", "isCorrect": true },
+          { "optionId": "B", "text": "しらべどく", "isCorrect": false },
+          { "optionId": "C", "text": "さとく", "isCorrect": false },
+          { "optionId": "D", "text": "しらどく", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "査読 (さどく) có nghĩa là phản biện/bình duyệt (peer review)",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195922043" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "___を取得するために研究を続けています。(học vị tiến sĩ)",
+        "options": [
+          { "optionId": "A", "text": "博士号", "isCorrect": true },
+          { "optionId": "B", "text": "修士号", "isCorrect": false },
+          { "optionId": "C", "text": "学士号", "isCorrect": false },
+          { "optionId": "D", "text": "資格", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "博士号 (はくしごう) có nghĩa là học vị tiến sĩ",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  }
+]

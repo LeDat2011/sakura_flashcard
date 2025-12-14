@@ -161,21 +161,21 @@ fun VocabularyDto.toFlashcard(): Flashcard {
         id = id,
         front = FlashcardSide(
             text = word.japanese,
-            audio = null,
-            image = null,
+            audio = media?.audioUrl,
+            image = media?.imageUrl,
             translation = null,
             explanation = null
         ),
         back = FlashcardSide(
-            text = word.meaning,
+            text = word.vietnamese,
             audio = null,
             image = null,
-            translation = word.reading,
-            explanation = details.examples.firstOrNull()?.let { "${it.japanese} - ${it.meaning}" }
+            translation = word.hiragana,
+            explanation = details.exampleSentences.firstOrNull()?.let { "${it.japanese} - ${it.vietnamese}" }
         ),
         topic = topic.toVocabularyTopic(),
         level = level.toJLPTLevel(),
-        difficulty = 1.0f,
+        difficulty = difficulty.toFloat(),
         lastReviewed = null,
         nextReview = null,
         isCustom = false,

@@ -179,3 +179,43 @@ export const getProfile = async (req: AuthRequest, res: Response) => {
         return errorResponse(res, error.message, 500);
     }
 };
+
+export const updateProfile = async (req: AuthRequest, res: Response) => {
+    try {
+        const userId = req.user?.userId;
+        const { displayName, username, avatar, currentLevel } = req.body;
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return errorResponse(res, 'User not found', 404);
+        }
+
+        // Check if username is taken by another user
+        if (username && username !== user.username) {
+            const existingUser = await User.findOne({ username });
+            if (existingUser) {
+                return errorResponse(res, 'Username already exists', 400);
+            }
+            user.username = username;
+        }
+
+        // Update profile fields
+        if (displayName) user.profile.displayName = displayName;
+        if (avatar) user.profile.avatar = avatar;
+        if (currentLevel) user.profile.currentLevel = currentLevel;
+
+        await user.save();
+
+        return successResponse(res, {
+            id: user._id,
+            email: user.email,
+            username: user.username,
+            profile: user.profile,
+            stats: user.stats,
+            role: user.role,
+            isActive: user.isActive
+        }, 'Profile updated successfully');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};

@@ -38,6 +38,13 @@ data class RegisterRequest(
     val displayName: String? = null
 )
 
+data class UpdateProfileRequest(
+    val username: String? = null,
+    val displayName: String? = null,
+    val avatar: String? = null,
+    val currentLevel: String? = null
+)
+
 data class RefreshTokenRequest(
     val refreshToken: String
 )
@@ -85,27 +92,39 @@ data class VocabularyDto(
     @SerializedName("_id") val id: String,
     val word: WordInfo,
     val details: VocabularyDetails,
+    val media: MediaInfo? = null,
     val topic: String,
     val level: String,
-    val order: Int
+    val difficulty: Int = 1,
+    val order: Int = 0,
+    val tags: List<String> = emptyList(),
+    val isActive: Boolean = true
 )
 
 data class WordInfo(
     val japanese: String,
-    val reading: String,
-    val meaning: String
+    val hiragana: String,
+    val romaji: String? = null,
+    val vietnamese: String,
+    val wordType: String? = null
 )
 
 data class VocabularyDetails(
-    val partOfSpeech: String,
-    val examples: List<ExampleSentence>,
-    val notes: String? = null
+    val explanation: String? = null,
+    val exampleSentences: List<ExampleSentence> = emptyList(),
+    val synonyms: List<String> = emptyList(),
+    val antonyms: List<String> = emptyList(),
+    val memoryTip: String? = null
 )
 
 data class ExampleSentence(
     val japanese: String,
-    val reading: String,
-    val meaning: String
+    val vietnamese: String
+)
+
+data class MediaInfo(
+    val audioUrl: String? = null,
+    val imageUrl: String? = null
 )
 
 data class TopicInfo(

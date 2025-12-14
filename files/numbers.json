@@ -1,0 +1,619 @@
+[
+  {
+    "_id": { "$oid": "693e36d08bebd27195923001" },
+    "topic": "NUMBERS",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Số đếm - Cơ bản",
+    "description": "Bộ câu hỏi NUMBERS cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195923002" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「一」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "いち", "isCorrect": true },
+          { "optionId": "B", "text": "に", "isCorrect": false },
+          { "optionId": "C", "text": "さん", "isCorrect": false },
+          { "optionId": "D", "text": "し", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "一 (いち) có nghĩa là số 1",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923003" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「五」có nghĩa là số mấy?",
+        "options": [
+          { "optionId": "A", "text": "3", "isCorrect": false },
+          { "optionId": "B", "text": "4", "isCorrect": false },
+          { "optionId": "C", "text": "5", "isCorrect": true },
+          { "optionId": "D", "text": "6", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "五 (ご) có nghĩa là số 5",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923004" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「十」(じゅう) có nghĩa là số 10",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "十 (じゅう) đúng là có nghĩa là số 10",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923005" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「百」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "じゅう", "isCorrect": false },
+          { "optionId": "B", "text": "ひゃく", "isCorrect": true },
+          { "optionId": "C", "text": "せん", "isCorrect": false },
+          { "optionId": "D", "text": "まん", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "百 (ひゃく) có nghĩa là số 100",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923006" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là số 1000?",
+        "options": [
+          { "optionId": "A", "text": "百", "isCorrect": false },
+          { "optionId": "B", "text": "千", "isCorrect": true },
+          { "optionId": "C", "text": "万", "isCorrect": false },
+          { "optionId": "D", "text": "億", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "千 (せん) có nghĩa là số 1000",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923007" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "りんごを___つください。(3)",
+        "options": [
+          { "optionId": "A", "text": "みっ", "isCorrect": true },
+          { "optionId": "B", "text": "さん", "isCorrect": false },
+          { "optionId": "C", "text": "よっ", "isCorrect": false },
+          { "optionId": "D", "text": "ふた", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "みっつ là cách đếm số 3 cho đồ vật chung",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923008" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「万」có nghĩa là số mấy?",
+        "options": [
+          { "optionId": "A", "text": "1,000", "isCorrect": false },
+          { "optionId": "B", "text": "10,000", "isCorrect": true },
+          { "optionId": "C", "text": "100,000", "isCorrect": false },
+          { "optionId": "D", "text": "1,000,000", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "万 (まん) có nghĩa là 10,000 (một vạn)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923009" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「七」có thể đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しち / なな", "isCorrect": true },
+          { "optionId": "B", "text": "ろく / むっ", "isCorrect": false },
+          { "optionId": "C", "text": "はち / やっ", "isCorrect": false },
+          { "optionId": "D", "text": "く / きゅう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "七 có thể đọc là しち hoặc なな (số 7)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592300a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「四」có thể đọc là「し」hoặc「よん」",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "四 có thể đọc là し hoặc よん (số 4)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592300b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「零」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "れい / ゼロ", "isCorrect": true },
+          { "optionId": "B", "text": "いち", "isCorrect": false },
+          { "optionId": "C", "text": "まる", "isCorrect": false },
+          { "optionId": "D", "text": "なし", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "零 (れい) hoặc ゼロ có nghĩa là số 0",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195923010" },
+    "topic": "NUMBERS",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Số đếm - Sơ cấp",
+    "description": "Bộ câu hỏi NUMBERS cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195923011" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「一人」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ひとり", "isCorrect": true },
+          { "optionId": "B", "text": "いちにん", "isCorrect": false },
+          { "optionId": "C", "text": "いちり", "isCorrect": false },
+          { "optionId": "D", "text": "ひとにん", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "一人 (ひとり) có nghĩa là 1 người",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923012" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「三本」dùng để đếm gì?",
+        "options": [
+          { "optionId": "A", "text": "Đồ vật tròn", "isCorrect": false },
+          { "optionId": "B", "text": "Đồ vật dài/hình trụ", "isCorrect": true },
+          { "optionId": "C", "text": "Động vật", "isCorrect": false },
+          { "optionId": "D", "text": "Người", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "本 (ほん) là đơn vị đếm cho đồ vật dài như bút, chai, cây",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923013" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "犬が二___います。(con)",
+        "options": [
+          { "optionId": "A", "text": "匹", "isCorrect": true },
+          { "optionId": "B", "text": "頭", "isCorrect": false },
+          { "optionId": "C", "text": "羽", "isCorrect": false },
+          { "optionId": "D", "text": "本", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "匹 (ひき) là đơn vị đếm cho động vật nhỏ/vừa",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923014" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「二十日」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "はつか", "isCorrect": true },
+          { "optionId": "B", "text": "にじゅうにち", "isCorrect": false },
+          { "optionId": "C", "text": "ふつか", "isCorrect": false },
+          { "optionId": "D", "text": "にじゅうか", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "二十日 (はつか) có nghĩa là ngày 20",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923015" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「一日」(ついたち) có nghĩa là ngày 1/mùng 1",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "一日 (ついたち) đúng là có nghĩa là ngày mùng 1",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923016" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「一週間」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "1 ngày", "isCorrect": false },
+          { "optionId": "B", "text": "1 tuần", "isCorrect": true },
+          { "optionId": "C", "text": "1 tháng", "isCorrect": false },
+          { "optionId": "D", "text": "1 năm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "一週間 (いっしゅうかん) có nghĩa là 1 tuần",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923017" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「三冊」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "さんさつ", "isCorrect": true },
+          { "optionId": "B", "text": "みさつ", "isCorrect": false },
+          { "optionId": "C", "text": "さんかん", "isCorrect": false },
+          { "optionId": "D", "text": "みつさつ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "三冊 (さんさつ) - 冊 là đơn vị đếm sách",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923018" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "コーヒーを二___ください。(cốc)",
+        "options": [
+          { "optionId": "A", "text": "杯", "isCorrect": true },
+          { "optionId": "B", "text": "本", "isCorrect": false },
+          { "optionId": "C", "text": "個", "isCorrect": false },
+          { "optionId": "D", "text": "枚", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "杯 (はい) là đơn vị đếm cho cốc/ly đồ uống",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923019" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「五枚」dùng để đếm gì?",
+        "options": [
+          { "optionId": "A", "text": "Đồ vật dẹt/mỏng", "isCorrect": true },
+          { "optionId": "B", "text": "Đồ vật dài", "isCorrect": false },
+          { "optionId": "C", "text": "Động vật", "isCorrect": false },
+          { "optionId": "D", "text": "Máy móc", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "枚 (まい) là đơn vị đếm cho đồ vật dẹt như giấy, áo, vé",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592301a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「台」(だい) dùng để đếm xe cộ và máy móc",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "台 (だい) đúng là đơn vị đếm cho xe, máy móc, thiết bị",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195923020" },
+    "topic": "NUMBERS",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Số đếm - Trung cấp",
+    "description": "Bộ câu hỏi NUMBERS cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195923021" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「億」có nghĩa là số mấy?",
+        "options": [
+          { "optionId": "A", "text": "1,000,000", "isCorrect": false },
+          { "optionId": "B", "text": "10,000,000", "isCorrect": false },
+          { "optionId": "C", "text": "100,000,000", "isCorrect": true },
+          { "optionId": "D", "text": "1,000,000,000", "isCorrect": false }
+        ],
+        "correctAnswer": "C",
+        "explanation": "億 (おく) có nghĩa là 100 triệu (100,000,000)",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923022" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「約」đọc là gì và có nghĩa gì?",
+        "options": [
+          { "optionId": "A", "text": "やく - khoảng/xấp xỉ", "isCorrect": true },
+          { "optionId": "B", "text": "あく - chính xác", "isCorrect": false },
+          { "optionId": "C", "text": "こう - hơn", "isCorrect": false },
+          { "optionId": "D", "text": "げん - dưới", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "約 (やく) có nghĩa là khoảng/xấp xỉ",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923023" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "人口は___百万人です。(khoảng 3)",
+        "options": [
+          { "optionId": "A", "text": "約三", "isCorrect": true },
+          { "optionId": "B", "text": "正三", "isCorrect": false },
+          { "optionId": "C", "text": "全三", "isCorrect": false },
+          { "optionId": "D", "text": "各三", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "約三百万人 nghĩa là khoảng 3 triệu người",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923024" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「倍」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Phân số", "isCorrect": false },
+          { "optionId": "B", "text": "Gấp/lần", "isCorrect": true },
+          { "optionId": "C", "text": "Phần trăm", "isCorrect": false },
+          { "optionId": "D", "text": "Chia", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "倍 (ばい) có nghĩa là gấp/lần (2倍 = gấp đôi)",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923025" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「割」(わり) có nghĩa là phần 10 (10%)",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "割 (わり) đúng là có nghĩa 1/10 (1割 = 10%)",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195923030" },
+    "topic": "NUMBERS",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Số đếm - Trung cao cấp",
+    "description": "Bộ câu hỏi NUMBERS cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195923031" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「兆」có nghĩa là số mấy?",
+        "options": [
+          { "optionId": "A", "text": "1 tỷ", "isCorrect": false },
+          { "optionId": "B", "text": "1 nghìn tỷ", "isCorrect": true },
+          { "optionId": "C", "text": "100 tỷ", "isCorrect": false },
+          { "optionId": "D", "text": "10 tỷ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "兆 (ちょう) có nghĩa là 1 nghìn tỷ (10^12)",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923032" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「小数点」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "しょうすうてん", "isCorrect": true },
+          { "optionId": "B", "text": "こすうてん", "isCorrect": false },
+          { "optionId": "C", "text": "しょうかずてん", "isCorrect": false },
+          { "optionId": "D", "text": "ちいすうてん", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "小数点 (しょうすうてん) có nghĩa là dấu thập phân",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923033" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この商品の売上は前年比120___です。(phần trăm)",
+        "options": [
+          { "optionId": "A", "text": "パーセント", "isCorrect": true },
+          { "optionId": "B", "text": "割", "isCorrect": false },
+          { "optionId": "C", "text": "倍", "isCorrect": false },
+          { "optionId": "D", "text": "分", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "パーセント có nghĩa là phần trăm (%)",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923034" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「概数」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Số chính xác", "isCorrect": false },
+          { "optionId": "B", "text": "Số gần đúng/ước lượng", "isCorrect": true },
+          { "optionId": "C", "text": "Số nguyên", "isCorrect": false },
+          { "optionId": "D", "text": "Số thập phân", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "概数 (がいすう) có nghĩa là số gần đúng/số ước lượng",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195923040" },
+    "topic": "NUMBERS",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Số đếm - Cao cấp",
+    "description": "Bộ câu hỏi NUMBERS cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195923041" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「京」có nghĩa là số mấy?",
+        "options": [
+          { "optionId": "A", "text": "10^15", "isCorrect": false },
+          { "optionId": "B", "text": "10^16", "isCorrect": true },
+          { "optionId": "C", "text": "10^14", "isCorrect": false },
+          { "optionId": "D", "text": "10^18", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "京 (けい) có nghĩa là 10^16 (10 triệu tỷ)",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923042" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「端数」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "はすう", "isCorrect": true },
+          { "optionId": "B", "text": "たんすう", "isCorrect": false },
+          { "optionId": "C", "text": "はしすう", "isCorrect": false },
+          { "optionId": "D", "text": "たすう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "端数 (はすう) có nghĩa là số lẻ/phần dư",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195923043" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "数学で「___」は分数の逆数を表す。(nghịch đảo)",
+        "options": [
+          { "optionId": "A", "text": "逆数", "isCorrect": true },
+          { "optionId": "B", "text": "正数", "isCorrect": false },
+          { "optionId": "C", "text": "負数", "isCorrect": false },
+          { "optionId": "D", "text": "整数", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "逆数 (ぎゃくすう) có nghĩa là số nghịch đảo",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  }
+]

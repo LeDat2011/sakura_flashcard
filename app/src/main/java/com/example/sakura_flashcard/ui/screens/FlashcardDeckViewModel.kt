@@ -3,6 +3,8 @@ package com.example.sakura_flashcard.ui.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sakura_flashcard.data.VocabularyData
+import com.example.sakura_flashcard.data.api.toFlashcard
+import com.example.sakura_flashcard.data.repository.VocabularyRepository
 import com.example.sakura_flashcard.data.model.Flashcard
 import com.example.sakura_flashcard.data.model.JLPTLevel
 import com.example.sakura_flashcard.data.model.VocabularyTopic
@@ -25,7 +27,9 @@ data class FlashcardDeckUiState(
 )
 
 @HiltViewModel
-class FlashcardDeckViewModel @Inject constructor() : ViewModel() {
+class FlashcardDeckViewModel @Inject constructor(
+    private val vocabularyRepository: VocabularyRepository
+) : ViewModel() {
     
     private val _uiState = MutableStateFlow(FlashcardDeckUiState())
     val uiState: StateFlow<FlashcardDeckUiState> = _uiState.asStateFlow()
@@ -37,16 +41,35 @@ class FlashcardDeckViewModel @Inject constructor() : ViewModel() {
             try {
                 val topic = VocabularyTopic.valueOf(topicName)
                 val level = JLPTLevel.valueOf(levelName)
-                val flashcards = VocabularyData.getFlashcards(topic, level)
                 
-                _uiState.value = _uiState.value.copy(
-                    flashcards = flashcards,
-                    topic = topic,
-                    level = level,
-                    isLoading = false,
-                    currentIndex = 0,
-                    isFlipped = false
-                )
+                // Gọi API thay vì dùng local data
+                vocabularyRepository.getVocabularies(
+                    topic = topicName,
+                    level = levelName,
+                    page = 1,
+                    limit = 100
+                ).onSuccess { response ->
+                    val flashcards = response.data.map { it.toFlashcard() }
+                    _uiState.value = _uiState.value.copy(
+                        flashcards = flashcards,
+                        topic = topic,
+                        level = level,
+                        isLoading = false,
+                        currentIndex = 0,
+                        isFlipped = false
+                    )
+                }.onFailure { error ->
+                    // Fallback to local data if API fails
+                    val flashcards = VocabularyData.getFlashcards(topic, level)
+                    _uiState.value = _uiState.value.copy(
+                        flashcards = flashcards,
+                        topic = topic,
+                        level = level,
+                        isLoading = false,
+                        currentIndex = 0,
+                        isFlipped = false
+                    )
+                }
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(
                     isLoading = false,

@@ -317,73 +317,177 @@ private fun QuestionReviewCard(
 
     Card(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = bgColor),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        colors = CardDefaults.cardColors(containerColor = AppColors.SurfaceLight),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            // Header: Question number + Result + Points + Difficulty
             Row(
+                modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Surface(
-                    color = accentColor,
-                    shape = RoundedCornerShape(8.dp)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Icon(
-                        if (isCorrect) Icons.Rounded.Check else Icons.Rounded.Close,
-                        if (isCorrect) "Đúng" else "Sai",
-                        tint = Color.White,
-                        modifier = Modifier
-                            .padding(4.dp)
-                            .size(16.dp)
+                    Surface(
+                        color = accentColor,
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Icon(
+                            if (isCorrect) Icons.Rounded.Check else Icons.Rounded.Close,
+                            if (isCorrect) "Đúng" else "Sai",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .padding(4.dp)
+                                .size(16.dp)
+                        )
+                    }
+                    Text(
+                        "Câu $questionNumber",
+                        style = AppTypography.TitleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = AppColors.TextPrimary
                     )
                 }
-                Text(
-                    "Câu hỏi $questionNumber",
-                    style = AppTypography.TitleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = AppColors.TextPrimary
-                )
-            }
-
-            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Row {
-                    Text(
-                        "Câu trả lời của bạn: ",
-                        style = AppTypography.BodyMedium,
-                        color = AppColors.TextSecondary
-                    )
-                    Text(
-                        answer.userAnswer.ifEmpty { "(Chưa trả lời)" },
-                        style = AppTypography.BodyMedium,
-                        fontWeight = FontWeight.Medium,
-                        color = if (isCorrect) Color(0xFF059669) else Color(0xFFdc2626)
-                    )
-                    if (isCorrect) {
-                        Text(" ✓", color = Color(0xFF059669))
+                
+                // Points & Difficulty badges
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    // Points badge
+                    Surface(
+                        color = if (isCorrect) Color(0xFFdcfce7) else Color(0xFFf3f4f6),
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Text(
+                            text = if (isCorrect) "+${answer.points} điểm" else "0 điểm",
+                            style = AppTypography.LabelSmall,
+                            fontWeight = FontWeight.Medium,
+                            color = if (isCorrect) Color(0xFF16a34a) else AppColors.TextSecondary,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        )
+                    }
+                    
+                    // Difficulty badge
+                    Surface(
+                        color = getDifficultyColor(answer.difficulty),
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Text(
+                            text = answer.getDifficultyLabel(),
+                            style = AppTypography.LabelSmall,
+                            fontWeight = FontWeight.Medium,
+                            color = Color.White,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        )
                     }
                 }
-
-                if (!isCorrect) {
+            }
+            
+            // Question text
+            if (answer.questionText.isNotEmpty()) {
+                Surface(
+                    color = Color(0xFFf8fafc),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = answer.questionText,
+                        style = AppTypography.BodyMedium,
+                        color = AppColors.TextPrimary,
+                        modifier = Modifier.padding(12.dp)
+                    )
+                }
+            }
+            
+            // Answer section
+            Surface(
+                color = bgColor,
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.padding(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
                     Row {
                         Text(
-                            "Đáp án đúng: ",
+                            "Câu trả lời của bạn: ",
                             style = AppTypography.BodyMedium,
                             color = AppColors.TextSecondary
                         )
                         Text(
-                            answer.correctAnswer,
+                            answer.userAnswer.ifEmpty { "(Chưa trả lời)" },
                             style = AppTypography.BodyMedium,
                             fontWeight = FontWeight.Bold,
-                            color = Color(0xFF059669)
+                            color = if (isCorrect) Color(0xFF059669) else Color(0xFFdc2626)
                         )
+                        if (isCorrect) {
+                            Text(" ✓", color = Color(0xFF059669), fontWeight = FontWeight.Bold)
+                        }
+                    }
+
+                    if (!isCorrect) {
+                        Row {
+                            Text(
+                                "Đáp án đúng: ",
+                                style = AppTypography.BodyMedium,
+                                color = AppColors.TextSecondary
+                            )
+                            Text(
+                                answer.correctAnswer,
+                                style = AppTypography.BodyMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF059669)
+                            )
+                        }
+                    }
+                }
+            }
+            
+            // Explanation section
+            if (!answer.explanation.isNullOrEmpty()) {
+                Surface(
+                    color = Color(0xFFfef3c7),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text("💡", fontSize = 16.sp)
+                        Column {
+                            Text(
+                                "Giải thích:",
+                                style = AppTypography.LabelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFFb45309)
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = answer.explanation,
+                                style = AppTypography.BodySmall,
+                                color = Color(0xFF92400e)
+                            )
+                        }
                     }
                 }
             }
         }
     }
+}
+
+@Composable
+private fun getDifficultyColor(difficulty: Int): Color = when (difficulty) {
+    1 -> Color(0xFF22c55e)  // Green - Dễ
+    2 -> Color(0xFF3b82f6)  // Blue - Trung bình
+    3 -> Color(0xFFf59e0b)  // Orange - Khó
+    4 -> Color(0xFFef4444)  // Red - Rất khó
+    5 -> Color(0xFF7c3aed)  // Purple - Cực khó
+    else -> Color(0xFF6b7280)
 }

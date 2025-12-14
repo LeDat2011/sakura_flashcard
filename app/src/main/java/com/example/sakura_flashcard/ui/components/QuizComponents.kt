@@ -96,7 +96,7 @@ fun QuizQuestionCard(
                         onAnswerSelected = onAnswerSelected
                     )
                 }
-                QuestionType.FILL_IN_BLANK -> {
+                QuestionType.FILL_BLANK -> {
                     FillInBlankInput(
                         userAnswer = userAnswer,
                         onAnswerChanged = onAnswerSelected

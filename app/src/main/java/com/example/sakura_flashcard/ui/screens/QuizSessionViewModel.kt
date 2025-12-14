@@ -69,7 +69,9 @@ class QuizSessionViewModel @Inject constructor(
                                 content = q.questionText,
                                 options = q.options.map { it.text },
                                 correctAnswer = correctOptionText,
-                                explanation = q.explanation
+                                explanation = q.explanation,
+                                points = q.points,
+                                difficulty = q.difficulty
                             )
                         }
 
@@ -123,10 +125,14 @@ class QuizSessionViewModel @Inject constructor(
 
                 val answer = QuizAnswer(
                     questionId = currentQuestion.id,
+                    questionText = currentQuestion.content,
                     userAnswer = currentState.currentAnswer,
                     correctAnswer = currentQuestion.correctAnswer,
                     isCorrect = isCorrect,
-                    timeSpentSeconds = 0L
+                    timeSpentSeconds = 0L,
+                    explanation = currentQuestion.explanation,
+                    points = currentQuestion.points,
+                    difficulty = currentQuestion.difficulty
                 )
 
                 userAnswers.add(answer)

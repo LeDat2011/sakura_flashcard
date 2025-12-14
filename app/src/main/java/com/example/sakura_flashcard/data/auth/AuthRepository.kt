@@ -1,6 +1,7 @@
 package com.example.sakura_flashcard.data.auth
 
 import com.example.sakura_flashcard.data.api.*
+import com.example.sakura_flashcard.data.api.UpdateProfileRequest
 import com.example.sakura_flashcard.data.validation.ContentValidator
 import kotlinx.coroutines.flow.StateFlow
 import retrofit2.HttpException
@@ -175,6 +176,32 @@ class AuthRepository @Inject constructor(
             }
         } catch (e: Exception) {
             AuthResult.Error("Failed to get profile: ${e.message}")
+        }
+    }
+
+    suspend fun updateProfile(
+        username: String? = null,
+        displayName: String? = null,
+        avatar: String? = null,
+        currentLevel: String? = null
+    ): AuthResult {
+        return try {
+            val request = UpdateProfileRequest(
+                username = username,
+                displayName = displayName,
+                avatar = avatar,
+                currentLevel = currentLevel
+            )
+            val response = apiService.updateProfile(request)
+            if (response.isSuccessful && response.body()?.success == true) {
+                response.body()?.data?.let {
+                    AuthResult.Success(it)
+                } ?: AuthResult.Error("Failed to update profile")
+            } else {
+                AuthResult.Error(response.body()?.message ?: "Failed to update profile")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("Failed to update profile: ${e.message}")
         }
     }
 

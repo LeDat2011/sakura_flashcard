@@ -1,0 +1,619 @@
+[
+  {
+    "_id": { "$oid": "693e36d08bebd27195927001" },
+    "topic": "TRAVEL",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Du lịch - Cơ bản",
+    "description": "Bộ câu hỏi TRAVEL cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195927002" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「旅行」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "りょこう", "isCorrect": true },
+          { "optionId": "B", "text": "たびこう", "isCorrect": false },
+          { "optionId": "C", "text": "りょぎょう", "isCorrect": false },
+          { "optionId": "D", "text": "たびぎょう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "旅行 (りょこう) có nghĩa là du lịch",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927003" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「駅」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Sân bay", "isCorrect": false },
+          { "optionId": "B", "text": "Nhà ga", "isCorrect": true },
+          { "optionId": "C", "text": "Bến xe", "isCorrect": false },
+          { "optionId": "D", "text": "Cảng", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "駅 (えき) có nghĩa là nhà ga (tàu)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927004" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「電車」(でんしゃ) có nghĩa là tàu điện",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "電車 (でんしゃ) đúng là có nghĩa là tàu điện",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927005" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「飛行機」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ひこうき", "isCorrect": true },
+          { "optionId": "B", "text": "ひきょうき", "isCorrect": false },
+          { "optionId": "C", "text": "とびこうき", "isCorrect": false },
+          { "optionId": "D", "text": "ふこうき", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "飛行機 (ひこうき) có nghĩa là máy bay",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927006" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'khách sạn'?",
+        "options": [
+          { "optionId": "A", "text": "病院", "isCorrect": false },
+          { "optionId": "B", "text": "ホテル", "isCorrect": true },
+          { "optionId": "C", "text": "会社", "isCorrect": false },
+          { "optionId": "D", "text": "銀行", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "ホテル có nghĩa là khách sạn",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927007" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "___を買いました。(vé)",
+        "options": [
+          { "optionId": "A", "text": "切符", "isCorrect": true },
+          { "optionId": "B", "text": "地図", "isCorrect": false },
+          { "optionId": "C", "text": "写真", "isCorrect": false },
+          { "optionId": "D", "text": "本", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "切符 (きっぷ) có nghĩa là vé",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927008" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「地図」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Sách", "isCorrect": false },
+          { "optionId": "B", "text": "Bản đồ", "isCorrect": true },
+          { "optionId": "C", "text": "Ảnh", "isCorrect": false },
+          { "optionId": "D", "text": "Vé", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "地図 (ちず) có nghĩa là bản đồ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927009" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「空港」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "くうこう", "isCorrect": true },
+          { "optionId": "B", "text": "からこう", "isCorrect": false },
+          { "optionId": "C", "text": "そらこう", "isCorrect": false },
+          { "optionId": "D", "text": "あきこう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "空港 (くうこう) có nghĩa là sân bay",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592700a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「バス」có nghĩa là xe buýt",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "バス đúng là có nghĩa là xe buýt",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592700b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'hộ chiếu'?",
+        "options": [
+          { "optionId": "A", "text": "切符", "isCorrect": false },
+          { "optionId": "B", "text": "パスポート", "isCorrect": true },
+          { "optionId": "C", "text": "地図", "isCorrect": false },
+          { "optionId": "D", "text": "カメラ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "パスポート có nghĩa là hộ chiếu",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195927010" },
+    "topic": "TRAVEL",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Du lịch - Sơ cấp",
+    "description": "Bộ câu hỏi TRAVEL cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195927011" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「予約」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "よやく", "isCorrect": true },
+          { "optionId": "B", "text": "よやつ", "isCorrect": false },
+          { "optionId": "C", "text": "あやく", "isCorrect": false },
+          { "optionId": "D", "text": "あやつ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "予約 (よやく) có nghĩa là đặt chỗ/đặt trước",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927012" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「出発」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Đến nơi", "isCorrect": false },
+          { "optionId": "B", "text": "Khởi hành", "isCorrect": true },
+          { "optionId": "C", "text": "Quay lại", "isCorrect": false },
+          { "optionId": "D", "text": "Chờ đợi", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "出発 (しゅっぱつ) có nghĩa là khởi hành/xuất phát",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927013" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "ホテルに___しました。(check-in)",
+        "options": [
+          { "optionId": "A", "text": "チェックイン", "isCorrect": true },
+          { "optionId": "B", "text": "チェックアウト", "isCorrect": false },
+          { "optionId": "C", "text": "予約", "isCorrect": false },
+          { "optionId": "D", "text": "到着", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "チェックイン là làm thủ tục nhận phòng",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927014" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「到着」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "とうちゃく", "isCorrect": true },
+          { "optionId": "B", "text": "とうたく", "isCorrect": false },
+          { "optionId": "C", "text": "とうしゃく", "isCorrect": false },
+          { "optionId": "D", "text": "いたちゃく", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "到着 (とうちゃく) có nghĩa là đến nơi",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927015" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「観光」(かんこう) có nghĩa là tham quan/du lịch",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "観光 (かんこう) đúng là có nghĩa là tham quan/du lịch",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927016" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「荷物」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Vé", "isCorrect": false },
+          { "optionId": "B", "text": "Hành lý", "isCorrect": true },
+          { "optionId": "C", "text": "Tiền", "isCorrect": false },
+          { "optionId": "D", "text": "Bản đồ", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "荷物 (にもつ) có nghĩa là hành lý/đồ đạc",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927017" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「案内」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "あんない", "isCorrect": true },
+          { "optionId": "B", "text": "あんうち", "isCorrect": false },
+          { "optionId": "C", "text": "あないし", "isCorrect": false },
+          { "optionId": "D", "text": "けんない", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "案内 (あんない) có nghĩa là hướng dẫn",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927018" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "___を両替したいです。(ngoại tệ)",
+        "options": [
+          { "optionId": "A", "text": "外貨", "isCorrect": true },
+          { "optionId": "B", "text": "現金", "isCorrect": false },
+          { "optionId": "C", "text": "お金", "isCorrect": false },
+          { "optionId": "D", "text": "円", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "外貨 (がいか) có nghĩa là ngoại tệ",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927019" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「土産」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Đồ ăn", "isCorrect": false },
+          { "optionId": "B", "text": "Quà lưu niệm", "isCorrect": true },
+          { "optionId": "C", "text": "Vé", "isCorrect": false },
+          { "optionId": "D", "text": "Bưu thiếp", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "土産 (みやげ/おみやげ) có nghĩa là quà/đặc sản",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592701a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「乗り換え」(のりかえ) có nghĩa là chuyển tàu/xe",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "乗り換え (のりかえ) đúng là có nghĩa là chuyển tàu/xe",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195927020" },
+    "topic": "TRAVEL",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Du lịch - Trung cấp",
+    "description": "Bộ câu hỏi TRAVEL cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195927021" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「往復」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Một chiều", "isCorrect": false },
+          { "optionId": "B", "text": "Khứ hồi", "isCorrect": true },
+          { "optionId": "C", "text": "Trực tiếp", "isCorrect": false },
+          { "optionId": "D", "text": "Chuyển tiếp", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "往復 (おうふく) có nghĩa là khứ hồi/đi về",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927022" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「搭乗」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "とうじょう", "isCorrect": true },
+          { "optionId": "B", "text": "そうじょう", "isCorrect": false },
+          { "optionId": "C", "text": "のうじょう", "isCorrect": false },
+          { "optionId": "D", "text": "じょうしゃ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "搭乗 (とうじょう) có nghĩa là lên máy bay/boarding",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927023" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "___で荷物を預けました。(quầy ký gửi)",
+        "options": [
+          { "optionId": "A", "text": "手荷物預かり所", "isCorrect": true },
+          { "optionId": "B", "text": "案内所", "isCorrect": false },
+          { "optionId": "C", "text": "売店", "isCorrect": false },
+          { "optionId": "D", "text": "改札口", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "手荷物預かり所 (てにもつあずかりじょ) là quầy ký gửi hành lý",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927024" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「税関」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Xuất nhập cảnh", "isCorrect": false },
+          { "optionId": "B", "text": "Hải quan", "isCorrect": true },
+          { "optionId": "C", "text": "An ninh", "isCorrect": false },
+          { "optionId": "D", "text": "Đổi tiền", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "税関 (ぜいかん) có nghĩa là hải quan",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927025" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「入国審査」(にゅうこくしんさ) có nghĩa là kiểm tra nhập cảnh",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "入国審査 (にゅうこくしんさ) đúng là có nghĩa là kiểm tra nhập cảnh",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195927030" },
+    "topic": "TRAVEL",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Du lịch - Trung cao cấp",
+    "description": "Bộ câu hỏi TRAVEL cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195927031" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「渡航」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Du lịch trong nước", "isCorrect": false },
+          { "optionId": "B", "text": "Đi nước ngoài", "isCorrect": true },
+          { "optionId": "C", "text": "Đi bộ", "isCorrect": false },
+          { "optionId": "D", "text": "Chuyển nhà", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "渡航 (とこう) có nghĩa là đi/đến nước ngoài",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927032" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「旅程」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "りょてい", "isCorrect": true },
+          { "optionId": "B", "text": "たびてい", "isCorrect": false },
+          { "optionId": "C", "text": "りょほど", "isCorrect": false },
+          { "optionId": "D", "text": "たびほど", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "旅程 (りょてい) có nghĩa là hành trình/lịch trình du lịch",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927033" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "___保険に加入することをお勧めします。(du lịch)",
+        "options": [
+          { "optionId": "A", "text": "旅行", "isCorrect": true },
+          { "optionId": "B", "text": "生命", "isCorrect": false },
+          { "optionId": "C", "text": "健康", "isCorrect": false },
+          { "optionId": "D", "text": "自動車", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "旅行保険 (りょこうほけん) là bảo hiểm du lịch",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927034" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「周遊」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Du lịch một điểm", "isCorrect": false },
+          { "optionId": "B", "text": "Du lịch vòng quanh", "isCorrect": true },
+          { "optionId": "C", "text": "Du lịch công tác", "isCorrect": false },
+          { "optionId": "D", "text": "Du lịch ngắn ngày", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "周遊 (しゅうゆう) có nghĩa là du lịch vòng quanh nhiều nơi",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195927040" },
+    "topic": "TRAVEL",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Du lịch - Cao cấp",
+    "description": "Bộ câu hỏi TRAVEL cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195927041" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「巡礼」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Du lịch bụi", "isCorrect": false },
+          { "optionId": "B", "text": "Hành hương", "isCorrect": true },
+          { "optionId": "C", "text": "Du lịch cao cấp", "isCorrect": false },
+          { "optionId": "D", "text": "Du lịch mạo hiểm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "巡礼 (じゅんれい) có nghĩa là hành hương/đi thăm các nơi linh thiêng",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927042" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「越境」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "えっきょう", "isCorrect": true },
+          { "optionId": "B", "text": "こえきょう", "isCorrect": false },
+          { "optionId": "C", "text": "えつきょう", "isCorrect": false },
+          { "optionId": "D", "text": "こしきょう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "越境 (えっきょう) có nghĩa là vượt biên giới",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195927043" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "この地域は___遺産に登録されている。(thế giới)",
+        "options": [
+          { "optionId": "A", "text": "世界", "isCorrect": true },
+          { "optionId": "B", "text": "国家", "isCorrect": false },
+          { "optionId": "C", "text": "文化", "isCorrect": false },
+          { "optionId": "D", "text": "自然", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "世界遺産 (せかいいさん) có nghĩa là di sản thế giới",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  }
+]

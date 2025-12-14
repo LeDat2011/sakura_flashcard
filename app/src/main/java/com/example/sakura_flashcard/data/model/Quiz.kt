@@ -44,15 +44,30 @@ data class QuizResult(
 
 data class QuizAnswer(
     val questionId: String,
+    val questionText: String = "",
     val userAnswer: String,
     val correctAnswer: String,
     val isCorrect: Boolean,
-    val timeSpentSeconds: Long
+    val timeSpentSeconds: Long,
+    val explanation: String? = null,
+    val points: Int = 10,
+    val difficulty: Int = 1
 ) {
     init {
         require(questionId.isNotBlank()) { "Question ID cannot be empty" }
         require(correctAnswer.isNotBlank()) { "Correct answer cannot be empty" }
         require(timeSpentSeconds >= 0) { "Time spent cannot be negative" }
+        require(points > 0) { "Points must be positive" }
+        require(difficulty in 1..5) { "Difficulty must be between 1 and 5" }
+    }
+    
+    fun getDifficultyLabel(): String = when (difficulty) {
+        1 -> "Dễ"
+        2 -> "Trung bình"
+        3 -> "Khó"
+        4 -> "Rất khó"
+        5 -> "Cực khó"
+        else -> "Không xác định"
     }
 }
 
@@ -63,9 +78,20 @@ interface QuizQuestion {
     val options: List<String>?
     val correctAnswer: String
     val explanation: String?
+    val points: Int
+    val difficulty: Int
     
     fun isAnswerCorrect(userAnswer: String): Boolean {
         return userAnswer.trim().equals(correctAnswer.trim(), ignoreCase = true)
+    }
+    
+    fun getDifficultyLabel(): String = when (difficulty) {
+        1 -> "Dễ"
+        2 -> "Trung bình"
+        3 -> "Khó"
+        4 -> "Rất khó"
+        5 -> "Cực khó"
+        else -> "Không xác định"
     }
 }
 
@@ -74,7 +100,9 @@ data class MultipleChoiceQuestion(
     override val content: String,
     override val options: List<String>,
     override val correctAnswer: String,
-    override val explanation: String? = null
+    override val explanation: String? = null,
+    override val points: Int = 10,
+    override val difficulty: Int = 1
 ) : QuizQuestion {
     override val type = QuestionType.MULTIPLE_CHOICE
     
@@ -86,13 +114,15 @@ data class MultipleChoiceQuestion(
     }
 }
 
-data class FillInBlankQuestion(
+data class FillBlankQuestion(
     override val id: String = UUID.randomUUID().toString(),
     override val content: String,
     override val correctAnswer: String,
-    override val explanation: String? = null
+    override val explanation: String? = null,
+    override val points: Int = 10,
+    override val difficulty: Int = 1
 ) : QuizQuestion {
-    override val type = QuestionType.FILL_IN_BLANK
+    override val type = QuestionType.FILL_BLANK
     override val options: List<String>? = null
     
     init {
@@ -108,7 +138,9 @@ data class TrueFalseQuestion(
     override val id: String = UUID.randomUUID().toString(),
     override val content: String,
     override val correctAnswer: String,
-    override val explanation: String? = null
+    override val explanation: String? = null,
+    override val points: Int = 10,
+    override val difficulty: Int = 1
 ) : QuizQuestion {
     override val type = QuestionType.TRUE_FALSE
     override val options = listOf("True", "False")
@@ -134,7 +166,7 @@ data class QuizSession(
 ) {
     init {
         require(id.isNotBlank()) { "Session ID cannot be empty" }
-        require(questions.size == 10) { "Quiz session must have exactly 10 questions" }
+        require(questions.isNotEmpty()) { "Quiz session must have at least 1 question" }
         require(currentQuestionIndex >= 0) { "Current question index cannot be negative" }
         require(currentQuestionIndex < questions.size || isCompleted) { 
             "Current question index ($currentQuestionIndex) must be within bounds (${questions.size}) unless completed ($isCompleted)" 
@@ -170,7 +202,7 @@ data class QuizSession(
 
 enum class QuestionType(val displayName: String) {
     MULTIPLE_CHOICE("Multiple Choice"),
-    FILL_IN_BLANK("Fill in the Blank"),
+    FILL_BLANK("Fill in the Blank"),
     TRUE_FALSE("True or False");
     
     companion object {

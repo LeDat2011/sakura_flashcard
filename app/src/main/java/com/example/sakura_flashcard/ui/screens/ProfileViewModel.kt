@@ -52,6 +52,7 @@ class ProfileViewModel @Inject constructor(
                         // Initialize edit state
                         _editState.value = ProfileEditState(
                             username = profile.username,
+                            displayName = profile.profile.displayName,
                             email = profile.email,
                             avatar = profile.profile.avatar
                         )
@@ -99,6 +100,10 @@ class ProfileViewModel @Inject constructor(
         _editState.value = _editState.value.copy(username = username)
     }
 
+    fun updateDisplayName(displayName: String) {
+        _editState.value = _editState.value.copy(displayName = displayName)
+    }
+
     fun updateEmail(email: String) {
         _editState.value = _editState.value.copy(email = email)
     }
@@ -109,16 +114,34 @@ class ProfileViewModel @Inject constructor(
 
     fun saveProfile() {
         viewModelScope.launch {
-            _editState.value = _editState.value.copy(isSaving = true)
+            _editState.value = _editState.value.copy(isSaving = true, error = null)
             
-            // TODO: Call API to save profile
-            // For now, just simulate success
-            kotlinx.coroutines.delay(1000)
+            val currentEditState = _editState.value
             
-            _editState.value = _editState.value.copy(
-                isSaving = false,
-                saveSuccess = true
-            )
+            when (val result = authRepository.updateProfile(
+                username = currentEditState.username,
+                displayName = currentEditState.displayName,
+                avatar = currentEditState.avatar
+            )) {
+                is AuthResult.Success -> {
+                    _editState.value = _editState.value.copy(
+                        isSaving = false,
+                        saveSuccess = true
+                    )
+                    // Refresh profile to get updated data
+                    loadUserProfile()
+                }
+                is AuthResult.Error -> {
+                    _editState.value = _editState.value.copy(
+                        isSaving = false,
+                        saveSuccess = false,
+                        error = result.message
+                    )
+                }
+                else -> {
+                    _editState.value = _editState.value.copy(isSaving = false)
+                }
+            }
         }
     }
 
@@ -220,6 +243,7 @@ data class ProfileUiState(
 
 data class ProfileEditState(
     val username: String = "",
+    val displayName: String = "",
     val email: String = "",
     val avatar: String? = null,
     val isSaving: Boolean = false,

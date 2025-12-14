@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
@@ -74,21 +75,40 @@ fun LearnScreen(
             shadowElevation = 2.dp
         ) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                // Title
-                Row(
+                // Title with gradient background
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                        .background(
+                            brush = Brush.linearGradient(
+                                colors = listOf(
+                                    Color(0xFFe0f2fe),
+                                    Color(0xFFdbeafe),
+                                    Color(0xFFeff6ff)
+                                )
+                            )
+                        )
+                        .padding(horizontal = 16.dp, vertical = 16.dp)
                 ) {
-                    Text(text = "📚", fontSize = 28.sp)
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(
-                        text = "Học chữ cái",
-                        style = AppTypography.HeadlineSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = AppColors.TextPrimary
-                    )
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = "📚", fontSize = 36.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Học chữ cái",
+                            style = AppTypography.HeadlineSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFF1e40af)
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "Hiragana • Katakana • Kanji",
+                            style = AppTypography.BodySmall,
+                            color = Color(0xFF3b82f6)
+                        )
+                    }
                 }
 
                 // Search Bar

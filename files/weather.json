@@ -1,0 +1,619 @@
+[
+  {
+    "_id": { "$oid": "693e36d08bebd27195926001" },
+    "topic": "WEATHER",
+    "level": "N5",
+    "setNumber": 1,
+    "title": "Thời tiết - Cơ bản",
+    "description": "Bộ câu hỏi WEATHER cấp độ N5",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195926002" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「天気」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "てんき", "isCorrect": true },
+          { "optionId": "B", "text": "てんけ", "isCorrect": false },
+          { "optionId": "C", "text": "あまき", "isCorrect": false },
+          { "optionId": "D", "text": "あまけ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "天気 (てんき) có nghĩa là thời tiết",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926003" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「雨」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Tuyết", "isCorrect": false },
+          { "optionId": "B", "text": "Mưa", "isCorrect": true },
+          { "optionId": "C", "text": "Gió", "isCorrect": false },
+          { "optionId": "D", "text": "Mây", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "雨 (あめ) có nghĩa là mưa",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926004" },
+        "questionNumber": 3,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「晴れ」(はれ) có nghĩa là trời nắng/quang đãng",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "晴れ (はれ) đúng là có nghĩa là trời nắng/quang đãng",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926005" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「曇り」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "くもり", "isCorrect": true },
+          { "optionId": "B", "text": "はれ", "isCorrect": false },
+          { "optionId": "C", "text": "あめ", "isCorrect": false },
+          { "optionId": "D", "text": "ゆき", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "曇り (くもり) có nghĩa là trời âm u/nhiều mây",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926006" },
+        "questionNumber": 5,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'tuyết'?",
+        "options": [
+          { "optionId": "A", "text": "雨", "isCorrect": false },
+          { "optionId": "B", "text": "雪", "isCorrect": true },
+          { "optionId": "C", "text": "風", "isCorrect": false },
+          { "optionId": "D", "text": "雲", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "雪 (ゆき) có nghĩa là tuyết",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926007" },
+        "questionNumber": 6,
+        "questionType": "FILL_BLANK",
+        "questionText": "今日は___が強いです。(gió)",
+        "options": [
+          { "optionId": "A", "text": "風", "isCorrect": true },
+          { "optionId": "B", "text": "雨", "isCorrect": false },
+          { "optionId": "C", "text": "雪", "isCorrect": false },
+          { "optionId": "D", "text": "雲", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "風 (かぜ) có nghĩa là gió",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926008" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「暑い」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Lạnh", "isCorrect": false },
+          { "optionId": "B", "text": "Nóng", "isCorrect": true },
+          { "optionId": "C", "text": "Mát", "isCorrect": false },
+          { "optionId": "D", "text": "Ấm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "暑い (あつい) có nghĩa là nóng (thời tiết)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926009" },
+        "questionNumber": 8,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「寒い」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "さむい", "isCorrect": true },
+          { "optionId": "B", "text": "あつい", "isCorrect": false },
+          { "optionId": "C", "text": "すずしい", "isCorrect": false },
+          { "optionId": "D", "text": "あたたかい", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "寒い (さむい) có nghĩa là lạnh (thời tiết)",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592600a" },
+        "questionNumber": 9,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「涼しい」(すずしい) có nghĩa là mát mẻ",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "涼しい (すずしい) đúng là có nghĩa là mát mẻ",
+        "points": 10,
+        "difficulty": 1
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592600b" },
+        "questionNumber": 10,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "Từ nào có nghĩa là 'ấm áp'?",
+        "options": [
+          { "optionId": "A", "text": "寒い", "isCorrect": false },
+          { "optionId": "B", "text": "暖かい", "isCorrect": true },
+          { "optionId": "C", "text": "暑い", "isCorrect": false },
+          { "optionId": "D", "text": "涼しい", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "暖かい (あたたかい) có nghĩa là ấm áp",
+        "points": 10,
+        "difficulty": 1
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195926010" },
+    "topic": "WEATHER",
+    "level": "N4",
+    "setNumber": 1,
+    "title": "Thời tiết - Sơ cấp",
+    "description": "Bộ câu hỏi WEATHER cấp độ N4",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195926011" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「台風」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "たいふう", "isCorrect": true },
+          { "optionId": "B", "text": "だいふう", "isCorrect": false },
+          { "optionId": "C", "text": "たいかぜ", "isCorrect": false },
+          { "optionId": "D", "text": "だいかぜ", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "台風 (たいふう) có nghĩa là bão (typhoon)",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926012" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「天気予報」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Thời sự", "isCorrect": false },
+          { "optionId": "B", "text": "Dự báo thời tiết", "isCorrect": true },
+          { "optionId": "C", "text": "Tin thể thao", "isCorrect": false },
+          { "optionId": "D", "text": "Thông báo", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "天気予報 (てんきよほう) có nghĩa là dự báo thời tiết",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926013" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "今日の___は30度です。(nhiệt độ)",
+        "options": [
+          { "optionId": "A", "text": "気温", "isCorrect": true },
+          { "optionId": "B", "text": "天気", "isCorrect": false },
+          { "optionId": "C", "text": "気候", "isCorrect": false },
+          { "optionId": "D", "text": "気圧", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "気温 (きおん) có nghĩa là nhiệt độ",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926014" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「梅雨」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "つゆ", "isCorrect": true },
+          { "optionId": "B", "text": "ばいう", "isCorrect": false },
+          { "optionId": "C", "text": "うめあめ", "isCorrect": false },
+          { "optionId": "D", "text": "めう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "梅雨 (つゆ) có nghĩa là mùa mưa (tháng 6-7 ở Nhật)",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926015" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「湿度」(しつど) có nghĩa là độ ẩm",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "湿度 (しつど) đúng là có nghĩa là độ ẩm",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926016" },
+        "questionNumber": 6,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「雷」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Tuyết", "isCorrect": false },
+          { "optionId": "B", "text": "Sấm sét", "isCorrect": true },
+          { "optionId": "C", "text": "Mưa đá", "isCorrect": false },
+          { "optionId": "D", "text": "Sương mù", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "雷 (かみなり) có nghĩa là sấm sét",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926017" },
+        "questionNumber": 7,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「霧」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "きり", "isCorrect": true },
+          { "optionId": "B", "text": "くも", "isCorrect": false },
+          { "optionId": "C", "text": "かすみ", "isCorrect": false },
+          { "optionId": "D", "text": "もや", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "霧 (きり) có nghĩa là sương mù",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926018" },
+        "questionNumber": 8,
+        "questionType": "FILL_BLANK",
+        "questionText": "___が降っています。(mưa đá)",
+        "options": [
+          { "optionId": "A", "text": "雹", "isCorrect": true },
+          { "optionId": "B", "text": "雨", "isCorrect": false },
+          { "optionId": "C", "text": "雪", "isCorrect": false },
+          { "optionId": "D", "text": "霧", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "雹 (ひょう) có nghĩa là mưa đá",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926019" },
+        "questionNumber": 9,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「季節」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Ngày", "isCorrect": false },
+          { "optionId": "B", "text": "Mùa", "isCorrect": true },
+          { "optionId": "C", "text": "Tháng", "isCorrect": false },
+          { "optionId": "D", "text": "Năm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "季節 (きせつ) có nghĩa là mùa",
+        "points": 10,
+        "difficulty": 2
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd2719592601a" },
+        "questionNumber": 10,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「虹」(にじ) có nghĩa là cầu vồng",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "虹 (にじ) đúng là có nghĩa là cầu vồng",
+        "points": 10,
+        "difficulty": 2
+      }
+    ],
+    "settings": {
+      "totalQuestions": 10,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195926020" },
+    "topic": "WEATHER",
+    "level": "N3",
+    "setNumber": 1,
+    "title": "Thời tiết - Trung cấp",
+    "description": "Bộ câu hỏi WEATHER cấp độ N3",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195926021" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「気候」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Thời tiết", "isCorrect": false },
+          { "optionId": "B", "text": "Khí hậu", "isCorrect": true },
+          { "optionId": "C", "text": "Nhiệt độ", "isCorrect": false },
+          { "optionId": "D", "text": "Độ ẩm", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "気候 (きこう) có nghĩa là khí hậu (điều kiện thời tiết dài hạn)",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926022" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「大雨警報」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "おおあめけいほう", "isCorrect": true },
+          { "optionId": "B", "text": "だいうけいほう", "isCorrect": false },
+          { "optionId": "C", "text": "おおさめけいほう", "isCorrect": false },
+          { "optionId": "D", "text": "たいうけいほう", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "大雨警報 (おおあめけいほう) có nghĩa là cảnh báo mưa lớn",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926023" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "地球___が問題になっています。(nóng lên)",
+        "options": [
+          { "optionId": "A", "text": "温暖化", "isCorrect": true },
+          { "optionId": "B", "text": "冷却化", "isCorrect": false },
+          { "optionId": "C", "text": "乾燥化", "isCorrect": false },
+          { "optionId": "D", "text": "湿潤化", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "地球温暖化 (ちきゅうおんだんか) nghĩa là sự nóng lên toàn cầu",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926024" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「降水量」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Tốc độ gió", "isCorrect": false },
+          { "optionId": "B", "text": "Lượng mưa", "isCorrect": true },
+          { "optionId": "C", "text": "Độ ẩm", "isCorrect": false },
+          { "optionId": "D", "text": "Áp suất khí quyển", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "降水量 (こうすいりょう) có nghĩa là lượng mưa",
+        "points": 15,
+        "difficulty": 3
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926025" },
+        "questionNumber": 5,
+        "questionType": "TRUE_FALSE",
+        "questionText": "「異常気象」(いじょうきしょう) có nghĩa là thời tiết bất thường",
+        "options": [
+          { "optionId": "A", "text": "Đúng", "isCorrect": true },
+          { "optionId": "B", "text": "Sai", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "異常気象 (いじょうきしょう) đúng là có nghĩa là thời tiết bất thường/cực đoan",
+        "points": 15,
+        "difficulty": 3
+      }
+    ],
+    "settings": {
+      "totalQuestions": 5,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195926030" },
+    "topic": "WEATHER",
+    "level": "N2",
+    "setNumber": 1,
+    "title": "Thời tiết - Trung cao cấp",
+    "description": "Bộ câu hỏi WEATHER cấp độ N2",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195926031" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「高気圧」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Áp suất thấp", "isCorrect": false },
+          { "optionId": "B", "text": "Áp suất cao", "isCorrect": true },
+          { "optionId": "C", "text": "Nhiệt độ cao", "isCorrect": false },
+          { "optionId": "D", "text": "Độ ẩm cao", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "高気圧 (こうきあつ) có nghĩa là áp cao/áp suất cao",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926032" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「前線」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "ぜんせん", "isCorrect": true },
+          { "optionId": "B", "text": "まえせん", "isCorrect": false },
+          { "optionId": "C", "text": "さきせん", "isCorrect": false },
+          { "optionId": "D", "text": "せんせん", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "前線 (ぜんせん) có nghĩa là frông/ranh giới khí quyển",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926033" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "___現象により干ばつが続いている。(El Nino)",
+        "options": [
+          { "optionId": "A", "text": "エルニーニョ", "isCorrect": true },
+          { "optionId": "B", "text": "ラニーニャ", "isCorrect": false },
+          { "optionId": "C", "text": "台風", "isCorrect": false },
+          { "optionId": "D", "text": "寒波", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "エルニーニョ現象 là hiện tượng El Nino gây biến đổi khí hậu",
+        "points": 20,
+        "difficulty": 4
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926034" },
+        "questionNumber": 4,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「熱帯低気圧」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bão tuyết", "isCorrect": false },
+          { "optionId": "B", "text": "Áp thấp nhiệt đới", "isCorrect": true },
+          { "optionId": "C", "text": "Áp cao nhiệt đới", "isCorrect": false },
+          { "optionId": "D", "text": "Sóng nhiệt", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "熱帯低気圧 (ねったいていきあつ) có nghĩa là áp thấp nhiệt đới",
+        "points": 20,
+        "difficulty": 4
+      }
+    ],
+    "settings": {
+      "totalQuestions": 4,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  },
+  {
+    "_id": { "$oid": "693e36d08bebd27195926040" },
+    "topic": "WEATHER",
+    "level": "N1",
+    "setNumber": 1,
+    "title": "Thời tiết - Cao cấp",
+    "description": "Bộ câu hỏi WEATHER cấp độ N1",
+    "questions": [
+      {
+        "_id": { "$oid": "693e36d08bebd27195926041" },
+        "questionNumber": 1,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「気象庁」có nghĩa là gì?",
+        "options": [
+          { "optionId": "A", "text": "Bộ môi trường", "isCorrect": false },
+          { "optionId": "B", "text": "Cơ quan khí tượng", "isCorrect": true },
+          { "optionId": "C", "text": "Bộ nông nghiệp", "isCorrect": false },
+          { "optionId": "D", "text": "Cơ quan thiên văn", "isCorrect": false }
+        ],
+        "correctAnswer": "B",
+        "explanation": "気象庁 (きしょうちょう) là Cơ quan Khí tượng Nhật Bản",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926042" },
+        "questionNumber": 2,
+        "questionType": "MULTIPLE_CHOICE",
+        "questionText": "「観測史上」đọc là gì?",
+        "options": [
+          { "optionId": "A", "text": "かんそくしじょう", "isCorrect": true },
+          { "optionId": "B", "text": "みそくしじょう", "isCorrect": false },
+          { "optionId": "C", "text": "かんそくふじょう", "isCorrect": false },
+          { "optionId": "D", "text": "かんそくれきし", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "観測史上 (かんそくしじょう) có nghĩa là trong lịch sử quan trắc",
+        "points": 25,
+        "difficulty": 5
+      },
+      {
+        "_id": { "$oid": "693e36d08bebd27195926043" },
+        "questionNumber": 3,
+        "questionType": "FILL_BLANK",
+        "questionText": "___による被害が甚大だ。(lũ lụt bất ngờ)",
+        "options": [
+          { "optionId": "A", "text": "鉄砲水", "isCorrect": true },
+          { "optionId": "B", "text": "大雨", "isCorrect": false },
+          { "optionId": "C", "text": "洪水", "isCorrect": false },
+          { "optionId": "D", "text": "津波", "isCorrect": false }
+        ],
+        "correctAnswer": "A",
+        "explanation": "鉄砲水 (てっぽうみず) có nghĩa là lũ quét/nước lũ đột ngột",
+        "points": 25,
+        "difficulty": 5
+      }
+    ],
+    "settings": {
+      "totalQuestions": 3,
+      "passingScore": 70,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "showExplanation": true,
+      "allowRetry": true
+    },
+    "statistics": { "totalAttempts": 0, "averageScore": 0, "passRate": 0 },
+    "isActive": true,
+    "isPublished": true,
+    "createdAt": { "$date": "2025-12-14T04:02:24.022Z" },
+    "updatedAt": { "$date": "2025-12-14T04:02:24.022Z" }
+  }
+]

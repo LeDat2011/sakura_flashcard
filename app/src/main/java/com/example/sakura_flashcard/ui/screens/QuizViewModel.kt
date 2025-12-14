@@ -90,7 +90,7 @@ class QuizViewModel @Inject constructor(
                 correctAnswer = "Hello",
                 explanation = "'こんにちは' is a common Japanese greeting meaning 'Hello'"
             ),
-            FillInBlankQuestion(
+            FillBlankQuestion(
                 content = "Fill in the blank: _____ は学生です。(I am a student)",
                 correctAnswer = "私",
                 explanation = "'私' (watashi) means 'I' in Japanese"
@@ -106,7 +106,7 @@ class QuizViewModel @Inject constructor(
                 correctAnswer = "か",
                 explanation = "'か' represents the 'ka' sound in hiragana"
             ),
-            FillInBlankQuestion(
+            FillBlankQuestion(
                 content = "Complete the sentence: 今日は___です。(Today is ___)",
                 correctAnswer = "月曜日",
                 explanation = "This could be any day of the week, '月曜日' (getsuyoubi) means Monday"
@@ -122,7 +122,7 @@ class QuizViewModel @Inject constructor(
                 correctAnswer = "水",
                 explanation = "'水' (mizu) means water in Japanese"
             ),
-            FillInBlankQuestion(
+            FillBlankQuestion(
                 content = "The polite form of 'to eat' is ___ます。",
                 correctAnswer = "食べ",
                 explanation = "'食べます' (tabemasu) is the polite form of 'to eat'"

@@ -65,7 +65,9 @@ fun QuizScreen(
         } else {
             QuizLevelSelection(
                 topicName = selectedTopic!!,
-                levels = uiState.topics.filter { it.topic == selectedTopic },
+                levels = uiState.topics
+                    .filter { it.topic == selectedTopic }
+                    .sortedByDescending { it.level.removePrefix("N").toIntOrNull() ?: 0 },
                 onStartQuiz = { level -> onStartQuiz(selectedTopic!!, level) },
                 onBack = { selectedTopic = null },
                 modifier = Modifier.fillMaxWidth()
