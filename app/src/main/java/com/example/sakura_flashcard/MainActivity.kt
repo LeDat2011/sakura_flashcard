@@ -1,3 +1,4 @@
+
 package com.example.sakura_flashcard
 
 import android.os.Bundle
