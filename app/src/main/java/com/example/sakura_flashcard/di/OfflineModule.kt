@@ -8,12 +8,14 @@ import com.example.sakura_flashcard.data.local.dao.*
 import com.example.sakura_flashcard.data.network.NetworkConnectivityManager
 import com.example.sakura_flashcard.data.repository.OfflineRepository
 import com.example.sakura_flashcard.data.sync.ConflictResolutionService
+import com.example.sakura_flashcard.util.DatabaseSecurityManager
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import net.sqlcipher.database.SupportFactory
 import javax.inject.Singleton
 
 /**
@@ -25,12 +27,25 @@ object OfflineModule {
     
     @Provides
     @Singleton
-    fun provideFlashcardDatabase(@ApplicationContext context: Context): FlashcardDatabase {
+    fun provideDatabaseSecurityManager(@ApplicationContext context: Context): DatabaseSecurityManager {
+        return DatabaseSecurityManager(context)
+    }
+    
+    @Provides
+    @Singleton
+    fun provideFlashcardDatabase(
+        @ApplicationContext context: Context,
+        securityManager: DatabaseSecurityManager
+    ): FlashcardDatabase {
+        val passphrase = securityManager.getDatabasePassphrase()
+        val factory = SupportFactory(passphrase)
+        
         return Room.databaseBuilder(
             context,
             FlashcardDatabase::class.java,
             FlashcardDatabase.DATABASE_NAME
         )
+        .openHelperFactory(factory)
         .fallbackToDestructiveMigration()
         .build()
     }

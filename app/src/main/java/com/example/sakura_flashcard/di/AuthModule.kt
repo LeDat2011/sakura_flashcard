@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.sakura_flashcard.data.api.ApiService
 import com.example.sakura_flashcard.data.auth.AuthRepository
 import com.example.sakura_flashcard.data.auth.AuthTokenManager
+import com.example.sakura_flashcard.data.auth.BiometricAuthManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,10 +26,19 @@ object AuthModule {
 
     @Provides
     @Singleton
+    fun provideBiometricAuthManager(
+        @ApplicationContext context: Context
+    ): BiometricAuthManager {
+        return BiometricAuthManager(context)
+    }
+
+    @Provides
+    @Singleton
     fun provideAuthRepository(
         apiService: ApiService,
-        authTokenManager: AuthTokenManager
+        authTokenManager: AuthTokenManager,
+        biometricAuthManager: BiometricAuthManager
     ): AuthRepository {
-        return AuthRepository(apiService, authTokenManager)
+        return AuthRepository(apiService, authTokenManager, biometricAuthManager)
     }
 }

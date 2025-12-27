@@ -16,6 +16,7 @@ import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material.icons.rounded.VisibilityOff
+import androidx.compose.material.icons.rounded.Fingerprint
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -32,10 +33,17 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
+import androidx.fragment.app.FragmentActivity
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.sakura_flashcard.data.auth.GoogleAuthManager
 import com.example.sakura_flashcard.ui.theme.AppColors
 import com.example.sakura_flashcard.ui.theme.AppTypography
+import kotlinx.coroutines.launch
+import com.example.sakura_flashcard.util.SecureScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,6 +53,21 @@ fun LoginScreen(
     modifier: Modifier = Modifier,
     viewModel: LoginViewModel = hiltViewModel()
 ) {
+    SecureScreen {
+        LoginScreenContent(onNavigateToRegister, onLoginSuccess, modifier, viewModel)
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun LoginScreenContent(
+    onNavigateToRegister: () -> Unit,
+    onLoginSuccess: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: LoginViewModel = hiltViewModel()
+) {
+    val context = LocalContext.current
+    val activity = context as? FragmentActivity
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val focusManager = LocalFocusManager.current
 
@@ -162,6 +185,29 @@ fun LoginScreen(
                     )
                 )
 
+                // Checkbox bật đăng nhập vân tay (chỉ hiện khi thiết bị hỗ trợ và chưa bật)
+                if (uiState.isBiometricAvailable && !uiState.canUseBiometric) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Checkbox(
+                            checked = uiState.enableBiometric,
+                            onCheckedChange = viewModel::updateEnableBiometric,
+                            colors = CheckboxDefaults.colors(
+                                checkedColor = AppColors.PrimaryLight,
+                                uncheckedColor = AppColors.TextSecondary
+                            )
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = "Bật đăng nhập bằng vân tay",
+                            style = AppTypography.BodyMedium,
+                            color = AppColors.TextPrimary
+                        )
+                    }
+                }
+
                 // Error Message
                 AnimatedVisibility(visible = uiState.errorMessage != null, enter = fadeIn(), exit = fadeOut()) {
                     uiState.errorMessage?.let { error ->
@@ -190,6 +236,90 @@ fun LoginScreen(
                         style = AppTypography.TitleMedium,
                         color = Color.White
                     )
+                }
+
+                // Biometric Login Button - chỉ hiện khi đã bật và có credentials
+                if (uiState.canUseBiometric && activity != null) {
+                    OutlinedButton(
+                        onClick = { viewModel.biometricLogin(activity) },
+                        modifier = Modifier.fillMaxWidth().height(52.dp),
+                        enabled = !uiState.isLoading,
+                        shape = RoundedCornerShape(16.dp),
+                        border = BorderStroke(1.dp, AppColors.PrimaryLight)
+                    ) {
+                        Icon(Icons.Rounded.Fingerprint, "Vân tay", tint = AppColors.PrimaryLight)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = "Đăng nhập bằng vân tay",
+                            style = AppTypography.TitleMedium,
+                            color = AppColors.PrimaryLight
+                        )
+                    }
+                }
+
+                HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp), color = AppColors.SurfaceBorder)
+
+                val scope = rememberCoroutineScope()
+                val googleAuthManager = remember { GoogleAuthManager(context) }
+
+                // Google Login Button
+                OutlinedButton(
+                    onClick = {
+                        scope.launch {
+                            val idToken = googleAuthManager.getGoogleIdToken()
+                            if (idToken != null) {
+                                viewModel.googleLogin(idToken)
+                            }
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth().height(52.dp),
+                    shape = RoundedCornerShape(16.dp),
+                    border = BorderStroke(1.dp, AppColors.SurfaceBorder)
+                ) {
+                    Text(text = "G Đăng nhập với Google", style = AppTypography.TitleMedium, color = AppColors.TextPrimary)
+                }
+
+                // OTP Login Option
+                TextButton(
+                    onClick = { viewModel.sendOTP() },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(text = "Đăng nhập bằng mã OTP (Email)", style = AppTypography.BodyMedium, color = AppColors.PrimaryLight)
+                }
+            }
+        }
+
+        // OTP Dialog
+        if (uiState.isOtpSent) {
+            var otpCode by remember { mutableStateOf("") }
+            Dialog(onDismissRequest = { }) {
+                Card(
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = AppColors.SurfaceLight),
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(text = "Nhập mã OTP", style = AppTypography.HeadlineSmall, fontWeight = FontWeight.Bold)
+                        Text(text = "Mã đã được gửi đến email của bạn", style = AppTypography.BodyMedium, color = AppColors.TextSecondary, textAlign = TextAlign.Center)
+                        Spacer(modifier = Modifier.height(16.dp))
+                        OutlinedTextField(
+                            value = otpCode,
+                            onValueChange = { if (it.length <= 6) otpCode = it },
+                            label = { Text("Mã OTP") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Button(
+                            onClick = { viewModel.verifyOTP(otpCode) },
+                            enabled = otpCode.length == 6 && !uiState.isLoading,
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Text("Xác nhận")
+                        }
+                    }
                 }
             }
         }

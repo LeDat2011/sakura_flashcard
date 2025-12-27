@@ -8,6 +8,11 @@ import {
 } from '../utils/jwt';
 import { successResponse, errorResponse } from '../utils/response';
 import { AuthRequest } from '../middlewares/auth.middleware';
+import { OAuth2Client } from 'google-auth-library';
+import nodemailer from 'nodemailer';
+import crypto from 'crypto';
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 export const register = async (req: Request, res: Response) => {
     try {
@@ -63,22 +68,36 @@ export const login = async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;
 
+        // Import security functions
+        const { recordFailedLogin, clearLoginAttempts } = await import('../middlewares/security.middleware');
+
         // Find user
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: email.toLowerCase() });
         if (!user) {
+            // Record failed attempt even for non-existent users (prevent enumeration)
+            recordFailedLogin(email);
             return errorResponse(res, 'Invalid credentials', 401);
         }
 
         // Check password
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
-            return errorResponse(res, 'Invalid credentials', 401);
+            const { isLocked, attemptsLeft } = recordFailedLogin(email);
+
+            if (isLocked) {
+                return errorResponse(res, 'Tài khoản tạm khóa do đăng nhập thất bại quá nhiều lần. Vui lòng thử lại sau 15 phút.', 429);
+            }
+
+            return errorResponse(res, `Sai mật khẩu. Còn ${attemptsLeft} lần thử.`, 401);
         }
 
         // Check if active
         if (!user.isActive) {
             return errorResponse(res, 'Account is deactivated', 403);
         }
+
+        // Clear failed login attempts on successful login
+        clearLoginAttempts(email);
 
         // Generate tokens
         const payload = { userId: user._id.toString(), email: user.email, role: user.role };
@@ -107,6 +126,7 @@ export const login = async (req: Request, res: Response) => {
         return errorResponse(res, error.message, 500);
     }
 };
+
 
 export const refreshToken = async (req: Request, res: Response) => {
     try {
@@ -215,6 +235,149 @@ export const updateProfile = async (req: AuthRequest, res: Response) => {
             role: user.role,
             isActive: user.isActive
         }, 'Profile updated successfully');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};
+
+export const googleLogin = async (req: Request, res: Response) => {
+    try {
+        const { idToken } = req.body;
+        if (!idToken) return errorResponse(res, 'ID Token is required', 400);
+
+        const ticket = await googleClient.verifyIdToken({
+            idToken,
+            audience: process.env.GOOGLE_CLIENT_ID
+        });
+
+        const payload = ticket.getPayload();
+        if (!payload || !payload.email) return errorResponse(res, 'Invalid Google Token', 400);
+
+        const { email, name, sub: googleId, picture } = payload;
+
+        let user = await User.findOne({ $or: [{ googleId }, { email }] });
+
+        if (!user) {
+            // Create user for Google Login
+            user = await User.create({
+                email,
+                username: email.split('@')[0] + Math.random().toString(36).substring(7),
+                googleId,
+                profile: {
+                    displayName: name || email.split('@')[0],
+                    avatar: picture
+                },
+                auth: { emailVerified: true }
+            });
+        } else if (!user.googleId) {
+            // Link existing account to Google
+            user.googleId = googleId;
+            if (!user.profile.avatar && picture) user.profile.avatar = picture;
+            await user.save();
+        }
+
+        const tokenPayload = { userId: user._id.toString(), email: user.email, role: user.role };
+        const accessToken = generateAccessToken(tokenPayload);
+        const refreshToken = generateRefreshToken(tokenPayload);
+
+        user.auth.refreshTokens.push({
+            token: refreshToken,
+            expiresAt: getRefreshTokenExpiry(),
+        });
+        await user.save();
+
+        return successResponse(res, {
+            user: {
+                id: user._id,
+                email: user.email,
+                username: user.username,
+                profile: user.profile,
+                stats: user.stats,
+            },
+            accessToken,
+            refreshToken,
+        }, 'Google Login successful');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};
+
+export const sendOTP = async (req: Request, res: Response) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ email });
+        if (!user) return errorResponse(res, 'User not found', 404);
+
+        const otp = Math.floor(100000 + Math.random() * 900000).toString();
+        user.auth.otpInfo = {
+            code: otp,
+            expiresAt: new Date(Date.now() + 5 * 60 * 1000) // 5 minutes
+        };
+        await user.save();
+
+        // Send Email (Mocking for now, need valid SMTP credentials in .env)
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Sakura Flashcard - OTP Verification',
+            text: `Mã OTP của bạn là: ${otp}. Mã này có hiệu lực trong 5 phút.`
+        };
+
+        // In development, just log the OTP if no credentials provided
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.log(`[DEV] OTP for ${email}: ${otp}`);
+        } else {
+            await transporter.sendMail(mailOptions);
+        }
+
+        return successResponse(res, null, 'OTP sent successfully');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};
+
+export const verifyOTP = async (req: Request, res: Response) => {
+    try {
+        const { email, otp } = req.body;
+        const user = await User.findOne({ email });
+
+        if (!user || !user.auth.otpInfo) return errorResponse(res, 'OTP not requested', 400);
+        if (user.auth.otpInfo.code !== otp) return errorResponse(res, 'Invalid OTP', 400);
+        if (user.auth.otpInfo.expiresAt < new Date()) return errorResponse(res, 'OTP expired', 400);
+
+        // Clear OTP
+        user.auth.otpInfo = undefined;
+        await user.save();
+
+        const tokenPayload = { userId: user._id.toString(), email: user.email, role: user.role };
+        const accessToken = generateAccessToken(tokenPayload);
+        const refreshToken = generateRefreshToken(tokenPayload);
+
+        user.auth.refreshTokens.push({
+            token: refreshToken,
+            expiresAt: getRefreshTokenExpiry(),
+        });
+        await user.save();
+
+        return successResponse(res, {
+            user: {
+                id: user._id,
+                email: user.email,
+                username: user.username,
+                profile: user.profile,
+                stats: user.stats,
+            },
+            accessToken,
+            refreshToken,
+        }, 'OTP verified successfully');
     } catch (error: any) {
         return errorResponse(res, error.message, 500);
     }

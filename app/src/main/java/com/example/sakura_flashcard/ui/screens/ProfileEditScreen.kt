@@ -24,8 +24,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.sakura_flashcard.ui.theme.AppColors
 import com.example.sakura_flashcard.ui.theme.AppTypography
 
+import com.example.sakura_flashcard.util.SecureScreen
+
 @Composable
 fun ProfileEditScreen(
+    onNavigateBack: () -> Unit = {},
+    viewModel: ProfileViewModel = hiltViewModel()
+) {
+    SecureScreen {
+        ProfileEditScreenContent(onNavigateBack, viewModel)
+    }
+}
+
+@Composable
+private fun ProfileEditScreenContent(
     onNavigateBack: () -> Unit = {},
     viewModel: ProfileViewModel = hiltViewModel()
 ) {

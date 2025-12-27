@@ -33,4 +33,5 @@
     <string name="retry_button">Thử lại</string>
     <string name="retry_in_progress">Đang thử lại…</string>
     <string name="retry_failed">Thử lại thất bại. Vui lòng thử lại sau.</string>
+    <string name="google_client_id">27956848724-htu7kge35non4bilsl2j59sd6vb1k0qt.apps.googleusercontent.com</string>
 </resources>

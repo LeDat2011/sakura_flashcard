@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!-- 
+    =====================================================
+    NETWORK SECURITY CONFIGURATION
+    Ensures data-in-transit security (HTTPS/TLS)
+    =====================================================
+    -->
+
+    <!-- DEBUG: Allow cleartext for local development only -->
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">10.0.2.2</domain>
         <domain includeSubdomains="true">localhost</domain>
         <domain includeSubdomains="true">127.0.0.1</domain>
     </domain-config>
+
+    <!-- PRODUCTION: Strict HTTPS with Certificate Pinning -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">sakura-flashcard.com</domain>
+        <domain includeSubdomains="true">api.sakura-flashcard.com</domain>
+        
+        <!-- 
+        Certificate Pinning Configuration
+        ===================================
+        To generate SHA-256 pin for your certificate:
+        1. openssl s_client -servername your-domain.com -connect your-domain.com:443 | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+        2. Replace the placeholder below with actual hash
+        
+        IMPORTANT: Always pin at least 2 certificates (primary + backup)
+        to avoid lockout if certificate needs to be rotated.
+        -->
+        <pin-set expiration="2026-01-01">
+            <!-- Primary certificate pin (Replace with actual hash) -->
+            <pin digest="SHA-256">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>
+            <!-- Backup certificate pin (Replace with actual hash) -->
+            <pin digest="SHA-256">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=</pin>
+        </pin-set>
+        
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Default: Block cleartext, trust system CAs -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
 </network-security-config>
+

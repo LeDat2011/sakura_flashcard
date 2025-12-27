@@ -1,6 +1,8 @@
 package com.example.sakura_flashcard.data.api
 
+// ApiService for Retrofit
 import com.example.sakura_flashcard.data.model.*
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -13,8 +15,20 @@ interface ApiService {
     @POST("auth/login")
     suspend fun login(@Body request: LoginRequest): Response<ApiResponse<AuthData>>
 
+    @POST("auth/google")
+    suspend fun googleLogin(@Body request: GoogleLoginRequest): Response<ApiResponse<AuthData>>
+
+    @POST("auth/otp/send")
+    suspend fun sendOTP(@Body request: OTPRequest): Response<ApiResponse<Nothing>>
+
+    @POST("auth/otp/verify")
+    suspend fun verifyOTP(@Body request: OTPVerifyRequest): Response<ApiResponse<AuthData>>
+
     @POST("auth/refresh-token")
     suspend fun refreshToken(@Body request: RefreshTokenRequest): Response<ApiResponse<TokenData>>
+
+    @POST("auth/refresh-token")
+    fun refreshTokenBlocking(@Body request: RefreshTokenRequest): Call<ApiResponse<TokenData>>
 
     @POST("auth/logout")
     suspend fun logout(@Body request: LogoutRequest): Response<ApiResponse<Nothing>>

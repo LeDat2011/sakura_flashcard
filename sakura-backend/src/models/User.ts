@@ -16,7 +16,12 @@ export interface IUser extends Document {
         emailVerificationToken?: string;
         passwordResetToken?: string;
         passwordResetExpires?: Date;
+        otpInfo?: {
+            code: string;
+            expiresAt: Date;
+        };
     };
+    googleId?: string;
     stats: {
         totalXP: number;
         currentStreak: number;
@@ -34,7 +39,8 @@ const userSchema = new Schema<IUser>(
     {
         email: { type: String, required: true, unique: true, lowercase: true },
         username: { type: String, required: true, unique: true },
-        password: { type: String, required: true, minlength: 6 },
+        password: { type: String, required: false, minlength: 6 },
+        googleId: { type: String, sparse: true, unique: true },
         profile: {
             displayName: { type: String, required: true },
             avatar: String,
@@ -52,6 +58,10 @@ const userSchema = new Schema<IUser>(
             emailVerificationToken: String,
             passwordResetToken: String,
             passwordResetExpires: Date,
+            otpInfo: {
+                code: String,
+                expiresAt: Date
+            }
         },
         stats: {
             totalXP: { type: Number, default: 0 },

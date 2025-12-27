@@ -38,6 +38,19 @@ data class RegisterRequest(
     val displayName: String? = null
 )
 
+data class GoogleLoginRequest(
+    val idToken: String
+)
+
+data class OTPRequest(
+    val email: String
+)
+
+data class OTPVerifyRequest(
+    val email: String,
+    val otp: String
+)
+
 data class UpdateProfileRequest(
     val username: String? = null,
     val displayName: String? = null,

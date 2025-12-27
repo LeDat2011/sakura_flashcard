@@ -12,11 +12,79 @@ import javax.inject.Singleton
 @Singleton
 class AuthRepository @Inject constructor(
     private val apiService: ApiService,
-    private val tokenManager: AuthTokenManager
+    private val tokenManager: AuthTokenManager,
+    private val biometricManager: BiometricAuthManager
 ) {
     val authState: StateFlow<AuthState> = tokenManager.authState
 
-    suspend fun login(email: String, password: String): AuthResult {
+    // ==================== Biometric Authentication ====================
+
+    /**
+     * Kiểm tra thiết bị có hỗ trợ biometric không
+     */
+    fun isBiometricAvailable(): BiometricStatus = biometricManager.isBiometricAvailable()
+
+    /**
+     * Kiểm tra biometric đã được bật chưa
+     */
+    fun isBiometricEnabled(): Boolean = tokenManager.isBiometricEnabled()
+
+    /**
+     * Kiểm tra có credentials đã lưu cho biometric không
+     */
+    fun canUseBiometricLogin(): Boolean {
+        return isBiometricAvailable() == BiometricStatus.Available &&
+               tokenManager.isBiometricEnabled() &&
+               tokenManager.hasSavedCredentials()
+    }
+
+    /**
+     * Bật biometric login và lưu credentials
+     */
+    fun enableBiometricLogin(email: String, password: String) {
+        tokenManager.saveCredentialsForBiometric(email, password)
+        tokenManager.setBiometricEnabled(true)
+    }
+
+    /**
+     * Tắt biometric login
+     */
+    fun disableBiometricLogin() {
+        tokenManager.clearSavedCredentials()
+    }
+
+    /**
+     * Đăng nhập bằng biometric (vân tay)
+     */
+    suspend fun loginWithBiometric(activity: androidx.fragment.app.FragmentActivity): AuthResult {
+        // Kiểm tra biometric có sẵn không
+        if (isBiometricAvailable() != BiometricStatus.Available) {
+            return AuthResult.Error("Thiết bị không hỗ trợ đăng nhập vân tay")
+        }
+
+        // Kiểm tra có credentials đã lưu không
+        val credentials = tokenManager.getSavedCredentials()
+            ?: return AuthResult.Error("Chưa thiết lập đăng nhập vân tay")
+
+        // Xác thực biometric
+        return when (val result = biometricManager.authenticate(activity)) {
+            is BiometricResult.Success -> {
+                // Đăng nhập với credentials đã lưu
+                login(credentials.first, credentials.second)
+            }
+            is BiometricResult.Cancelled -> {
+                AuthResult.Error("Đã hủy xác thực")
+            }
+            is BiometricResult.Lockout -> {
+                AuthResult.Error("Đã khóa vân tay: ${result.message}")
+            }
+            is BiometricResult.Error -> {
+                AuthResult.Error("Lỗi xác thực: ${result.message}")
+            }
+        }
+    }
+
+    suspend fun login(email: String, password: String, enableBiometric: Boolean = false): AuthResult {
         return try {
             if (!ContentValidator.isValidEmail(email)) {
                 return AuthResult.Error("Invalid email format")
@@ -38,6 +106,12 @@ class AuthRepository @Inject constructor(
                         expiresIn = 900, // 15 minutes
                         userId = authData.user.id
                     )
+                    
+                    // Lưu credentials cho biometric nếu được yêu cầu
+                    if (enableBiometric && isBiometricAvailable() == BiometricStatus.Available) {
+                        enableBiometricLogin(email, password)
+                    }
+                    
                     AuthResult.Success(authData.user)
                 } else {
                     tokenManager.updateAuthState(AuthState.Error("Invalid response from server"))
@@ -66,6 +140,69 @@ class AuthRepository @Inject constructor(
         } catch (e: Exception) {
             tokenManager.updateAuthState(AuthState.Error("An unexpected error occurred"))
             AuthResult.Error("An unexpected error occurred: ${e.message}")
+        }
+    }
+
+    suspend fun googleLogin(idToken: String): AuthResult {
+        return try {
+            tokenManager.updateAuthState(AuthState.Loading)
+            val response = apiService.googleLogin(GoogleLoginRequest(idToken))
+            if (response.isSuccessful && response.body()?.success == true) {
+                val authData = response.body()?.data
+                if (authData != null) {
+                    tokenManager.saveTokens(
+                        accessToken = authData.accessToken,
+                        refreshToken = authData.refreshToken,
+                        expiresIn = 900,
+                        userId = authData.user.id
+                    )
+                    AuthResult.Success(authData.user)
+                } else {
+                    AuthResult.Error("Invalid response")
+                }
+            } else {
+                AuthResult.Error(response.body()?.message ?: "Google login failed")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("Google login failed: ${e.message}")
+        }
+    }
+
+    suspend fun sendOTP(email: String): AuthResult {
+        return try {
+            val response = apiService.sendOTP(OTPRequest(email))
+            if (response.isSuccessful && response.body()?.success == true) {
+                AuthResult.Success(null)
+            } else {
+                AuthResult.Error(response.body()?.message ?: "Failed to send OTP")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("Failed to send OTP: ${e.message}")
+        }
+    }
+
+    suspend fun verifyOTP(email: String, otp: String): AuthResult {
+        return try {
+            tokenManager.updateAuthState(AuthState.Loading)
+            val response = apiService.verifyOTP(OTPVerifyRequest(email, otp))
+            if (response.isSuccessful && response.body()?.success == true) {
+                val authData = response.body()?.data
+                if (authData != null) {
+                    tokenManager.saveTokens(
+                        accessToken = authData.accessToken,
+                        refreshToken = authData.refreshToken,
+                        expiresIn = 900,
+                        userId = authData.user.id
+                    )
+                    AuthResult.Success(authData.user)
+                } else {
+                    AuthResult.Error("Invalid response")
+                }
+            } else {
+                AuthResult.Error(response.body()?.message ?: "OTP verification failed")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("OTP verification failed: ${e.message}")
         }
     }
 
@@ -226,6 +363,23 @@ class AuthRepository @Inject constructor(
     fun isAuthenticated(): Boolean = tokenManager.isAuthenticated()
 
     fun getCurrentUserId(): String? = tokenManager.getUserId()
+
+    /**
+     * Cập nhật thời gian hoạt động (gọi khi user tương tác với app)
+     */
+    fun updateLastActivity() {
+        tokenManager.updateLastActivity()
+    }
+
+    /**
+     * Kiểm tra session còn hợp lệ không
+     */
+    fun isSessionValid(): Boolean = tokenManager.isSessionValid()
+
+    /**
+     * Lấy số ngày còn lại của session
+     */
+    fun getRemainingSessionDays(): Int = tokenManager.getRemainingSessionDays()
 
     private fun handleHttpError(e: HttpException): AuthResult {
         val errorMessage = when (e.code()) {
