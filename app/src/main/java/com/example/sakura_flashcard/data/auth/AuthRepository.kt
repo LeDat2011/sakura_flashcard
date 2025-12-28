@@ -55,16 +55,16 @@ class AuthRepository @Inject constructor(
 
     /**
      * Đăng nhập bằng biometric (vân tay)
-     * Luôn hiện prompt vân tay trước, sau đó mới kiểm tra credentials
      */
     suspend fun loginWithBiometric(activity: androidx.fragment.app.FragmentActivity): AuthResult {
-        // Xác thực biometric TRƯỚC - luôn hiện prompt
+        android.util.Log.d("BiometricLogin", "AuthRepository.loginWithBiometric() called")
+        
         return when (val result = biometricManager.authenticate(activity)) {
             is BiometricResult.Success -> {
-                // Sau khi xác thực vân tay thành công, kiểm tra credentials
+                android.util.Log.d("BiometricLogin", "BiometricResult.Success - checking credentials...")
                 val credentials = tokenManager.getSavedCredentials()
+                android.util.Log.d("BiometricLogin", "Saved credentials: ${if (credentials != null) "found" else "NOT FOUND"}")
                 if (credentials != null) {
-                    // Đăng nhập với credentials đã lưu
                     login(credentials.first, credentials.second)
                 } else {
                     AuthResult.Error("Chưa thiết lập đăng nhập vân tay. Vui lòng bật trong Hồ sơ → Tùy chọn tài khoản.")
@@ -201,6 +201,32 @@ class AuthRepository @Inject constructor(
             }
         } catch (e: Exception) {
             AuthResult.Error("OTP verification failed: ${e.message}")
+        }
+    }
+
+    suspend fun forgotPassword(email: String): AuthResult {
+        return try {
+            val response = apiService.forgotPassword(ForgotPasswordRequest(email))
+            if (response.isSuccessful && response.body()?.success == true) {
+                AuthResult.Success(null)
+            } else {
+                AuthResult.Error(response.body()?.message ?: "Không thể gửi yêu cầu")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("Lỗi: ${e.message}")
+        }
+    }
+
+    suspend fun resetPassword(email: String, token: String, newPassword: String): AuthResult {
+        return try {
+            val response = apiService.resetPassword(ResetPasswordRequest(email, token, newPassword))
+            if (response.isSuccessful && response.body()?.success == true) {
+                AuthResult.Success(null)
+            } else {
+                AuthResult.Error(response.body()?.message ?: "Không thể đặt lại mật khẩu")
+            }
+        } catch (e: Exception) {
+            AuthResult.Error("Lỗi: ${e.message}")
         }
     }
 

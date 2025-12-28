@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.Sakura_flashcard" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- AppCompat theme for AppCompatActivity -->
+    <style name="Theme.Sakura_flashcard" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sakura_pink</item>
+        <item name="colorPrimaryDark">@color/sakura_pink_dark</item>
+        <item name="colorAccent">@color/sakura_accent</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
 </resources>

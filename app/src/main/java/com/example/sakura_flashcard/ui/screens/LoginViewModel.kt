@@ -145,22 +145,37 @@ class LoginViewModel @Inject constructor(
      * Đăng nhập bằng vân tay/biometric
      */
     fun biometricLogin(activity: FragmentActivity) {
-        if (_isLoading.value) return
+        android.util.Log.d("BiometricLogin", "biometricLogin() called")
+        
+        if (_isLoading.value) {
+            android.util.Log.d("BiometricLogin", "Already loading, returning early")
+            return
+        }
         
         viewModelScope.launch {
+            android.util.Log.d("BiometricLogin", "Starting biometric authentication...")
             _isLoading.value = true
             _errorMessage.value = null
             
-            when (val result = authRepository.loginWithBiometric(activity)) {
-                is AuthResult.Success -> {
-                    _isLoginSuccessful.value = true
+            try {
+                android.util.Log.d("BiometricLogin", "Calling authRepository.loginWithBiometric...")
+                when (val result = authRepository.loginWithBiometric(activity)) {
+                    is AuthResult.Success -> {
+                        android.util.Log.d("BiometricLogin", "SUCCESS!")
+                        _isLoginSuccessful.value = true
+                    }
+                    is AuthResult.Error -> {
+                        android.util.Log.e("BiometricLogin", "ERROR: ${result.message}")
+                        _errorMessage.value = result.message
+                    }
+                    is AuthResult.TokenRefreshed -> {
+                        android.util.Log.d("BiometricLogin", "Token refreshed")
+                        _isLoginSuccessful.value = true
+                    }
                 }
-                is AuthResult.Error -> {
-                    _errorMessage.value = result.message
-                }
-                is AuthResult.TokenRefreshed -> {
-                    _isLoginSuccessful.value = true
-                }
+            } catch (e: Exception) {
+                android.util.Log.e("BiometricLogin", "EXCEPTION: ${e.message}", e)
+                _errorMessage.value = "Lỗi: ${e.message}"
             }
             _isLoading.value = false
         }
@@ -207,6 +222,57 @@ class LoginViewModel @Inject constructor(
             }
             _isLoading.value = false
         }
+    }
+
+    // ==================== FORGOT PASSWORD ====================
+    private val _isForgotPasswordSent = MutableStateFlow(false)
+    private val _isResetPasswordSuccess = MutableStateFlow(false)
+    
+    val isForgotPasswordSent: StateFlow<Boolean> = _isForgotPasswordSent
+    val isResetPasswordSuccess: StateFlow<Boolean> = _isResetPasswordSuccess
+    
+    fun forgotPassword() {
+        val currentEmail = _email.value.trim()
+        if (validateEmail(currentEmail) != null) {
+            _errorMessage.value = "Vui lòng nhập email hợp lệ"
+            return
+        }
+
+        viewModelScope.launch {
+            _isLoading.value = true
+            when (val result = authRepository.forgotPassword(currentEmail)) {
+                is AuthResult.Success -> _isForgotPasswordSent.value = true
+                is AuthResult.Error -> _errorMessage.value = result.message
+                else -> {}
+            }
+            _isLoading.value = false
+        }
+    }
+
+    fun resetPassword(token: String, newPassword: String) {
+        val currentEmail = _email.value.trim()
+        if (newPassword.length < 8) {
+            _errorMessage.value = "Mật khẩu mới phải có ít nhất 8 ký tự"
+            return
+        }
+
+        viewModelScope.launch {
+            _isLoading.value = true
+            when (val result = authRepository.resetPassword(currentEmail, token, newPassword)) {
+                is AuthResult.Success -> {
+                    _isResetPasswordSuccess.value = true
+                    _isForgotPasswordSent.value = false
+                }
+                is AuthResult.Error -> _errorMessage.value = result.message
+                else -> {}
+            }
+            _isLoading.value = false
+        }
+    }
+
+    fun clearForgotPasswordState() {
+        _isForgotPasswordSent.value = false
+        _isResetPasswordSuccess.value = false
     }
 
     private fun validateEmail(email: String): String? {

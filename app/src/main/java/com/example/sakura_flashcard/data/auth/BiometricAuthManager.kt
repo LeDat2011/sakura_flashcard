@@ -11,6 +11,10 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.resume
 
+/**
+ * Quản lý xác thực sinh trắc học (vân tay, khuôn mặt)
+ * Sử dụng BiometricPrompt API (khuyến nghị bởi Google)
+ */
 @Singleton
 class BiometricAuthManager @Inject constructor(
     @ApplicationContext private val context: Context
@@ -21,68 +25,75 @@ class BiometricAuthManager @Inject constructor(
      * Kiểm tra thiết bị có hỗ trợ biometric không
      */
     fun isBiometricAvailable(): BiometricStatus {
-        // Thử BIOMETRIC_STRONG trước, nếu không được thì thử BIOMETRIC_WEAK
-        val strongResult = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
-        val weakResult = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK)
-        
-        return when {
-            strongResult == BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
-            weakResult == BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
-            strongResult == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED || 
-                weakResult == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> BiometricStatus.NoneEnrolled
-            strongResult == BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE -> BiometricStatus.NoHardware
-            strongResult == BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> BiometricStatus.HardwareUnavailable
-            strongResult == BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED -> BiometricStatus.SecurityUpdateRequired
+        return when (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
+            BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
+            BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE -> BiometricStatus.NoHardware
+            BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> BiometricStatus.HardwareUnavailable
+            BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> BiometricStatus.NoneEnrolled
+            BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED -> BiometricStatus.SecurityUpdateRequired
             else -> BiometricStatus.Unknown
         }
     }
 
     /**
-     * Hiển thị prompt xác thực vân tay
+     * Hiển thị dialog xác thực vân tay
      */
     suspend fun authenticate(
         activity: FragmentActivity,
         title: String = "Xác thực vân tay",
-        subtitle: String = "Sử dụng vân tay để đăng nhập",
+        subtitle: String = "Đặt ngón tay lên cảm biến để xác thực",
+        description: String = "Sử dụng vân tay để đăng nhập vào ứng dụng",
         negativeButtonText: String = "Hủy"
     ): BiometricResult = suspendCancellableCoroutine { continuation ->
+        
+        android.util.Log.d("BiometricLogin", "BiometricAuthManager.authenticate() called")
+        
         val executor = ContextCompat.getMainExecutor(context)
 
-        val callback = object : BiometricPrompt.AuthenticationCallback() {
-            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                if (continuation.isActive) {
-                    continuation.resume(BiometricResult.Success)
-                }
-            }
+        val biometricPrompt = BiometricPrompt(
+            activity,
+            executor,
+            object : BiometricPrompt.AuthenticationCallback() {
 
-            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                if (continuation.isActive) {
-                    val result = when (errorCode) {
-                        BiometricPrompt.ERROR_USER_CANCELED,
-                        BiometricPrompt.ERROR_NEGATIVE_BUTTON -> BiometricResult.Cancelled
-                        BiometricPrompt.ERROR_LOCKOUT,
-                        BiometricPrompt.ERROR_LOCKOUT_PERMANENT -> BiometricResult.Lockout(errString.toString())
-                        else -> BiometricResult.Error(errString.toString())
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    android.util.Log.d("BiometricLogin", "onAuthenticationSucceeded!")
+                    if (continuation.isActive) {
+                        continuation.resume(BiometricResult.Success)
                     }
-                    continuation.resume(result)
+                }
+
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    android.util.Log.w("BiometricLogin", "onAuthenticationFailed - vân tay không khớp")
+                    // Không resume - cho phép thử lại
+                }
+
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    android.util.Log.e("BiometricLogin", "onAuthenticationError: code=$errorCode, msg=$errString")
+                    if (continuation.isActive) {
+                        val result = when (errorCode) {
+                            BiometricPrompt.ERROR_USER_CANCELED,
+                            BiometricPrompt.ERROR_NEGATIVE_BUTTON -> BiometricResult.Cancelled
+                            BiometricPrompt.ERROR_LOCKOUT,
+                            BiometricPrompt.ERROR_LOCKOUT_PERMANENT -> BiometricResult.Lockout(errString.toString())
+                            else -> BiometricResult.Error(errString.toString())
+                        }
+                        continuation.resume(result)
+                    }
                 }
             }
+        )
 
-            override fun onAuthenticationFailed() {
-                // Không resume ở đây vì user có thể thử lại
-            }
-        }
-
-        val biometricPrompt = BiometricPrompt(activity, executor, callback)
-
-        // Sử dụng BIOMETRIC_WEAK để hỗ trợ nhiều thiết bị hơn
         val promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle(title)
             .setSubtitle(subtitle)
+            .setDescription(description)
             .setNegativeButtonText(negativeButtonText)
-            .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_WEAK)
             .build()
 
+        android.util.Log.d("BiometricLogin", "Showing biometric prompt...")
         biometricPrompt.authenticate(promptInfo)
 
         continuation.invokeOnCancellation {
@@ -92,17 +103,17 @@ class BiometricAuthManager @Inject constructor(
 }
 
 sealed class BiometricStatus {
-    object Available : BiometricStatus()
-    object NoHardware : BiometricStatus()
-    object HardwareUnavailable : BiometricStatus()
-    object NoneEnrolled : BiometricStatus()
-    object SecurityUpdateRequired : BiometricStatus()
-    object Unknown : BiometricStatus()
+    data object Available : BiometricStatus()
+    data object NoHardware : BiometricStatus()
+    data object HardwareUnavailable : BiometricStatus()
+    data object NoneEnrolled : BiometricStatus()
+    data object SecurityUpdateRequired : BiometricStatus()
+    data object Unknown : BiometricStatus()
 }
 
 sealed class BiometricResult {
-    object Success : BiometricResult()
-    object Cancelled : BiometricResult()
+    data object Success : BiometricResult()
+    data object Cancelled : BiometricResult()
     data class Lockout(val message: String) : BiometricResult()
     data class Error(val message: String) : BiometricResult()
 }

@@ -67,10 +67,9 @@ fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
-    // Tìm activity - ComponentActivity kế thừa từ FragmentActivity trong AndroidX
-    val activity = remember(context) { 
-        context.findActivity() ?: (context as? FragmentActivity)
-    }
+    // Lấy FragmentActivity từ context - bây giờ MainActivity là AppCompatActivity (extends FragmentActivity)
+    val activity: FragmentActivity? = context as? FragmentActivity
+    android.util.Log.d("BiometricLogin", "LoginScreen: activity=$activity, context=${context::class.java.name}")
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val focusManager = LocalFocusManager.current
 
@@ -226,56 +225,65 @@ fun LoginScreen(
                         )
                     }
 
-                    // Nút vân tay nhỏ - LUÔN HIỆN VÀ LUÔN BẬT
-                    FilledIconButton(
-                        onClick = { 
-                            activity?.let { viewModel.biometricLogin(it) }
-                                ?: run { /* Activity null - show error if needed */ }
-                        },
-                        modifier = Modifier.size(52.dp),
-                        enabled = !uiState.isLoading,
-                        colors = IconButtonDefaults.filledIconButtonColors(
-                            containerColor = AppColors.PrimaryLight
-                        ),
-                        shape = RoundedCornerShape(16.dp)
-                    ) {
-                        Icon(
-                            Icons.Rounded.Fingerprint,
-                            contentDescription = "Đăng nhập vân tay",
-                            modifier = Modifier.size(28.dp),
-                            tint = Color.White
-                        )
+                    // Nút vân tay - CHỈ HIỆN KHI ĐÃ BẬT TRONG PROFILE
+                    if (uiState.canUseBiometric) {
+                        FilledIconButton(
+                            onClick = { 
+                                android.util.Log.d("BiometricLogin", "Fingerprint button clicked")
+                                if (activity != null) {
+                                    viewModel.biometricLogin(activity)
+                                } else {
+                                    android.util.Log.e("BiometricLogin", "Activity is NULL!")
+                                }
+                            },
+                            modifier = Modifier.size(52.dp),
+                            enabled = !uiState.isLoading,
+                            colors = IconButtonDefaults.filledIconButtonColors(
+                                containerColor = AppColors.PrimaryLight
+                            ),
+                            shape = RoundedCornerShape(16.dp)
+                        ) {
+                            Icon(
+                                Icons.Rounded.Fingerprint,
+                                contentDescription = "Đăng nhập vân tay",
+                                modifier = Modifier.size(28.dp),
+                                tint = Color.White
+                            )
+                        }
                     }
+                }
+
+                // Hint text khi thiết bị hỗ trợ biometric nhưng chưa bật
+                if (uiState.isBiometricAvailable && !uiState.canUseBiometric) {
+                    Text(
+                        text = "💡 Bật đăng nhập vân tay trong Hồ sơ sau khi đăng nhập",
+                        style = AppTypography.BodySmall,
+                        color = AppColors.TextTertiary,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
                 }
 
                 HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp), color = AppColors.SurfaceBorder)
 
-                val scope = rememberCoroutineScope()
-                val googleAuthManager = remember { GoogleAuthManager(context) }
-
-                // Google Login Button
+                // OTP Login Option
                 OutlinedButton(
-                    onClick = {
-                        scope.launch {
-                            val idToken = googleAuthManager.getGoogleIdToken()
-                            if (idToken != null) {
-                                viewModel.googleLogin(idToken)
-                            }
-                        }
-                    },
+                    onClick = { viewModel.sendOTP() },
                     modifier = Modifier.fillMaxWidth().height(52.dp),
                     shape = RoundedCornerShape(16.dp),
                     border = BorderStroke(1.dp, AppColors.SurfaceBorder)
                 ) {
-                    Text(text = "G Đăng nhập với Google", style = AppTypography.TitleMedium, color = AppColors.TextPrimary)
+                    Text(text = "📧 Đăng nhập bằng mã OTP (Email)", style = AppTypography.TitleMedium, color = AppColors.TextPrimary)
                 }
 
-                // OTP Login Option
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // Forgot Password Link
                 TextButton(
-                    onClick = { viewModel.sendOTP() },
-                    modifier = Modifier.fillMaxWidth()
+                    onClick = { viewModel.forgotPassword() },
+                    enabled = !uiState.isLoading
                 ) {
-                    Text(text = "Đăng nhập bằng mã OTP (Email)", style = AppTypography.BodyMedium, color = AppColors.PrimaryLight)
+                    Text(text = "🔐 Quên mật khẩu?", style = AppTypography.BodyMedium, color = AppColors.PrimaryLight)
                 }
             }
         }
@@ -309,6 +317,136 @@ fun LoginScreen(
                             shape = RoundedCornerShape(12.dp)
                         ) {
                             Text("Xác nhận")
+                        }
+                    }
+                }
+            }
+        }
+
+        // Forgot Password Dialog
+        val isForgotPasswordSent by viewModel.isForgotPasswordSent.collectAsStateWithLifecycle()
+        val isResetPasswordSuccess by viewModel.isResetPasswordSuccess.collectAsStateWithLifecycle()
+        
+        if (isForgotPasswordSent) {
+            var resetToken by remember { mutableStateOf("") }
+            var newPassword by remember { mutableStateOf("") }
+            var confirmPassword by remember { mutableStateOf("") }
+            var showPassword by remember { mutableStateOf(false) }
+            
+            Dialog(onDismissRequest = { viewModel.clearForgotPasswordState() }) {
+                Card(
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = AppColors.SurfaceLight),
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(text = "🔐 Đặt lại mật khẩu", style = AppTypography.HeadlineSmall, fontWeight = FontWeight.Bold)
+                        Text(
+                            text = "Mã xác nhận đã được gửi đến email của bạn",
+                            style = AppTypography.BodyMedium,
+                            color = AppColors.TextSecondary,
+                            textAlign = TextAlign.Center
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        
+                        OutlinedTextField(
+                            value = resetToken,
+                            onValueChange = { if (it.length <= 6) resetToken = it },
+                            label = { Text("Mã xác nhận (6 số)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        
+                        Spacer(modifier = Modifier.height(12.dp))
+                        
+                        OutlinedTextField(
+                            value = newPassword,
+                            onValueChange = { newPassword = it },
+                            label = { Text("Mật khẩu mới") },
+                            visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                            trailingIcon = {
+                                IconButton(onClick = { showPassword = !showPassword }) {
+                                    Icon(
+                                        if (showPassword) Icons.Rounded.VisibilityOff else Icons.Rounded.Visibility,
+                                        contentDescription = null
+                                    )
+                                }
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        
+                        Spacer(modifier = Modifier.height(12.dp))
+                        
+                        OutlinedTextField(
+                            value = confirmPassword,
+                            onValueChange = { confirmPassword = it },
+                            label = { Text("Xác nhận mật khẩu") },
+                            visualTransformation = PasswordVisualTransformation(),
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp),
+                            isError = confirmPassword.isNotEmpty() && confirmPassword != newPassword,
+                            supportingText = if (confirmPassword.isNotEmpty() && confirmPassword != newPassword) {
+                                { Text("Mật khẩu không khớp", color = MaterialTheme.colorScheme.error) }
+                            } else null
+                        )
+                        
+                        Spacer(modifier = Modifier.height(24.dp))
+                        
+                        Button(
+                            onClick = { viewModel.resetPassword(resetToken, newPassword) },
+                            enabled = resetToken.length == 6 && 
+                                     newPassword.length >= 8 && 
+                                     newPassword == confirmPassword && 
+                                     !uiState.isLoading,
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = AppColors.PrimaryLight)
+                        ) {
+                            if (uiState.isLoading) {
+                                CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp, color = Color.White)
+                                Spacer(modifier = Modifier.width(8.dp))
+                            }
+                            Text("Đặt lại mật khẩu")
+                        }
+                        
+                        TextButton(onClick = { viewModel.clearForgotPasswordState() }) {
+                            Text("Hủy", color = AppColors.TextSecondary)
+                        }
+                    }
+                }
+            }
+        }
+
+        // Success Dialog after Reset Password
+        if (isResetPasswordSuccess) {
+            Dialog(onDismissRequest = { viewModel.clearForgotPasswordState() }) {
+                Card(
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = AppColors.SurfaceLight),
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(text = "✅", fontSize = 48.sp)
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(text = "Thành công!", style = AppTypography.HeadlineSmall, fontWeight = FontWeight.Bold)
+                        Text(
+                            text = "Mật khẩu đã được đặt lại. Vui lòng đăng nhập với mật khẩu mới.",
+                            style = AppTypography.BodyMedium,
+                            color = AppColors.TextSecondary,
+                            textAlign = TextAlign.Center
+                        )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Button(
+                            onClick = { viewModel.clearForgotPasswordState() },
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = AppColors.PrimaryLight)
+                        ) {
+                            Text("Đăng nhập")
                         }
                     }
                 }

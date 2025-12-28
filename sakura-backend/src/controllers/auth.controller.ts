@@ -325,10 +325,60 @@ export const sendOTP = async (req: Request, res: Response) => {
         });
 
         const mailOptions = {
-            from: process.env.EMAIL_USER,
+            from: `"Sakura Flashcard" <${process.env.EMAIL_USER}>`,
             to: email,
-            subject: 'Sakura Flashcard - OTP Verification',
-            text: `Mã OTP của bạn là: ${otp}. Mã này có hiệu lực trong 5 phút.`
+            subject: '🌸 Sakura Flashcard - Mã xác thực OTP',
+            html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa;">
+                    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+                        <!-- Header -->
+                        <div style="background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); border-radius: 16px 16px 0 0; padding: 30px; text-align: center;">
+                            <h1 style="color: white; margin: 0; font-size: 28px;">🌸 Sakura Flashcard</h1>
+                            <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0; font-size: 14px;">Học tiếng Nhật mỗi ngày</p>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div style="background-color: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <h2 style="color: #333; margin: 0 0 20px 0; font-size: 22px; text-align: center;">Xác thực tài khoản</h2>
+                            
+                            <p style="color: #666; font-size: 16px; line-height: 1.6; text-align: center; margin-bottom: 30px;">
+                                Xin chào! Đây là mã xác thực OTP của bạn:
+                            </p>
+                            
+                            <!-- OTP Box -->
+                            <div style="background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%); border: 2px dashed #FF69B4; border-radius: 12px; padding: 25px; text-align: center; margin: 20px 0;">
+                                <p style="font-size: 40px; font-weight: bold; color: #FF1493; letter-spacing: 8px; margin: 0;">
+                                    ${otp}
+                                </p>
+                            </div>
+                            
+                            <p style="color: #888; font-size: 14px; text-align: center; margin-top: 25px;">
+                                ⏰ Mã này có hiệu lực trong <strong style="color: #FF69B4;">5 phút</strong>
+                            </p>
+                            
+                            <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+                            
+                            <p style="color: #999; font-size: 13px; text-align: center; line-height: 1.6;">
+                                Nếu bạn không yêu cầu mã này, vui lòng bỏ qua email này.<br>
+                                Không chia sẻ mã OTP với bất kỳ ai.
+                            </p>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
+                            <p style="margin: 0;">© 2024 Sakura Flashcard. All rights reserved.</p>
+                            <p style="margin: 5px 0 0 0;">Học tiếng Nhật thông minh 📚</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `
         };
 
         // In development, just log the OTP if no credentials provided
@@ -378,6 +428,126 @@ export const verifyOTP = async (req: Request, res: Response) => {
             accessToken,
             refreshToken,
         }, 'OTP verified successfully');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};
+
+export const forgotPassword = async (req: Request, res: Response) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (!user) {
+            // Don't reveal if email exists or not (security)
+            return successResponse(res, null, 'Nếu email tồn tại, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.');
+        }
+
+        // Generate reset token (6 digit OTP for simplicity)
+        const resetToken = Math.floor(100000 + Math.random() * 900000).toString();
+        user.auth.passwordResetToken = resetToken;
+        user.auth.passwordResetExpires = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+        await user.save();
+
+        // Send Email
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
+
+        const mailOptions = {
+            from: `"Sakura Flashcard" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: '🔐 Sakura Flashcard - Đặt lại mật khẩu',
+            html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa;">
+                    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+                        <!-- Header -->
+                        <div style="background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); border-radius: 16px 16px 0 0; padding: 30px; text-align: center;">
+                            <h1 style="color: white; margin: 0; font-size: 28px;">🌸 Sakura Flashcard</h1>
+                            <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0; font-size: 14px;">Học tiếng Nhật mỗi ngày</p>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div style="background-color: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <h2 style="color: #333; margin: 0 0 20px 0; font-size: 22px; text-align: center;">🔐 Đặt lại mật khẩu</h2>
+                            
+                            <p style="color: #666; font-size: 16px; line-height: 1.6; text-align: center; margin-bottom: 30px;">
+                                Bạn đã yêu cầu đặt lại mật khẩu. Đây là mã xác nhận của bạn:
+                            </p>
+                            
+                            <!-- Reset Code Box -->
+                            <div style="background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%); border: 2px dashed #FF69B4; border-radius: 12px; padding: 25px; text-align: center; margin: 20px 0;">
+                                <p style="font-size: 40px; font-weight: bold; color: #FF1493; letter-spacing: 8px; margin: 0;">
+                                    ${resetToken}
+                                </p>
+                            </div>
+                            
+                            <p style="color: #888; font-size: 14px; text-align: center; margin-top: 25px;">
+                                ⏰ Mã này có hiệu lực trong <strong style="color: #FF69B4;">15 phút</strong>
+                            </p>
+                            
+                            <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+                            
+                            <p style="color: #999; font-size: 13px; text-align: center; line-height: 1.6;">
+                                Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.<br>
+                                Tài khoản của bạn vẫn an toàn.
+                            </p>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
+                            <p style="margin: 0;">© 2024 Sakura Flashcard. All rights reserved.</p>
+                            <p style="margin: 5px 0 0 0;">Học tiếng Nhật thông minh 📚</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `
+        };
+
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.log(`[DEV] Password Reset Token for ${email}: ${resetToken}`);
+        } else {
+            await transporter.sendMail(mailOptions);
+        }
+
+        return successResponse(res, null, 'Nếu email tồn tại, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.');
+    } catch (error: any) {
+        return errorResponse(res, error.message, 500);
+    }
+};
+
+export const resetPassword = async (req: Request, res: Response) => {
+    try {
+        const { email, token, newPassword } = req.body;
+
+        const user = await User.findOne({
+            email: email.toLowerCase(),
+            'auth.passwordResetToken': token,
+            'auth.passwordResetExpires': { $gt: new Date() }
+        });
+
+        if (!user) {
+            return errorResponse(res, 'Mã xác nhận không hợp lệ hoặc đã hết hạn', 400);
+        }
+
+        // Update password
+        user.password = newPassword;
+        user.auth.passwordResetToken = undefined;
+        user.auth.passwordResetExpires = undefined;
+        await user.save();
+
+        return successResponse(res, null, 'Đặt lại mật khẩu thành công! Vui lòng đăng nhập.');
     } catch (error: any) {
         return errorResponse(res, error.message, 500);
     }

@@ -24,6 +24,12 @@ interface ApiService {
     @POST("auth/otp/verify")
     suspend fun verifyOTP(@Body request: OTPVerifyRequest): Response<ApiResponse<AuthData>>
 
+    @POST("auth/forgot-password")
+    suspend fun forgotPassword(@Body request: ForgotPasswordRequest): Response<ApiResponse<Nothing>>
+
+    @POST("auth/reset-password")
+    suspend fun resetPassword(@Body request: ResetPasswordRequest): Response<ApiResponse<Nothing>>
+
     @POST("auth/refresh-token")
     suspend fun refreshToken(@Body request: RefreshTokenRequest): Response<ApiResponse<TokenData>>
 

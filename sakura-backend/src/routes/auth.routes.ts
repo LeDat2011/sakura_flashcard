@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import { register, login, refreshToken, logout, getProfile, updateProfile, googleLogin, sendOTP, verifyOTP } from '../controllers/auth.controller';
+import { register, login, refreshToken, logout, getProfile, updateProfile, googleLogin, sendOTP, verifyOTP, forgotPassword, resetPassword } from '../controllers/auth.controller';
 import { authenticate } from '../middlewares/auth.middleware';
 import { validate } from '../middlewares/validate.middleware';
 import { authLimiter, otpLimiter, accountLockout } from '../middlewares/security.middleware';
@@ -37,12 +37,30 @@ const otpVerifyValidation = [
         .withMessage('OTP must be 6 digits'),
 ];
 
+const forgotPasswordValidation = [
+    body('email').isEmail().normalizeEmail().withMessage('Valid email required'),
+];
+
+const resetPasswordValidation = [
+    body('email').isEmail().normalizeEmail().withMessage('Valid email required'),
+    body('token')
+        .isLength({ min: 6, max: 6 })
+        .isNumeric()
+        .withMessage('Token must be 6 digits'),
+    body('newPassword')
+        .isLength({ min: 8 })
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
+        .withMessage('Password: min 8 chars, 1 uppercase, 1 lowercase, 1 number'),
+];
+
 // Routes with security middleware
 router.post('/register', authLimiter, validate(registerValidation), register);
 router.post('/login', authLimiter, accountLockout, validate(loginValidation), login);
 router.post('/google', authLimiter, googleLogin);
 router.post('/otp/send', otpLimiter, validate(otpValidation), sendOTP);
 router.post('/otp/verify', authLimiter, validate(otpVerifyValidation), verifyOTP);
+router.post('/forgot-password', otpLimiter, validate(forgotPasswordValidation), forgotPassword);
+router.post('/reset-password', authLimiter, validate(resetPasswordValidation), resetPassword);
 router.post('/refresh-token', authLimiter, refreshToken);
 router.post('/logout', authenticate, logout);
 router.get('/profile', authenticate, getProfile);

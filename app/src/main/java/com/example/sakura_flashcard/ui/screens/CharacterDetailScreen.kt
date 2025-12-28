@@ -2,6 +2,7 @@ package com.example.sakura_flashcard.ui.screens
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -34,28 +35,22 @@ fun CharacterDetailScreen(
     onNavigateBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // For now, create a sample character - in a real app, this would load from API
-    val character = remember {
+    // Sử dụng characterId là chính chữ Hiragana được truyền từ navigation
+    val character = remember(characterId) {
         Character(
             id = characterId,
-            character = "あ",
+            character = characterId, // characterId bây giờ là chữ Hiragana thực tế (あ, い, う, ...)
             script = CharacterScript.HIRAGANA,
-            pronunciation = listOf("a"),
+            pronunciation = listOf(getHiraganaPronunciation(characterId)),
             strokeOrder = listOf(
                 Stroke(
                     order = 1, 
                     points = listOf(Point(10f, 10f), Point(50f, 10f)), 
                     direction = StrokeDirection.HORIZONTAL,
                     path = "M 10 10 L 50 10"
-                ),
-                Stroke(
-                    order = 2, 
-                    points = listOf(Point(30f, 10f), Point(30f, 50f)), 
-                    direction = StrokeDirection.VERTICAL,
-                    path = "M 30 10 L 30 50"
                 )
             ),
-            examples = listOf("あさ (morning)", "あか (red)")
+            examples = listOf()
         )
     }
     var isAnimationPlaying by remember { mutableStateOf(false) }
@@ -122,63 +117,57 @@ fun CharacterDetailScreen(
             }
         }
         
-        // Stroke Order Animation
+        // Stroke Order Image from PDF
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .height(300.dp),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                .padding(horizontal = 16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFFFFF0F5)) // Light pink background
         ) {
             Column(
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier.padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "Stroke Order",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold
+                Text(
+                    text = "✍️ Hướng dẫn viết",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFFBE185D) // Pink color for title
+                )
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                // Hiển thị hình ảnh stroke order từ PDF
+                val strokeResourceId = com.example.sakura_flashcard.ui.components.StrokeOrderHelper.getStrokeOrderResource(character.character)
+                
+                if (strokeResourceId != null) {
+                    androidx.compose.foundation.Image(
+                        painter = androidx.compose.ui.res.painterResource(id = strokeResourceId),
+                        contentDescription = "Stroke order for ${character.character}",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .aspectRatio(1f)
+                            .padding(8.dp),
+                        contentScale = androidx.compose.ui.layout.ContentScale.Fit
                     )
-                    
-                    IconButton(
-                        onClick = {
-                            if (isAnimationPlaying) {
-                                isAnimationPlaying = false
-                            } else {
-                                currentStrokeIndex = 0
-                                isAnimationPlaying = true
-                            }
-                        }
+                } else {
+                    // Fallback: Hiển thị chữ lớn nếu không có hình
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .aspectRatio(1f)
+                            .background(Color(0xFFFCE7F3), shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp)),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Icon(
-                            imageVector = if (isAnimationPlaying) Icons.Default.Close else Icons.Default.PlayArrow,
-                            contentDescription = if (isAnimationPlaying) "Stop" else "Play"
+                        Text(
+                            text = character.character,
+                            fontSize = 120.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFFBE185D)
                         )
                     }
                 }
-                
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                // Stroke order canvas
-                StrokeOrderCanvas(
-                    strokes = character.strokeOrder,
-                    currentStrokeIndex = currentStrokeIndex,
-                    animationProgress = animationProgress,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                )
-                
-                // Stroke count
-                Text(
-                    text = "Strokes: ${character.getStrokeCount()}",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
             }
         }
         
@@ -373,4 +362,34 @@ private fun DrawScope.drawStroke(
             join = StrokeJoin.Round
         )
     )
+}
+
+/**
+ * Helper function to get pronunciation (romaji) for a hiragana character
+ */
+private fun getHiraganaPronunciation(hiragana: String): String {
+    return when (hiragana) {
+        "あ" -> "a"; "い" -> "i"; "う" -> "u"; "え" -> "e"; "お" -> "o"
+        "か" -> "ka"; "き" -> "ki"; "く" -> "ku"; "け" -> "ke"; "こ" -> "ko"
+        "さ" -> "sa"; "し" -> "shi"; "す" -> "su"; "せ" -> "se"; "そ" -> "so"
+        "た" -> "ta"; "ち" -> "chi"; "つ" -> "tsu"; "て" -> "te"; "と" -> "to"
+        "な" -> "na"; "に" -> "ni"; "ぬ" -> "nu"; "ね" -> "ne"; "の" -> "no"
+        "は" -> "ha"; "ひ" -> "hi"; "ふ" -> "fu"; "へ" -> "he"; "ほ" -> "ho"
+        "ま" -> "ma"; "み" -> "mi"; "む" -> "mu"; "め" -> "me"; "も" -> "mo"
+        "や" -> "ya"; "ゆ" -> "yu"; "よ" -> "yo"
+        "ら" -> "ra"; "り" -> "ri"; "る" -> "ru"; "れ" -> "re"; "ろ" -> "ro"
+        "わ" -> "wa"; "を" -> "wo"; "ん" -> "n"
+        // Katakana
+        "ア" -> "a"; "イ" -> "i"; "ウ" -> "u"; "エ" -> "e"; "オ" -> "o"
+        "カ" -> "ka"; "キ" -> "ki"; "ク" -> "ku"; "ケ" -> "ke"; "コ" -> "ko"
+        "サ" -> "sa"; "シ" -> "shi"; "ス" -> "su"; "セ" -> "se"; "ソ" -> "so"
+        "タ" -> "ta"; "チ" -> "chi"; "ツ" -> "tsu"; "テ" -> "te"; "ト" -> "to"
+        "ナ" -> "na"; "ニ" -> "ni"; "ヌ" -> "nu"; "ネ" -> "ne"; "ノ" -> "no"
+        "ハ" -> "ha"; "ヒ" -> "hi"; "フ" -> "fu"; "ヘ" -> "he"; "ホ" -> "ho"
+        "マ" -> "ma"; "ミ" -> "mi"; "ム" -> "mu"; "メ" -> "me"; "モ" -> "mo"
+        "ヤ" -> "ya"; "ユ" -> "yu"; "ヨ" -> "yo"
+        "ラ" -> "ra"; "リ" -> "ri"; "ル" -> "ru"; "レ" -> "re"; "ロ" -> "ro"
+        "ワ" -> "wa"; "ヲ" -> "wo"; "ン" -> "n"
+        else -> hiragana
+    }
 }

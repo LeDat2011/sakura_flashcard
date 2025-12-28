@@ -28,10 +28,6 @@ import com.example.sakura_flashcard.data.model.Flashcard
 import com.example.sakura_flashcard.ui.accessibility.*
 import com.example.sakura_flashcard.ui.theme.*
 
-enum class InteractionType {
-    FLIP, LEARNED, NOT_LEARNED, PLAY_AUDIO, SKIP
-}
-
 @Composable
 fun FlashcardView(
     flashcard: Flashcard,

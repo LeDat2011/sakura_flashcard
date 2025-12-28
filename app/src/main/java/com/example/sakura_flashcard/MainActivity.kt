@@ -2,7 +2,7 @@
 package com.example.sakura_flashcard
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.*
@@ -34,7 +34,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     
     @Inject
     lateinit var authRepository: AuthRepository
@@ -246,7 +246,7 @@ fun SakuraFlashcardApp(authRepository: AuthRepository) {
                 LearnScreen(
                     onCharacterClick = { character ->
                         navController.navigate(
-                            Screen.CharacterDetail.createRoute(character.id)
+                            Screen.CharacterDetail.createRoute(character.character)
                         )
                     }
                 )

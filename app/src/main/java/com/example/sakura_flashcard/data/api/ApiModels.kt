@@ -51,6 +51,16 @@ data class OTPVerifyRequest(
     val otp: String
 )
 
+data class ForgotPasswordRequest(
+    val email: String
+)
+
+data class ResetPasswordRequest(
+    val email: String,
+    val token: String,
+    val newPassword: String
+)
+
 data class UpdateProfileRequest(
     val username: String? = null,
     val displayName: String? = null,

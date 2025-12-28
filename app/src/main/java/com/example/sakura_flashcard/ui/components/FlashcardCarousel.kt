@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.example.sakura_flashcard.data.model.Flashcard
 import com.example.sakura_flashcard.ui.theme.AppColors
 import com.example.sakura_flashcard.ui.theme.AppTypography
-import com.example.sakura_flashcard.ui.components.InteractionType
+// InteractionType is in the same package
 
 
 

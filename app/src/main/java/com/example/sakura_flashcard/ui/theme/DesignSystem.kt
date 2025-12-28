@@ -179,6 +179,12 @@ object AppTypography {
         letterSpacing = 0.sp
     )
     
+    val HeadlineMedium = TextStyle(
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        letterSpacing = 0.sp
+    )
+    
     val HeadlineSmall = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.SemiBold,
