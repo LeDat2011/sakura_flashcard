@@ -6,37 +6,43 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=android&logoColor=white)
 
-Ứng dụng học tiếng Nhật toàn diện hỗ trợ ôn luyện từ vựng JLPT (N5-N1), Kana qua Flashcards, Quiz và Game tương tác.
+Ứng dụng học tiếng Nhật toàn diện hỗ trợ ôn luyện từ vựng JLPT (N5-N1), Hiragana/Katakana qua Flashcards, Quiz và Game tương tác.
 
-## ✨ Tính Năng Chính (Key Features)
+## ✨ Tính Năng Chính
 
-- **📚 Học Từ Vựng (Flashcards):**
-  - Hệ thống từ vựng phân theo cấp độ JLPT (N5 - N1).
-  - Chủ đề đa dạng: Đời sống, Công việc, Du lịch, Mua sắm, v.v.
-  - Chế độ Spaced Repetition (Lặp lại ngắt quãng) giúp tối ưu hóa việc ghi nhớ.
-  - Phát âm chuẩn Nhật Bản (Text-to-Speech).
+### 📚 Học Từ Vựng (Flashcards)
+- Hệ thống từ vựng phân theo cấp độ JLPT (N5 - N1)
+- Chủ đề đa dạng: Đời sống, Công việc, Du lịch, Anime, v.v.
+- **Spaced Repetition Algorithm (SM-2)** - tối ưu hóa việc ghi nhớ
+- Phát âm chuẩn Nhật Bản (Text-to-Speech)
+- **Hiển thị nét viết (Stroke Order)** cho Hiragana/Katakana
 
-- **📝 Luyện Tập (Quiz Mode):**
-  - Hàng trăm bộ câu hỏi trắc nghiệm theo chủ đề và trình độ.
-  - Tính thời gian thực, chấm điểm và giải thích chi tiết đáp án.
-  - Xem lại lịch sử làm bài và các câu trả lời sai.
+### 📝 Luyện Tập (Quiz Mode)
+- Hàng trăm bộ câu hỏi trắc nghiệm theo chủ đề và trình độ
+- Tính thời gian thực, chấm điểm và giải thích chi tiết
+- Xem lại lịch sử làm bài và các câu trả lời sai
 
-- **🎮 Trò Chơi (Mini Games):**
-  - **Lật Thẻ (Memory Match):** Rèn luyện trí nhớ và phản xạ từ vựng.
-  - **Ghép Từ:** Nối từ vựng với nghĩa hoặc Kanji tương ứng.
+### 🎮 Mini Games
+- **Memory Match:** Lật thẻ ghép cặp từ vựng
+- **Sentence Order Puzzle:** Sắp xếp câu tiếng Nhật
+- **Quick Answer Challenge:** Trả lời nhanh trong 5 giây
 
-- **📊 Thống Kê & Theo Dõi:**
-  - Biểu đồ theo dõi tiến độ học tập hàng ngày/tuần.
-  - Hệ thống huy hiệu và cấp độ người dùng.
-  - Đồng bộ hóa dữ liệu đám mây.
+### 🔐 Bảo Mật
+- **Xác thực Biometric** (Vân tay/Face ID)
+- Đăng nhập qua Google OAuth 2.0
+- JWT Access/Refresh Token
+- Mã hóa dữ liệu nhạy cảm (AES-256)
+- Quên mật khẩu qua Email OTP
 
-## 📱 Giao Diện (Screenshots)
+### 📊 Thống Kê & Theo Dõi
+- Biểu đồ tiến độ học tập hàng ngày/tuần
+- Hệ thống streak và XP
+- Đồng bộ hóa dữ liệu đám mây
 
-| Màn Hình Chính | Flashcard | Quiz Result |
-|:---:|:---:|:---:|
-| <img src="screenshots/home_screen.png" width="200" /> | <img src="screenshots/flashcard_screen.png" width="200" /> | <img src="screenshots/quiz_result.png" width="200" /> |
-
-*(Lưu ý: Thay thế các đường dẫn ảnh bằng ảnh thực tế của ứng dụng)*
+### �️ Admin Dashboard (Web)
+- Quản lý người dùng (khóa/mở khóa tài khoản)
+- Quản lý nội dung từ vựng và bộ quiz
+- Thống kê hệ thống
 
 ## 🛠️ Công Nghệ Sử Dụng (Tech Stack)
 
