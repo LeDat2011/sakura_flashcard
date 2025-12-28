@@ -55,22 +55,20 @@ class AuthRepository @Inject constructor(
 
     /**
      * Đăng nhập bằng biometric (vân tay)
+     * Luôn hiện prompt vân tay trước, sau đó mới kiểm tra credentials
      */
     suspend fun loginWithBiometric(activity: androidx.fragment.app.FragmentActivity): AuthResult {
-        // Kiểm tra biometric có sẵn không
-        if (isBiometricAvailable() != BiometricStatus.Available) {
-            return AuthResult.Error("Thiết bị không hỗ trợ đăng nhập vân tay")
-        }
-
-        // Kiểm tra có credentials đã lưu không
-        val credentials = tokenManager.getSavedCredentials()
-            ?: return AuthResult.Error("Chưa thiết lập đăng nhập vân tay")
-
-        // Xác thực biometric
+        // Xác thực biometric TRƯỚC - luôn hiện prompt
         return when (val result = biometricManager.authenticate(activity)) {
             is BiometricResult.Success -> {
-                // Đăng nhập với credentials đã lưu
-                login(credentials.first, credentials.second)
+                // Sau khi xác thực vân tay thành công, kiểm tra credentials
+                val credentials = tokenManager.getSavedCredentials()
+                if (credentials != null) {
+                    // Đăng nhập với credentials đã lưu
+                    login(credentials.first, credentials.second)
+                } else {
+                    AuthResult.Error("Chưa thiết lập đăng nhập vân tay. Vui lòng bật trong Hồ sơ → Tùy chọn tài khoản.")
+                }
             }
             is BiometricResult.Cancelled -> {
                 AuthResult.Error("Đã hủy xác thực")

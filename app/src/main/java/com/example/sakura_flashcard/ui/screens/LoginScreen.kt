@@ -1,11 +1,14 @@
 package com.example.sakura_flashcard.ui.screens
 
+import android.content.Context
+import android.content.ContextWrapper
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -21,6 +24,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -43,7 +47,16 @@ import com.example.sakura_flashcard.data.auth.GoogleAuthManager
 import com.example.sakura_flashcard.ui.theme.AppColors
 import com.example.sakura_flashcard.ui.theme.AppTypography
 import kotlinx.coroutines.launch
-import com.example.sakura_flashcard.util.SecureScreen
+
+// Helper function to find Activity from Context
+private fun Context.findActivity(): FragmentActivity? {
+    var ctx = this
+    while (ctx is ContextWrapper) {
+        if (ctx is FragmentActivity) return ctx
+        ctx = ctx.baseContext
+    }
+    return null
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,21 +66,11 @@ fun LoginScreen(
     modifier: Modifier = Modifier,
     viewModel: LoginViewModel = hiltViewModel()
 ) {
-    SecureScreen {
-        LoginScreenContent(onNavigateToRegister, onLoginSuccess, modifier, viewModel)
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun LoginScreenContent(
-    onNavigateToRegister: () -> Unit,
-    onLoginSuccess: () -> Unit,
-    modifier: Modifier = Modifier,
-    viewModel: LoginViewModel = hiltViewModel()
-) {
     val context = LocalContext.current
-    val activity = context as? FragmentActivity
+    // Tìm activity - ComponentActivity kế thừa từ FragmentActivity trong AndroidX
+    val activity = remember(context) { 
+        context.findActivity() ?: (context as? FragmentActivity)
+    }
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val focusManager = LocalFocusManager.current
 
@@ -185,29 +188,6 @@ private fun LoginScreenContent(
                     )
                 )
 
-                // Checkbox bật đăng nhập vân tay (chỉ hiện khi thiết bị hỗ trợ và chưa bật)
-                if (uiState.isBiometricAvailable && !uiState.canUseBiometric) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Checkbox(
-                            checked = uiState.enableBiometric,
-                            onCheckedChange = viewModel::updateEnableBiometric,
-                            colors = CheckboxDefaults.colors(
-                                checkedColor = AppColors.PrimaryLight,
-                                uncheckedColor = AppColors.TextSecondary
-                            )
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = "Bật đăng nhập bằng vân tay",
-                            style = AppTypography.BodyMedium,
-                            color = AppColors.TextPrimary
-                        )
-                    }
-                }
-
                 // Error Message
                 AnimatedVisibility(visible = uiState.errorMessage != null, enter = fadeIn(), exit = fadeOut()) {
                     uiState.errorMessage?.let { error ->
@@ -219,40 +199,51 @@ private fun LoginScreenContent(
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // Login Button
-                Button(
-                    onClick = viewModel::login,
-                    modifier = Modifier.fillMaxWidth().height(52.dp),
-                    enabled = !uiState.isLoading && uiState.isFormValid,
-                    colors = ButtonDefaults.buttonColors(containerColor = AppColors.PrimaryLight),
-                    shape = RoundedCornerShape(16.dp)
+                // Login Button Row với nút vân tay nhỏ
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    if (uiState.isLoading) {
-                        CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp, color = Color.White)
-                        Spacer(modifier = Modifier.width(8.dp))
-                    }
-                    Text(
-                        text = if (uiState.isLoading) "Đang đăng nhập..." else "Đăng nhập",
-                        style = AppTypography.TitleMedium,
-                        color = Color.White
-                    )
-                }
-
-                // Biometric Login Button - chỉ hiện khi đã bật và có credentials
-                if (uiState.canUseBiometric && activity != null) {
-                    OutlinedButton(
-                        onClick = { viewModel.biometricLogin(activity) },
-                        modifier = Modifier.fillMaxWidth().height(52.dp),
-                        enabled = !uiState.isLoading,
-                        shape = RoundedCornerShape(16.dp),
-                        border = BorderStroke(1.dp, AppColors.PrimaryLight)
+                    // Login Button (chiếm phần lớn)
+                    Button(
+                        onClick = viewModel::login,
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(52.dp),
+                        enabled = !uiState.isLoading && uiState.isFormValid,
+                        colors = ButtonDefaults.buttonColors(containerColor = AppColors.PrimaryLight),
+                        shape = RoundedCornerShape(16.dp)
                     ) {
-                        Icon(Icons.Rounded.Fingerprint, "Vân tay", tint = AppColors.PrimaryLight)
-                        Spacer(modifier = Modifier.width(8.dp))
+                        if (uiState.isLoading) {
+                            CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp, color = Color.White)
+                            Spacer(modifier = Modifier.width(8.dp))
+                        }
                         Text(
-                            text = "Đăng nhập bằng vân tay",
+                            text = if (uiState.isLoading) "Đang đăng nhập..." else "Đăng nhập",
                             style = AppTypography.TitleMedium,
-                            color = AppColors.PrimaryLight
+                            color = Color.White
+                        )
+                    }
+
+                    // Nút vân tay nhỏ - LUÔN HIỆN VÀ LUÔN BẬT
+                    FilledIconButton(
+                        onClick = { 
+                            activity?.let { viewModel.biometricLogin(it) }
+                                ?: run { /* Activity null - show error if needed */ }
+                        },
+                        modifier = Modifier.size(52.dp),
+                        enabled = !uiState.isLoading,
+                        colors = IconButtonDefaults.filledIconButtonColors(
+                            containerColor = AppColors.PrimaryLight
+                        ),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Icon(
+                            Icons.Rounded.Fingerprint,
+                            contentDescription = "Đăng nhập vân tay",
+                            modifier = Modifier.size(28.dp),
+                            tint = Color.White
                         )
                     }
                 }

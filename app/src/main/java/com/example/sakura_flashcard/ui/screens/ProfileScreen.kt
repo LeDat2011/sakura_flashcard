@@ -35,6 +35,7 @@ fun ProfileScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val customDecks by viewModel.customDecks.collectAsState()
+    val isBiometricEnabled by viewModel.isBiometricEnabled.collectAsState()
 
     LazyColumn(
         modifier = Modifier
@@ -46,7 +47,16 @@ fun ProfileScreen(
         item { ProfileHeader(userProfile = uiState.userProfile, onEditClick = onNavigateToEdit) }
         item { LearningProgressCard(userStats = uiState.userStats) }
         item { CustomDecksCard(decks = customDecks, onManageDecksClick = onNavigateToCustomDecks, onCreateDeck = { viewModel.createCustomDeck(it) }) }
-        item { ProfileActionsCard(onLogout = { viewModel.logout(); onLogout() }) }
+        item { 
+            ProfileActionsCard(
+                onLogout = { viewModel.logout(); onLogout() },
+                isBiometricEnabled = isBiometricEnabled,
+                userEmail = uiState.userProfile?.email ?: "",
+                onToggleBiometric = { enabled, email, password ->
+                    viewModel.toggleBiometric(enabled, email, password)
+                }
+            )
+        }
     }
 
     if (uiState.isLoading) {
@@ -244,8 +254,16 @@ private fun CreateDeckDialog(onDismiss: () -> Unit, onConfirm: (String) -> Unit)
 }
 
 @Composable
-private fun ProfileActionsCard(onLogout: () -> Unit) {
+private fun ProfileActionsCard(
+    onLogout: () -> Unit,
+    isBiometricEnabled: Boolean = false,
+    userEmail: String = "",
+    onToggleBiometric: (Boolean, String, String) -> Unit = { _, _, _ -> }
+) {
     var showLogoutDialog by remember { mutableStateOf(false) }
+    var showBiometricDialog by remember { mutableStateOf(false) }
+    var biometricPassword by remember { mutableStateOf("") }
+    
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = AppColors.SurfaceLight),
@@ -260,6 +278,61 @@ private fun ProfileActionsCard(onLogout: () -> Unit) {
                 Text("Tùy chọn tài khoản", style = AppTypography.TitleMedium, fontWeight = FontWeight.Bold, color = AppColors.TextPrimary)
             }
             Spacer(Modifier.height(16.dp))
+            
+            // Biometric toggle
+            Surface(
+                color = Color(0xFFfdf4ff),
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
+                        Icon(
+                            Icons.Rounded.Fingerprint,
+                            contentDescription = null,
+                            tint = AppColors.PrimaryLight,
+                            modifier = Modifier.size(24.dp)
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                text = "Đăng nhập vân tay",
+                                style = AppTypography.BodyMedium,
+                                fontWeight = FontWeight.Medium,
+                                color = AppColors.TextPrimary
+                            )
+                            Text(
+                                text = if (isBiometricEnabled) "Đã bật" else "Chưa bật",
+                                style = AppTypography.LabelSmall,
+                                color = if (isBiometricEnabled) Color(0xFF16a34a) else AppColors.TextSecondary
+                            )
+                        }
+                    }
+                    Switch(
+                        checked = isBiometricEnabled,
+                        onCheckedChange = { enabled ->
+                            if (enabled) {
+                                showBiometricDialog = true
+                            } else {
+                                onToggleBiometric(false, "", "")
+                            }
+                        },
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = Color.White,
+                            checkedTrackColor = AppColors.PrimaryLight,
+                            uncheckedThumbColor = Color.White,
+                            uncheckedTrackColor = AppColors.SurfaceBorder
+                        )
+                    )
+                }
+            }
+            
+            Spacer(Modifier.height(12.dp))
+            
             Button(
                 onClick = { showLogoutDialog = true },
                 modifier = Modifier.fillMaxWidth().height(48.dp),
@@ -273,7 +346,66 @@ private fun ProfileActionsCard(onLogout: () -> Unit) {
             }
         }
     }
+    
     if (showLogoutDialog) LogoutConfirmationDialog(onDismiss = { showLogoutDialog = false }, onConfirm = { showLogoutDialog = false; onLogout() })
+    
+    // Biometric enable dialog
+    if (showBiometricDialog) {
+        AlertDialog(
+            onDismissRequest = { showBiometricDialog = false; biometricPassword = "" },
+            containerColor = AppColors.SurfaceLight,
+            shape = RoundedCornerShape(20.dp),
+            title = { 
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Rounded.Fingerprint, null, tint = AppColors.PrimaryLight)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Bật đăng nhập vân tay", style = AppTypography.TitleLarge, color = AppColors.TextPrimary)
+                }
+            },
+            text = {
+                Column {
+                    Text(
+                        "Nhập mật khẩu để xác nhận bật đăng nhập bằng vân tay",
+                        style = AppTypography.BodyMedium,
+                        color = AppColors.TextSecondary
+                    )
+                    Spacer(Modifier.height(16.dp))
+                    OutlinedTextField(
+                        value = biometricPassword,
+                        onValueChange = { biometricPassword = it },
+                        label = { Text("Mật khẩu") },
+                        leadingIcon = { Icon(Icons.Rounded.Lock, null, tint = AppColors.PrimaryLight) },
+                        visualTransformation = androidx.compose.ui.text.input.PasswordVisualTransformation(),
+                        singleLine = true,
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        onToggleBiometric(true, userEmail, biometricPassword)
+                        showBiometricDialog = false
+                        biometricPassword = ""
+                    },
+                    enabled = biometricPassword.isNotBlank(),
+                    colors = ButtonDefaults.buttonColors(containerColor = AppColors.PrimaryLight),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("Bật", color = Color.White)
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { showBiometricDialog = false; biometricPassword = "" },
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("Hủy", color = AppColors.TextSecondary)
+                }
+            }
+        )
+    }
 }
 
 @Composable

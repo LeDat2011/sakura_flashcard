@@ -37,9 +37,23 @@ object NetworkModule {
             return result
         }
 
-    // TODO: Đổi thành URL thật khi deploy
-    private const val BASE_URL = "http://10.0.2.2:3000/api/" // Android Emulator -> localhost
-    // private const val BASE_URL = "http://192.168.x.x:3000/api/" // Real device -> your PC IP
+    // Dynamic BASE_URL - auto-detect emulator vs real device
+    private val BASE_URL: String
+        get() {
+            val isEmulator = android.os.Build.FINGERPRINT.startsWith("generic") ||
+                    android.os.Build.FINGERPRINT.startsWith("unknown") ||
+                    android.os.Build.MODEL.contains("google_sdk") ||
+                    android.os.Build.MODEL.contains("Emulator") ||
+                    android.os.Build.MODEL.contains("Android SDK") ||
+                    android.os.Build.HARDWARE.contains("goldfish") ||
+                    android.os.Build.HARDWARE.contains("ranchu")
+            
+            return if (isEmulator) {
+                "http://10.0.2.2:3000/api/" // Android Emulator -> localhost
+            } else {
+                "http://192.168.54.101:3000/api/" // Real device -> your PC IP (change this to your PC's IP)
+            }
+        }
 
     @Provides
     @Singleton

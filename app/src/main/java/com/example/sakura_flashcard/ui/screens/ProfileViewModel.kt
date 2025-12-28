@@ -32,6 +32,13 @@ class ProfileViewModel @Inject constructor(
     private val _customDecks = MutableStateFlow<List<CustomDeck>>(emptyList())
     val customDecks: StateFlow<List<CustomDeck>> = _customDecks.asStateFlow()
 
+    // Biometric state
+    private val _isBiometricEnabled = MutableStateFlow(authRepository.isBiometricEnabled())
+    val isBiometricEnabled: StateFlow<Boolean> = _isBiometricEnabled.asStateFlow()
+    
+    val isBiometricAvailable: Boolean
+        get() = authRepository.isBiometricAvailable() == com.example.sakura_flashcard.data.auth.BiometricStatus.Available
+
     init {
         loadUserProfile()
         loadUserStats()
@@ -223,6 +230,15 @@ class ProfileViewModel @Inject constructor(
     fun clearError() {
         _uiState.value = _uiState.value.copy(error = null)
         _editState.value = _editState.value.copy(error = null)
+    }
+
+    fun toggleBiometric(enabled: Boolean, email: String, password: String) {
+        if (enabled) {
+            authRepository.enableBiometricLogin(email, password)
+        } else {
+            authRepository.disableBiometricLogin()
+        }
+        _isBiometricEnabled.value = enabled
     }
 
     fun clearSuccessMessages() {

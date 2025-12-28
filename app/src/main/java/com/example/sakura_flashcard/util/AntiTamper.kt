@@ -12,7 +12,6 @@ import java.io.File
  * Features:
  * - Debugger detection
  * - Root detection  
- * - Emulator detection
  * - App signature verification
  * - Tamper detection
  */
@@ -25,7 +24,6 @@ object AntiTamper {
     fun isCompromised(context: Context): Boolean {
         return isDebugged() || 
                isDebuggerAttached() || 
-               isEmulator() || 
                isRooted() ||
                isDebuggable(context)
     }

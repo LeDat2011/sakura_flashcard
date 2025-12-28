@@ -21,12 +21,18 @@ class BiometricAuthManager @Inject constructor(
      * Kiểm tra thiết bị có hỗ trợ biometric không
      */
     fun isBiometricAvailable(): BiometricStatus {
-        return when (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
-            BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
-            BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE -> BiometricStatus.NoHardware
-            BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> BiometricStatus.HardwareUnavailable
-            BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> BiometricStatus.NoneEnrolled
-            BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED -> BiometricStatus.SecurityUpdateRequired
+        // Thử BIOMETRIC_STRONG trước, nếu không được thì thử BIOMETRIC_WEAK
+        val strongResult = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
+        val weakResult = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK)
+        
+        return when {
+            strongResult == BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
+            weakResult == BiometricManager.BIOMETRIC_SUCCESS -> BiometricStatus.Available
+            strongResult == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED || 
+                weakResult == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> BiometricStatus.NoneEnrolled
+            strongResult == BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE -> BiometricStatus.NoHardware
+            strongResult == BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> BiometricStatus.HardwareUnavailable
+            strongResult == BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED -> BiometricStatus.SecurityUpdateRequired
             else -> BiometricStatus.Unknown
         }
     }
@@ -69,11 +75,12 @@ class BiometricAuthManager @Inject constructor(
 
         val biometricPrompt = BiometricPrompt(activity, executor, callback)
 
+        // Sử dụng BIOMETRIC_WEAK để hỗ trợ nhiều thiết bị hơn
         val promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle(title)
             .setSubtitle(subtitle)
             .setNegativeButtonText(negativeButtonText)
-            .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
+            .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_WEAK)
             .build()
 
         biometricPrompt.authenticate(promptInfo)

@@ -15,7 +15,7 @@ import javax.inject.Singleton
  * 
  * Responsibilities:
  * - Generate and securely store database passphrase using Android Keystore.
- * - Perform root/emulator detection for session security.
+ * - Perform root detection for session security.
  */
 @Singleton
 class DatabaseSecurityManager @Inject constructor(

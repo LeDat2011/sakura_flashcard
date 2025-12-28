@@ -103,8 +103,9 @@ app.use((req: Request, res: Response) => {
 // Start server
 const startServer = async () => {
     await connectDB();
-    app.listen(PORT, () => {
-        console.log(`🚀 Server running on http://localhost:${PORT}`);
+    const HOST = '0.0.0.0'; // Accept connections from any IP
+    app.listen(Number(PORT), HOST, () => {
+        console.log(`🚀 Server running on http://${HOST}:${PORT}`);
         console.log(`🛡️ Security middleware enabled: Rate limiting, XSS, NoSQL injection protection`);
     });
 };

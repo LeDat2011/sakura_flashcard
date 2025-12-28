@@ -19,7 +19,6 @@ class SecurityInterceptor @Inject constructor(
 
     companion object {
         private const val HEADER_DEVICE_ROOTED = "X-Device-Rooted"
-        private const val HEADER_IS_EMULATOR = "X-Is-Emulator"
         private const val HEADER_IS_DEBUGGED = "X-Is-Debugged"
     }
 
@@ -33,7 +32,6 @@ class SecurityInterceptor @Inject constructor(
         // Server can use these to implement additional security policies
         val newRequest = originalRequest.newBuilder()
             .header(HEADER_DEVICE_ROOTED, securityStatus.isRooted.toString())
-            .header(HEADER_IS_EMULATOR, securityStatus.isEmulator.toString())
             .header(HEADER_IS_DEBUGGED, securityStatus.isDebugged.toString())
             .build()
         
