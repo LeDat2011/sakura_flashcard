@@ -7,6 +7,9 @@
     <title>🌸 Sakura Admin Dashboard</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    <!-- Third Party Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 
@@ -20,14 +23,21 @@
             </div>
             <nav class="nav-menu">
                 <a href="#" class="nav-item active" data-page="dashboard">
-                    <span class="icon">📊</span> Dashboard
+                    <i data-lucide="layout-dashboard" class="icon"></i> Dashboard
                 </a>
                 <a href="#" class="nav-item" data-page="users">
-                    <span class="icon">👥</span> Users
+                    <i data-lucide="users" class="icon"></i> Users
                 </a>
                 <a href="#" class="nav-item" data-page="content">
-                    <span class="icon">📚</span> Content
+                    <i data-lucide="book-open" class="icon"></i> Content
                 </a>
+                <div class="sidebar-spacer"></div>
+                <div class="theme-switch-container">
+                    <button id="theme-toggle" class="btn-theme">
+                        <i data-lucide="moon" id="theme-icon"></i>
+                        <span id="theme-text">Dark Mode</span>
+                    </button>
+                </div>
             </nav>
         </aside>
 
@@ -44,31 +54,46 @@
             <section id="dashboard-page" class="page active">
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-icon">👥</div>
+                        <div class="stat-icon users-icon"><i data-lucide="users"></i></div>
                         <div class="stat-info">
                             <h3 id="stat-total-users">0</h3>
                             <p>Total Users</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">✅</div>
+                        <div class="stat-icon active-icon"><i data-lucide="user-check"></i></div>
                         <div class="stat-info">
                             <h3 id="stat-active-users">0</h3>
                             <p>Active Users</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">📖</div>
+                        <div class="stat-icon vocab-icon"><i data-lucide="languages"></i></div>
                         <div class="stat-info">
                             <h3 id="stat-vocabularies">0</h3>
                             <p>Vocabularies</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">❓</div>
+                        <div class="stat-icon quiz-icon"><i data-lucide="help-circle"></i></div>
                         <div class="stat-info">
                             <h3 id="stat-quizzes">0</h3>
                             <p>Quiz Sets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-row">
+                    <div class="card chart-card">
+                        <h3>Registration Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="userTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <h3>JLPT Level Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="levelDistChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -169,7 +194,10 @@
 
                 <div id="quizzes-tab" class="tab-content">
                     <div class="card">
-                        <h3>Quiz Sets</h3>
+                        <div class="card-header">
+                            <h3>Quiz Sets</h3>
+                            <button class="btn btn-primary" id="add-quiz-btn">+ Add Quiz Set</button>
+                        </div>
                         <table class="data-table">
                             <thead>
                                 <tr>
@@ -270,7 +298,7 @@
         </div>
     </div>
 
-    <!-- Quiz Set Detail Modal -->
+    <!-- Quiz Detail Modal -->
     <div id="quiz-modal" class="modal">
         <div class="modal-content" style="max-width: 700px;">
             <div class="modal-header">
@@ -286,8 +314,53 @@
         </div>
     </div>
 
+    <!-- Quiz Form Modal (Add/Edit) -->
+    <div id="quiz-form-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3 id="quiz-form-title">Add Quiz Set</h3>
+                <button class="close-btn" id="close-quiz-form-btn">&times;</button>
+            </div>
+            <form id="quiz-form">
+                <input type="hidden" id="quiz-id">
+                <div class="form-group">
+                    <label>Topic</label>
+                    <input type="text" id="quiz-topic" required placeholder="e.g. Daily Life, Travel">
+                </div>
+                <div class="form-group">
+                    <label>Level</label>
+                    <select id="quiz-level" required>
+                        <option value="N5">N5</option>
+                        <option value="N4">N4</option>
+                        <option value="N3">N3</option>
+                        <option value="N2">N2</option>
+                        <option value="N1">N1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="quiz-title" required placeholder="e.g. Basic Greeting Quiz">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="quiz-description" class="form-control" rows="3"
+                        placeholder="Enter quiz description..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-quiz-form-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Quiz Set</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="js/api.js"></script>
     <script src="js/dashboard.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

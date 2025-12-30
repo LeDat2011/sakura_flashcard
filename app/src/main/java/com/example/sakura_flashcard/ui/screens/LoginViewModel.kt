@@ -233,8 +233,10 @@ class LoginViewModel @Inject constructor(
     
     fun forgotPassword() {
         val currentEmail = _email.value.trim()
-        if (validateEmail(currentEmail) != null) {
-            _errorMessage.value = "Vui lòng nhập email hợp lệ"
+        val emailError = validateEmail(currentEmail)
+        
+        if (currentEmail.isBlank() || emailError != null) {
+            _errorMessage.value = emailError ?: "Vui lòng nhập email để đặt lại mật khẩu"
             return
         }
 
@@ -277,7 +279,7 @@ class LoginViewModel @Inject constructor(
 
     private fun validateEmail(email: String): String? {
         return when {
-            email.isBlank() -> null
+            email.isBlank() -> "Vui lòng nhập email"
             !ContentValidator.isValidEmail(email) -> "Vui lòng nhập email hợp lệ"
             else -> null
         }
